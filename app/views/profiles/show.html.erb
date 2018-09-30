@@ -1,7 +1,10 @@
 <h1>Profile</h1>
+<p>Helle <%= current_user.first_name %></p>
 <p>nickname</p>
 <%= @profile.nickname %>
 <p>phone</p>
 <%= @profile.phone %>
+
+<%= current_user.email %>
 
 <%= link_to "update Profile", edit_profile_path(@profile) %>

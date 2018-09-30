@@ -37,7 +37,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
             <li>
-            <!-- <li>%= link_to "Profile", profile_path(profile) %></li> -->
+            <li><%= link_to "Profile", profiles_path() %>
             </li>
           <li><%= link_to "Create an event", new_event_path %></li>
           <li>

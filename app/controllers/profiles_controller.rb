@@ -16,11 +16,11 @@ class ProfilesController < ApplicationController
 
 
   def index
-    @profile = Profile.find(current_user.id)
-    if @profile.nil?
-      redirect_to new_profile_path
-    else
+    if Profile.exists?(user_id: current_user.id)
+      @profile = Profile.find(current_user.id)
       redirect_to profile_path(@profile)
+    else
+      redirect_to new_profile_path
     end
 
   end
