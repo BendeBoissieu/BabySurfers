@@ -1,5 +1,11 @@
-<h1>Profile</h1>
-<p>Helle <%= current_user.first_name %></p>
+<div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+<div class="profile_picture"></div>
+
+<div class="profile_infos">
+<h2 id="firstName"><%= current_user.first_name %></h2>
+  <div class="description_user">
+      <%= @profile.description_user %>
+  </div>
 <p>nickname</p>
 <%= @profile.nickname %>
 <p>phone</p>
@@ -8,3 +14,4 @@
 <%= current_user.email %>
 
 <%= link_to "update Profile", edit_profile_path(@profile) %>
+</div>

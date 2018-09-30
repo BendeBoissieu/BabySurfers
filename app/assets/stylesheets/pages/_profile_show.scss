@@ -1,0 +1,40 @@
+.banner_profile {
+  width: 100%;
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.profile_picture{
+  position: relative;
+  top: 150px;
+  height: 50px;
+  width: 50px;
+  background-color: pink;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.profile_infos{
+  position: relative;
+  top: 128px;
+  width: 80%;
+  margin: 0px auto 5px auto;
+}
+
+#firstName{
+  color: $white;
+  text-align: center;
+}
+
+.description_user {
+  background-color: pink;
+}
