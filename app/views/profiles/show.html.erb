@@ -1,3 +1,7 @@
 <h1>Profile</h1>
 <p>nickname</p>
 <%= @profile.nickname %>
+<p>phone</p>
+<%= @profile.phone %>
+
+<%= link_to "update Profile", edit_profile_path(@profile) %>

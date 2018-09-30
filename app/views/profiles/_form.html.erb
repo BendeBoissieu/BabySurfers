@@ -1,0 +1,8 @@
+<div class="container-form">
+  <%= simple_form_for [@profile] do |f| %>
+    <%= f.input :nickname %>
+    <%= f.input :phone %>
+    <div class="text-center"> <%= f.button :submit, class: 'btn btn-blue' %> </div>
+  <% end %>
+</div>
+
