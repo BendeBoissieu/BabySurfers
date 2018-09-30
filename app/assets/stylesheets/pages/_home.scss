@@ -1,1 +1,50 @@
-// Specific CSS for your home-page
+.container-home{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.under-logo-home{
+  position: absolute;
+  height: 170px;
+  width: 100vw;
+  top: 20%;
+  background-color: rgba(255,255,255, 0.4);
+  z-index: 1;
+}
+
+.see_event_home{
+  position: absolute;
+  width: 100vw;
+  top: 70%;
+  background-color: $gray-buttons;
+
+}
+
+.see_baby_surfers_home{
+  position: absolute;
+  width: 100vw;
+  top: 84%;
+  background-color: $gray-buttons;
+
+}
+
+.logo-home{
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  margin-top: -5px;
+}
+
+.btn-home{
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+
+a:hover, a:focus {
+    color: #1f74ba;
+    text-decoration: none;
+     vertical-align: middle;
+}

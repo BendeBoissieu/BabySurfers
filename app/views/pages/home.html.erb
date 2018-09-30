@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 70%), url('<%= image_path 'surf_home.jpg' %>');">
+  <div class="under-logo-home">
+    <div class="logo-home">
+         <%= image_tag "white_logo.png", height: 200 %>
+    </div>
+
+
+
+  </div>
+
+
+    <%= link_to "See an event", events_path, class: "see_event_home btn-home" %>
+
+
+    <%= link_to "See a baby surfer",  events_path, class: "see_baby_surfers_home btn-home" %>
+
+
+
+
+</div>
