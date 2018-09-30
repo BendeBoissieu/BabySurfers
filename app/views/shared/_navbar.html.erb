@@ -36,9 +36,8 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
-            <li> <%= link_to "my-profile" do %>
-               <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-               <% end %>
+            <li>
+            <!-- <li>%= link_to "Profile", profile_path(profile) %></li> -->
             </li>
           <li><%= link_to "Create an event", new_event_path %></li>
           <li>
