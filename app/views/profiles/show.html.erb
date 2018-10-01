@@ -1,4 +1,4 @@
-<div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+<div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'Surfboard.jpg' %>');">
 <div class="profile_picture"></div>
 
 <div class="profile_infos">
@@ -7,6 +7,7 @@
       <%= @profile.description_user %>
   </div>
 <p>nickname</p>
+<%= image_tag "baby-face-black.png", alt: "baby-face-black", width: 64, height: 64 %>
 <%= @profile.nickname %>
 <p>phone</p>
 <%= @profile.phone %>
