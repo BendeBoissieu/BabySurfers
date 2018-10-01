@@ -1,5 +1,20 @@
-<h1>Events#index</h1>
+<div class="background_index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
+  <div class="title"><h1>Events</h1></div>
 
-<%= favicon_link_tag 'color_logo.png' %>
-<p>Find me in app/views/events/index.html.erb</p>
+  <div class="container-index">
+    <% if @events.count <= 1 %>
+      <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> event for you. </h4>
+    <% else %>
+      <h2 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> events for you. </h2>
+    <% end %>
+    <div class="row">
+      <% @events.each do |event| %>
+       <div class="col-xs-12 col-md-4 col-sm-6">
+       </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
 
