@@ -13,9 +13,9 @@
 
 .profile_picture{
   position: relative;
-  top: 150px;
-  height: 50px;
-  width: 50px;
+  top: 88px;
+  height: 70px;
+  width: 70px;
   background-color: pink;
   border-radius: 50%;
   margin-left: auto;
@@ -25,8 +25,8 @@
 
 .profile_infos{
   position: relative;
-  top: 128px;
-  width: 80%;
+  top: 70px;
+  width: 95%;
   margin: 0px auto 5px auto;
 }
 
@@ -40,9 +40,60 @@
 }
 
 .icons-space{
+  position: relative;
   background-color: $medium-gray;
-  height: 80px;
-  width: 90%;
-  margin: 0px auto 5px auto;
+  height: 50px;
+  width: 100%;
+  margin: 15px auto 5px auto;
+  text-align: center;
+  padding-top: 10px;
+}
+.column{
+  float: left;
+  padding: 5px;
+
 }
 
+.column.middle{
+  width: 40%;
+}
+.column.side{
+  width: 30%;
+}
+
+.surf-level{
+  background-color: $medium-gray;
+  height: 50px;
+  font-size: 12px;
+}
+
+.surfboard{
+  background-color: $medium-gray;
+  height: 50px;
+  font-size: 12px;
+}
+
+.favorite_spot{
+  background-color: $medium-gray;
+  height: 50px;
+  font-size: 12px;
+}
+
+
+.team{
+  background-color: $medium-gray;
+  height: 70px;
+  font-size: 15px;
+}
+
+.contact{
+  background-color: $medium-gray;
+  height: 70px;
+  font-size: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
