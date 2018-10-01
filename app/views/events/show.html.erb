@@ -1,6 +1,38 @@
 <div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'surf_session.jpg' %>');"></div>
-<div class="profile_infos">
+<div class="event_infos">
   <div class="text-center">
-    <h2><%= @event.title_event %></h2>
+    <h2 id="title_event"><%= @event.title_event %></h2>
   </div>
+<div class="row">
+  <div class="column-show-event">
+    <div class="location-show-event">
+     <p class="text-center"> <%= @event.location %> </p>
+    </div>
+    <div class="date-show-event">
+      <p><%= @event.start_at.strftime("At %H:%M") %></p>
+      <p><%= @event.start_at.strftime("On %m %B %Y") %></p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="description_event">
+      <p class="text-center"><%= @event.description %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="text-center">
+    <button type="success"><p class="btn btn-warning">Join</p></button>
+  </div>
+</div>
+<div class="row">
+  <div class="column-show-event">
+    <div class="people-comming-show">
+      <p class="text-center">People who are coming</p>
+    </div>
+    <div class="discussion-show">
+      <p class="text-center">Discussion</p>
+    </div>
+  </div>
+</div>
+
 </div>

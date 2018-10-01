@@ -1,0 +1,59 @@
+#title_event{
+  top: 8px;
+  position: relative;
+  background-color: $dark-gray;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  width:94%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event_infos{
+  position: relative;
+  top: 70px;
+  width: 100%;
+  margin: 0px auto 5px auto;
+}
+
+
+.column-show-event{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+.date-show-event{
+  width: 55%;
+  min-height: 75px;
+  background-color: $medium-gray;
+  padding: 14px;
+}
+
+.location-show-event{
+  width: 38%;
+  min-height: 75px;
+  background-color: $medium-gray;
+  padding: 14px;
+}
+
+.description_event{
+   background-color: $medium-gray;
+   padding: 14px;
+}
+.people-comming-show{
+  width: 38%;
+  min-height: 75px;
+  background-color: $medium-gray;
+  padding: 14px;
+}
+
+.discussion-show{
+  width: 55%;
+  min-height: 75px;
+  background-color: $medium-gray;
+  padding: 14px;
+}
+
