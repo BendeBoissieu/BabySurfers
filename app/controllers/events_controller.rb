@@ -7,6 +7,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    @event.organiser = current_user.first_name
+    @event.organiser_id = current_user.id
     if @event.save
       redirect_to event_path(@event)
     else

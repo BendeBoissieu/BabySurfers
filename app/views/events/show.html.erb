@@ -25,6 +25,11 @@
   </div>
 </div>
 <div class="row">
+  <div class="description_event">
+    <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %> </p>
+  </div>
+</div>
+<div class="row">
   <div class="column-show-event">
     <div class="people-comming-show">
       <p class="text-center">People who are coming</p>
