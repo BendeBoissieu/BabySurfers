@@ -1,5 +1,8 @@
 <div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'Surfboard.jpg' %>');"></div>
-<div class="profile_picture"></div>
+<% if @profile.photoprofile.file.nil? %>
+<% else %>
+  <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.photoprofile.url %>');"></div>
+<% end %>
 
 <div class="profile_infos">
   <h2 id="firstName"><%= current_user.first_name %></h2>
@@ -35,12 +38,11 @@
     <div class="contact">
       <p>Phone: <%= @profile.phone %></p>
       <p>Mail: <%= current_user.email %></p>
-      <%= link_to "update Profile", edit_profile_path(@profile) %>
+      <p><%= link_to "update Profile", edit_profile_path(@profile) %></p>
     </div>
   </div>
-
-  <%= cl_image_tag("BabySurfers/boris_retreat_2017_limtyd",
-      width: 400, height: 300, crop: :fill) %>
+  <div class="row">
+  </div>
 </div>
 
 

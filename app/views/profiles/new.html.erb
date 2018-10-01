@@ -1,7 +1,9 @@
 <div class="container-form">
   <%= simple_form_for [@profile] do |f| %>
-    <%= f.input :nickname %>
+    <%= f.input :description_user %>
     <%= f.input :phone %>
+    <%= f.input :photoprofile %>
+    <%= f.input :photoprofile_cache, as: :hidden %>
     <div class="text-center"> <%= f.button :submit, class: 'btn btn-blue' %> </div>
   <% end %>
 </div>
