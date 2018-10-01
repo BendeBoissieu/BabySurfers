@@ -3,6 +3,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::
   include Cloudinary::CarrierWave
+    def public_id
+    return "BabySurfers/" + model.user_id.to_s
+  end
 
   # Choose what kind of storage to use for this uploader:
   #storage :file
