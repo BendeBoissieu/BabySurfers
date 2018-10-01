@@ -5,16 +5,28 @@
     <% if @events.count <= 1 %>
       <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> event for you. </h4>
     <% else %>
-      <h2 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> events for you. </h2>
+      <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> events for you. </h4>
     <% end %>
     <div class="row">
       <% @events.each do |event| %>
        <div class="col-xs-12 col-md-4 col-sm-6">
+          <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),  url('<%= image_path 'surf_session.jpg', height: 300, width: 400, crop: :fill %>')">
+            <div class="card-title">
+                <h2> <%= event.title_event.capitalize %> </h2>
+            </div>
+            <div class="card-date">
+              <p>10/02/2018</p>
+            </div>
+            <div class="card-description">
+                <p> <%= event.description %> </p>
+            </div>
+            <div class="card-location">
+              <p>4 avenue de verdun Ecully</p>
+            </div>
+            <%= link_to "", event_path(event), class: "card-link" %>
+          </div>
        </div>
       <% end %>
     </div>
   </div>
-</div>
-
-
 
