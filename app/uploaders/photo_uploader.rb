@@ -7,6 +7,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
     return "BabySurfers/" + model.user_id.to_s
   end
 
+
+
+
   # Choose what kind of storage to use for this uploader:
   #storage :file
   # storage :fog
@@ -26,7 +29,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process scale: [300, 300]
+  process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
