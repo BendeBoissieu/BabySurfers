@@ -6,9 +6,9 @@
 
   <div class="container-index">
     <% if @events.count <= 1 %>
-      <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> event for you. </h4>
+      <h4 class="text-center"> Hello <%= current_user.first_name %>, we found <%= @events.count %> event for you. </h4>
     <% else %>
-      <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> events for you. </h4>
+      <h4 class="text-center"> Hello <%= current_user.first_name %>, we found <%= @events.count %> events for you. </h4>
     <% end %>
     <div class="row">
       <% @events.each do |event| %>
