@@ -36,6 +36,15 @@
     </div>
     <div class="discussion-show">
       <p class="text-center">Discussion</p>
+      <% if @event.discussions.count < 1 %>
+          <p>no message yet</p>
+      <% else %>
+          <% @event.discussions.each do |discussion| %>
+            <div class="discussion_user"><%= discussion.user.first_name %></div>
+            <div class="discussion_message"><%= discussion.message_event.capitalize %></div>
+          <% end %>
+      <% end %>
+      <%= link_to "Write a message" '<i class="far fa-star"></i>'.html_safe, new_event_discussion_path(@event) %>
     </div>
   </div>
 </div>

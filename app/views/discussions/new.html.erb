@@ -1,2 +1,8 @@
-<h1>Discussions#new</h1>
-<p>Find me in app/views/discussions/new.html.erb</p>
+<p class="text-center">Write your message</p>
+<div class="container-form">
+  <%= simple_form_for [@event, @discussion] do |f| %>
+    <%= f.input :message_event %>
+    <%= f.submit "validate", class: "btn btn-warning" %>
+  <% end %>
+
+</div>
