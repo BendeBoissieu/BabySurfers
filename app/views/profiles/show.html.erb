@@ -1,4 +1,7 @@
 <div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'Surfboard.jpg' %>');"></div>
+<div class="arrow-left-back-page">
+   <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
+</div>
 <% if @profile.photoprofile.file.nil? %>
 <% else %>
   <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.photoprofile.url %>');"></div>

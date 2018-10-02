@@ -1,4 +1,7 @@
 <div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'surf_session.jpg' %>');"></div>
+<div class="arrow-left-back-page">
+   <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  events_path() %>
+</div>
 <div class="event_infos">
   <div class="text-center">
     <h2 id="title_event"><%= @event.title_event %></h2>
@@ -8,10 +11,12 @@
     <div class="location-show-event">
      <p class="text-center"> <%= @event.location %> </p>
     </div>
-    <div class="date-show-event">
-      <p><%= @event.start_at.strftime("At %H:%M") %></p>
-      <p><%= @event.start_at.strftime("On %m %B %Y") %></p>
-    </div>
+    <% if @event.start_at != nil %>
+      <div class="date-show-event">
+        <p><%= @event.start_at.strftime("At %H:%M") %></p>
+        <p><%= @event.start_at.strftime("On %m %B %Y") %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="row">
