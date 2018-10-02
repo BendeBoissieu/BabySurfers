@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'joins/new'
+  get 'joins/create'
   devise_for :users, :controllers => { registrations: 'registrations' }
   root to: 'pages#home'
   resources :events do
