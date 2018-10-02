@@ -4,4 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :events
+  has_one :profile, dependent: :destroy
+  after_create :init_profile
+
+  def init_profile
+    self.create_profile!
+  end
 end
