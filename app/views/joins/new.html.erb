@@ -1,2 +1,8 @@
-<h1>Joins#new</h1>
-<p>Find me in app/views/joins/new.html.erb</p>
+<div class="container-form">
+
+  <%= simple_form_for [@event, @join] do |f| %>
+    <p>Are you sure?</p>
+    <%= f.submit "Yes", class: "btn btn-success" %>
+  <% end %>
+
+</div>

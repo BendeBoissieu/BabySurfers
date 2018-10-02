@@ -21,7 +21,7 @@
 </div>
 <div class="row">
   <div class="text-center">
-    <button type="success"><p class="btn btn-warning">Join</p></button>
+    <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-success" %>
   </div>
 </div>
 <div class="row">
@@ -33,6 +33,13 @@
   <div class="column-show-event">
     <div class="people-comming-show">
       <p class="text-center">People who are coming</p>
+      <% if @event.joins.count < 1 %>
+        <p> No people yet</p>
+      <% else %>
+      <% @event.joins.each do |join| %>
+            <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
+        <% end %>
+      <% end %>
     </div>
     <div class="discussion-show">
       <p class="text-center">Discussion</p>
