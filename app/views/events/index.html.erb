@@ -15,13 +15,15 @@
                 <h2> <%= event.title_event.capitalize %> </h2>
             </div>
             <div class="card-date">
-              <p>10/02/2018</p>
+              <% if event.start_at != nil %>
+                <p><%= event.start_at.strftime("On %m %B %Y") %></p>
+              <% end %>
             </div>
             <div class="card-description">
                 <p> <%= event.description %> </p>
             </div>
             <div class="card-location">
-              <p>4 avenue de verdun Ecully</p>
+              <p><%= event.location %></p>
             </div>
             <%= link_to "", event_path(event), class: "card-link" %>
           </div>
