@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Find a surfer around you">
+    <meta name="google-site-verification" content="6U6ZLGSjFOf1FXGZ_bEwULuWU44oz4ykgLpKSX1jNR8" />
     <%= favicon_link_tag 'favicon.ico' %>
     <title>Baby Surfers</title>
     <%= csrf_meta_tags %>
@@ -21,7 +22,8 @@
     <% end %>
     <%= yield %>
       </div>
-        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
     <%= javascript_include_tag 'application' %>
