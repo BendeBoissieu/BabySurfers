@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_214306) do
+ActiveRecord::Schema.define(version: 2018_10_03_093805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2018_10_02_214306) do
     t.text "description"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.text "location"
     t.string "photo_event"
     t.string "organiser"
     t.bigint "user_id"
@@ -39,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_10_02_214306) do
     t.integer "organiser_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "location"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2018_10_02_214306) do
   create_table "profiles", force: :cascade do |t|
     t.string "nickname"
     t.string "email"
-    t.text "address"
     t.string "background_profile"
     t.date "birth_date"
     t.string "board_type"
@@ -70,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_10_02_214306) do
     t.string "phone"
     t.float "latitude"
     t.float "longitude"
+    t.string "address"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

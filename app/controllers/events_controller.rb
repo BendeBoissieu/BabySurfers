@@ -17,18 +17,19 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
     @events = Event.where.not(latitude: nil, longitude: nil)
-    @markers = @events.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
+    @hash = Gmaps4rails.build_markers(@events) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      marker.infowindow render_to_string(partial: "/events/map_box", locals: { event: event })
+    end
+    #@events = Event.all
   end
 
   def show
     @event = Event.find(params[:id])
+    @hash = [{lat: @event.latitude, lng: @event.longitude}]
+
   end
 
 

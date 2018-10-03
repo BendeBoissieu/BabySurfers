@@ -6,9 +6,9 @@
 
   <div class="container-index">
     <% if @events.count <= 1 %>
-      <h4 class="text-center"> Hello <%= current_user.first_name %>, we found <%= @events.count %> event for you. </h4>
+      <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> event for you. </h4>
     <% else %>
-      <h4 class="text-center"> Hello <%= current_user.first_name %>, we found <%= @events.count %> events for you. </h4>
+      <h4 class="text-center"> Hello <%= current_user.first_name %>, We found <%= @events.count %> events for you. </h4>
     <% end %>
     <div class="row">
       <% @events.each do |event| %>
@@ -33,13 +33,25 @@
        </div>
       <% end %>
     </div>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+    <div class="row">
+    <div id="map" style='width: 100%; height: 300px;'></div>
+    </div>
 
   </div>
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function(){
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  </script>
+<% end %>
 

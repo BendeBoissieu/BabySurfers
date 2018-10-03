@@ -7,6 +7,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -18,7 +19,15 @@ gem 'webpacker'
 gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-gem 'geocoder'
+gem 'figaro'
+gem "jquery-rails"
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source "https://rails-assets.org" do
+  gem "rails-assets-underscore"
+end
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
