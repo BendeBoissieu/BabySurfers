@@ -1,2 +1,5 @@
 import "bootstrap";
-import autocomplete from "../components/autocomplete"
+import $ from "jquery";
+import autocomplete from "../components/autocomplete";
+
+
