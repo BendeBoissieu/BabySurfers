@@ -2,50 +2,51 @@
 <div class="arrow-left-back-page">
    <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
 </div>
-<% if @profile.photoprofile.file.nil? %>
-<% else %>
-  <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.photoprofile.url %>');"></div>
-<% end %>
+<div class="container-show">
+  <% if @profile.photoprofile.file.nil? %>
+  <% else %>
+    <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.photoprofile.url %>');"></div>
+  <% end %>
 
-<div class="profile_infos">
-  <h2 id="firstName"><%= @profile.user.first_name %></h2>
-    <div class="description_user">
-        <%= @profile.description_user %>
+  <div class="profile_infos">
+    <h2 id="firstName"><%= @profile.user.first_name %></h2>
+      <div class="description_user">
+          <%= @profile.description_user %>
+      </div>
+
+    <div class="icons-space">
+      <%= image_tag "baby-face-black.png", alt: "baby-face-black", width: 30, height: 30 %>
+      <%= image_tag "cafe-red.png", alt: "baby-face-black", width: 30, height: 30 %>
+      <%= image_tag "beer-red.png", alt: "baby-face-black", width: 30, height: 30 %>
+      <%= image_tag "bbq-red.png", alt: "baby-face-black", width: 30, height: 30 %>
     </div>
-
-  <div class="icons-space">
-    <%= image_tag "baby-face-black.png", alt: "baby-face-black", width: 30, height: 30 %>
-    <%= image_tag "cafe-red.png", alt: "baby-face-black", width: 30, height: 30 %>
-    <%= image_tag "beer-red.png", alt: "baby-face-black", width: 30, height: 30 %>
-    <%= image_tag "bbq-red.png", alt: "baby-face-black", width: 30, height: 30 %>
-  </div>
-  <div class="row">
-    <div class="column side">
-      <div class="surf-level">
-        <p>Surf level</p>
+    <div class="row">
+      <div class="column side">
+        <div class="surf-level">
+          <p>Surf level</p>
+        </div>
+      </div>
+      <div class="column middle">
+          <div class="favorite_spot">
+          <p>Favorite spot</p>
+        </div>
+      </div>
+      <div class="column side">
+        <div class="surfboard">
+          <p>My Surfboard</p>
+        </div>
       </div>
     </div>
-    <div class="column middle">
-        <div class="favorite_spot">
-        <p>Favorite spot</p>
+
+    <div class="row">
+      <div class="contact">
+        <p>Phone: <%= @profile.phone %></p>
+        <p>Mail: <%= @profile.user.email %></p>
+        <p><%= link_to "update Profile", edit_profile_path(@profile) %></p>
       </div>
     </div>
-    <div class="column side">
-      <div class="surfboard">
-        <p>My Surfboard</p>
-      </div>
-    </div>
+
   </div>
 
-  <div class="row">
-    <div class="contact">
-      <p>Phone: <%= @profile.phone %></p>
-      <p>Mail: <%= @profile.user.email %></p>
-      <p><%= link_to "update Profile", edit_profile_path(@profile) %></p>
-    </div>
-  </div>
 
 </div>
-
-
-

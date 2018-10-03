@@ -2,84 +2,88 @@
 <div class="arrow-left-back-page">
    <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  events_path() %>
 </div>
-<div class="event_infos">
-  <div class="text-center">
-    <h2 id="title_event"><%= @event.title_event %></h2>
-  </div>
-  <div class="row">
-    <div class="column-show-event">
-      <div class="location-show-event">
-       <p class="text-center"> <%= @event.location %> </p>
-      </div>
-      <% if @event.start_at != nil %>
-        <div class="date-show-event">
-          <p><%= @event.start_at.strftime("At %H:%M") %></p>
-          <p><%= @event.start_at.strftime("On %m %B %Y") %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="description_event">
-        <p class="text-center"><%= @event.description %></p>
-    </div>
-  </div>
-  <div class="row">
+<div class="container-show">
+  <div class="event_infos">
     <div class="text-center">
-      <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-success" %>
+      <h2 id="title_event"><%= @event.title_event %></h2>
     </div>
-  </div>
-  <div class="row">
-    <div class="description_event">
-      <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %> </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="column-show-event">
-      <div class="people-comming-show">
-        <p class="text-center">People who are coming</p>
-        <% if @event.joins.count < 1 %>
-          <p> No people yet</p>
-        <% else %>
-        <% @event.joins.each do |join| %>
-              <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
-          <% end %>
+    <div class="row">
+      <div class="column-show-event">
+        <div class="location-show-event">
+         <p class="text-center"> <%= @event.location %> </p>
+        </div>
+        <% if @event.start_at != nil %>
+          <div class="date-show-event">
+            <p><%= @event.start_at.strftime("At %H:%M") %></p>
+            <p><%= @event.start_at.strftime("On %m %B %Y") %></p>
+          </div>
         <% end %>
       </div>
-      <div class="discussion-show">
-        <p class="text-center">Discussion</p>
-        <% if @event.discussions.count < 1 %>
-            <p>no message yet</p>
-        <% else %>
-            <% @event.discussions.each do |discussion| %>
-              <div class="discussion_user"><%= discussion.user.first_name %></div>
-              <div class="discussion_message"><%= discussion.message_event.capitalize %></div>
+    </div>
+    <div class="row">
+      <div class="description_event">
+          <p class="text-center"><%= @event.description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-success" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="description_event">
+        <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-show-event">
+        <div class="people-comming-show">
+          <p class="text-center">Who's coming?</p>
+          <% if @event.joins.count < 1 %>
+            <p> No people yet</p>
+          <% else %>
+          <% @event.joins.each do |join| %>
+                <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
             <% end %>
-        <% end %>
-        <%= link_to "Write a message" '<i class="far fa-star"></i>'.html_safe, new_event_discussion_path(@event) %>
+          <% end %>
+        </div>
+        <div class="discussion-show">
+          <p class="text-center">Discussion</p>
+          <% if @event.discussions.count < 1 %>
+              <p>no message yet</p>
+          <% else %>
+              <% @event.discussions.each do |discussion| %>
+                <div class="discussion_user"><%= discussion.user.first_name %></div>
+                <div class="discussion_message"><%= discussion.message_event.capitalize %></div>
+              <% end %>
+          <% end %>
+          <div class="text-center">
+            <%= link_to "Write a message",  new_event_discussion_path(@event), class: "btn btn-warning" %>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div id="map" style='width: 100%; height: 300px;'></div>
+    </div>
+
   </div>
-  <div class="row">
-    <div id="map" style='width: 100%; height: 300px;'></div>
-  </div>
+
+
+  <% content_for(:after_js) do %>
+    <script type="text/javascript">
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    </script>
+  <% end %>
 
 </div>
-
-
-<% content_for(:after_js) do %>
-  <script type="text/javascript">
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
-    });
-  </script>
-<% end %>
-

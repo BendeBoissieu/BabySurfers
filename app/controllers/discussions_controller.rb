@@ -12,7 +12,6 @@ class DiscussionsController < ApplicationController
     @discussion.user = current_user
     @discussion.save
     redirect_to event_path(event)
-    flash[:notice] = "Thanks for your message!"
   end
 
 
