@@ -31,7 +31,13 @@
     </div>
     <div class="row">
       <div class="description_event">
-        <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %> </p>
+        <% if @event.user.profile.photoprofile.file.nil? %>
+          <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %></p>
+        <% else %>
+          <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %>
+            <span class="organiser_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @event.user.profile.photoprofile.url %>');"></span>
+          </p>
+        <% end %>
       </div>
     </div>
     <div class="row">
