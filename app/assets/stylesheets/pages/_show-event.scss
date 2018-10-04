@@ -11,7 +11,7 @@
 
 .event_infos{
   position: relative;
-  top: 40px;
+  top: 70px;
   width: 100%;
   margin: 0px auto 5px auto;
 }
@@ -65,3 +65,8 @@
   color: $light-blue;
 }
 
+.write-message{
+  display: flex;
+  margin-top:80px;
+  height: 21px;
+}

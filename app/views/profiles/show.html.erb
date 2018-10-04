@@ -2,7 +2,7 @@
 <div class="arrow-left-back-page">
    <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
 </div>
-<div class="container-show">
+
   <% if @profile.photoprofile.file.nil? %>
   <% else %>
     <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.photoprofile.url %>');"></div>
@@ -42,11 +42,10 @@
       <div class="contact">
         <p>Phone: <%= @profile.phone %></p>
         <p>Mail: <%= @profile.user.email %></p>
-        <p><%= link_to "update Profile", edit_profile_path(@profile) %></p>
+        <%= link_to "update Profile", edit_profile_path(@profile), class:"btn btn-warning" %>
       </div>
     </div>
 
   </div>
 
 
-</div>
