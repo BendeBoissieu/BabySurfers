@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'matches/new'
+  get 'matches/create'
+  get 'matches/index'
+  get 'matches/show'
+  get 'matches/delete'
   get 'joins/new'
   get 'joins/create'
   devise_for :users, :controllers => { registrations: 'registrations' }
