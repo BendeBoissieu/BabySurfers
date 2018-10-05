@@ -1,2 +1,3 @@
-<h1>Matches#index</h1>
-<p>Find me in app/views/matches/index.html.erb</p>
+<%  JSON.array!@matches do |match|%>
+ <%=   JSON.title match.name%>
+<%   end%>

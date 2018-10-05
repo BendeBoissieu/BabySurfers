@@ -1,5 +1,9 @@
-<h1 id="match">Matches#new</h1>
+<div class="arrow-left-back-page">
+   <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
+</div>
 
+<h1 id="match">Matches#new</h1>
+Essai <%= user.first_name  %>
 
 <p>Find me in app/views/matches/new.html.erb</p>
 <%  sample = User.all.sample(1)[0] %>
@@ -9,16 +13,30 @@
 <%= sample.first_name %>
 <%= sample.profile.phone %>
 
+<% ilike = [] %>
+<% idontlike = [] %>
 
 
 
 <form id="add">
   <button type="submit" class="btn btn-primary"><%= image_tag "aloha-sign.png", alt: "Yes", width: 80, height: 80 %></button>
+  <p>My like list</p>
+  <% ilike.push(sample) %>
+  <% ilike.each do |e| %>
+    <%= e.first_name %>
+  <% end %>
 </form>
 
 
 <form id="skip">
   <button type="submit" class="btn btn-warning"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
+
+  <p>My dont like list</p>
+  <% idontlike.push(sample) %>
+  <% idontlike.each do |e| %>
+    <%= e.first_name %>
+  <% end %>
 </form>
 
 <div id="tag-id"></div>
+

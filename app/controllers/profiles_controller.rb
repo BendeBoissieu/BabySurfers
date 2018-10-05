@@ -16,13 +16,7 @@ class ProfilesController < ApplicationController
 
 
   def index
-    if Profile.exists?(user_id: current_user.id)
-      @profile = Profile.find(current_user.id)
-      redirect_to profile_path(@profile)
-    else
-      redirect_to new_profile_path
-    end
-
+    @profiles=Profile.all
   end
 
   def show
@@ -30,17 +24,6 @@ class ProfilesController < ApplicationController
       @profile
   end
 
-=begin    if @profile = @profile.has_ordered?(current_user)
-      @profile = Profile.friendly.find(params[:user_id])
-      @profile
-    else
-      @profile = Profile.new(profile_params)
-      @profile.user = current_user
-      @profile.save
-
-      @profile = Profile.create(user: current_user)
-    end
-=end
 
   def edit
     @profile = Profile.find(params[:id])

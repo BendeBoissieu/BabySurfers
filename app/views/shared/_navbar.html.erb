@@ -20,7 +20,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
        <% if user_signed_in? %>
             <li>
-            <li><%= link_to "Profile", profiles_path() %>
+            <li><%= link_to "Profile", profile_path(current_user.id) %>
             </li>
           <li><%= link_to "Create an event", new_event_path %></li>
           <li>
@@ -44,7 +44,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
             <li>
-            <li><%= link_to "Profile", profiles_path() %>
+            <li><%= link_to "Profile", profile_path(current_user.id) %>
             </li>
           <li><%= link_to "Create an event", new_event_path %></li>
           <li>

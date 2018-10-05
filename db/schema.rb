@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_145609) do
+ActiveRecord::Schema.define(version: 2018_10_05_120737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 2018_10_04_145609) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_matches_on_user_id"
+    t.integer "user_one_id"
+    t.integer "user_two_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -100,6 +100,5 @@ ActiveRecord::Schema.define(version: 2018_10_04_145609) do
   add_foreign_key "events", "users"
   add_foreign_key "joins", "events"
   add_foreign_key "joins", "users"
-  add_foreign_key "matches", "users"
   add_foreign_key "profiles", "users"
 end
