@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'matches/new'
-  get 'matches/create'
-  get 'matches/index'
-  get 'matches/show'
-  get 'matches/delete'
-  get 'joins/new'
-  get 'joins/create'
   devise_for :users, :controllers => { registrations: 'registrations' }
   root to: 'pages#home'
   resources :events do
@@ -13,6 +6,7 @@ Rails.application.routes.draw do
     resources :discussions
   end
   resources :profiles
+  resources :matches
   get 'about', to: 'pages#about', as: :about
   get 'my-profile', to: "profiles#show"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

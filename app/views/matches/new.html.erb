@@ -1,2 +1,24 @@
-<h1>Matches#new</h1>
+<h1 id="match">Matches#new</h1>
+
+
 <p>Find me in app/views/matches/new.html.erb</p>
+<%  sample = User.all.sample(1)[0] %>
+<% while sample.id == current_user.id %>
+  <%  sample = User.all.sample(1)[0] %>
+<% end %>
+<%= sample.first_name %>
+<%= sample.profile.phone %>
+
+
+
+
+<form id="add">
+  <button type="submit" class="btn btn-primary"><%= image_tag "aloha-sign.png", alt: "Yes", width: 80, height: 80 %></button>
+</form>
+
+
+<form id="skip">
+  <button type="submit" class="btn btn-warning"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
+</form>
+
+<div id="tag-id"></div>
