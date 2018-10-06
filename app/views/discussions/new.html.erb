@@ -2,6 +2,7 @@
   <%= simple_form_for [@event, @discussion] do |f| %>
     <%= f.input :message_event, placeholder: 'Write your message' %>
     <%= f.submit "validate", class: "btn btn-warning" %>
+    <%= f.submit "cancel", name: "cancel", class: "btn btn-danger" %>
   <% end %>
 
 </div>

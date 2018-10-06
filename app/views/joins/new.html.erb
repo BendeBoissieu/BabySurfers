@@ -3,6 +3,7 @@
   <%= simple_form_for [@event, @join] do |f| %>
     <p>Are you sure?</p>
     <%= f.submit "Yes", class: "btn btn-success" %>
+    <%= f.submit "No", name: "no", class: "btn btn-danger" %>
   <% end %>
 
 </div>

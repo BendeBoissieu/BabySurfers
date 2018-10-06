@@ -7,11 +7,18 @@ class MatchesController < ApplicationController
     end
 
     json = @userlist.to_json
-    exemple = @userlist.sample(1)
-    while exemple[0][:id] == current_user.id
-    exemple = @userlist.sample(1)
+    @exemple = @userlist.sample(1)
+    while @exemple[0][:id] == current_user.id
+    @exemple = @userlist.sample(1)
     end
-    user = User.find(exemple[0][:id])
+
+
+    #Read the json file
+    file = open("./public/event.json")
+    json = file.read
+
+    @parsed = JSON.parse(json)
+
 
 
   end
@@ -22,9 +29,23 @@ class MatchesController < ApplicationController
     user = User.find(params[:user_id])
     # we need `event_id` to asssociate the discussion with corresponding event
     @match.user = current_user
-    @match.save
-    redirect_to roots_path()
-    flash[:notice] = "you have a match!"
+    if @match.save
+      if user_one_id.present?
+        user_two_id == current_user.id
+        redirect_to roots_path()
+        if user_one_id.present? || user_two_id.present?
+          flash[:notice] = "you have a match!"
+        else
+          flash[:notice] = "you like"
+        end
+      else
+        user_one_id == current_user.id
+      end
+    else
+       redirect_to roots_path()
+       flash[:notice] = "you did not like"
+    end
+
   end
 
   def index
