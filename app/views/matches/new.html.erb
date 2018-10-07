@@ -3,40 +3,23 @@
 </div>
 
 <h1 id="match">Matches#new</h1>
-Essai <%= parsed  %>
 
-<p>Find me in app/views/matches/new.html.erb</p>
-<%  sample = User.all.sample(1)[0] %>
-<% while sample.id == current_user.id %>
-  <%  sample = User.all.sample(1)[0] %>
-<% end %>
-<%= sample.first_name %>
-<%= sample.profile.phone %>
-
-<% ilike = [] %>
-<% idontlike = [] %>
-
+<p><%= @sampleUser[0]["first_name"]%></p>
 
 
 <form id="add">
-  <button type="submit" class="btn btn-primary"><%= image_tag "aloha-sign.png", alt: "Yes", width: 80, height: 80 %></button>
-  <p>My like list</p>
-  <% ilike.push(sample) %>
-  <% ilike.each do |e| %>
-    <%= e.first_name %>
-  <% end %>
+  <button type="submit", name: "like", class="btn btn-primary"><%= image_tag "aloha-sign.png", alt: "Yes", width: 80, height: 80 %></button>
+
 </form>
 
 
 <form id="skip">
-  <button type="submit" class="btn btn-warning"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
-
-  <p>My dont like list</p>
-  <% idontlike.push(sample) %>
-  <% idontlike.each do |e| %>
-    <%= e.first_name %>
-  <% end %>
+  <button type="submit", name: "cancel", class="btn btn-warning"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
 </form>
 
 <div id="tag-id"></div>
 
+  <%= simple_form_for [@user, @match] do |f| %>
+    <%= f.submit "validate", class: "btn btn-warning" %>
+    <%= f.submit "cancel", name: "cancel", class: "btn btn-danger" %>
+  <% end %>

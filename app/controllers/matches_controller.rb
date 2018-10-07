@@ -1,23 +1,19 @@
 class MatchesController < ApplicationController
+
+  before_action :redirect_dontlike, only: [:create]
+
   def new
     @match = Match.new
     @users = User.all
-    @userlist = @users.map do |u|
-    { :id => u.id, :first_name => u.first_name }
-    end
-
-    json = @userlist.to_json
-    @exemple = @userlist.sample(1)
-    while @exemple[0][:id] == current_user.id
-    @exemple = @userlist.sample(1)
-    end
-
-
     #Read the json file
     file = open("./public/event.json")
     json = file.read
-
     @parsed = JSON.parse(json)
+
+    @sampleUser = @parsed.sample(1)
+    while @sampleUser[0][:id] == current_user.id
+    @sampleUser = @parsed.sample(1)
+    end
 
 
 
@@ -25,28 +21,28 @@ class MatchesController < ApplicationController
 
   def create
 
-    @match = Match.new()
-    user = User.find(params[:user_id])
+    @match = Match.new(match_params)
+    user = User.find(params[:match_id])
     # we need `event_id` to asssociate the discussion with corresponding event
-    @match.user = current_user
+    #if @match_user_one_id.present?
+    #  @match.user_two_id = current_user.id
+    #    if @match_user_one_id.present? || @match_user_two_id.present?
+    #      flash[:notice] = "you have a match!"
+    #    else
+    #      flash[:notice] = "you like"
+    #    end
+    #else
+    #    @match.user_one_id = current_user.id
+    #end
     if @match.save
-      if user_one_id.present?
-        user_two_id == current_user.id
-        redirect_to roots_path()
-        if user_one_id.present? || user_two_id.present?
-          flash[:notice] = "you have a match!"
-        else
-          flash[:notice] = "you like"
-        end
-      else
-        user_one_id == current_user.id
-      end
-    else
-       redirect_to roots_path()
-       flash[:notice] = "you did not like"
+      redirect_to root_path
+      flash[:notice] = "you like"
     end
 
+
   end
+
+
 
   def index
   end
@@ -74,7 +70,16 @@ class MatchesController < ApplicationController
     private
 
   def match_params
-    params.require(:match).permit(:user_id)
+    params.require(:match).permit(:match_id, :user_one_id, :user_two_id)
   end
+
+  def redirect_dontlike
+    user = User.find(current_user.id)
+    if params[:cancel]
+    redirect_to root_path()
+    flash[:notice] = "you did not like"
+    end
+  end
+
 
 end
