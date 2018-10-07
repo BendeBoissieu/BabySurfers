@@ -6,10 +6,11 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
     #Read the json file
-    sample();
+    sample()
+    #Save the sampleuser in flash to be use in other methods
     flash['@sampleUser'] = @sampleUser
-
-
+    #write in json the sampleuser as viewed
+    writejsonview()
 
   end
 
@@ -81,8 +82,36 @@ class MatchesController < ApplicationController
     return @sampleUser
   end
 
+  def writejsonview
+    @sampleUser = flash['@sampleUser']
+    file = open("./public/views.json")
+    json = file.read
+    views_json= JSON.parse(json)
+    views_json.map { |n|
+      if n["user_id"] = current_user.id
+        view_json = {
+                 "views" => [
+                    {
+                    "id" => @sampleUser[0]["id"],
+                    "fist_name" => @sampleUser[0]["first_name"]
+                   }
+                ]
+                }
+        n["views"] << view_json["views"]
+      end
+      }
 
 
+
+
+
+    File.open("public/views.json","w") do |f|
+      f.write(views_json.to_json)
+    end
+
+  end
 
 
 end
+
+

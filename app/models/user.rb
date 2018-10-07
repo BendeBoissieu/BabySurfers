@@ -24,7 +24,6 @@ class User < ApplicationRecord
     File.open("public/event.json","w") do |f|
       f.write(events_json.to_json)
     end
-
- end
+  end
 
 end
