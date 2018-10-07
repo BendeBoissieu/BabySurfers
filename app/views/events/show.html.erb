@@ -58,8 +58,17 @@
               <p>no message yet</p>
           <% else %>
               <% @event.discussions.each do |discussion| %>
-                <div class="discussion_user"><%= discussion.user.first_name %></div>
-                <div class="discussion_message"><%= discussion.message_event.capitalize %></div>
+                <% if discussion.user_id == @event.organiser_id %>
+                    <div class="discussion_organiser"><%= discussion.user.first_name %></div>
+                  <div class="organiser-answer">
+                    <div class="discussion_message_organiser"><%= discussion.message_event.capitalize %></div>
+                  </div>
+                <% else %>
+                    <div class="discussion_user"><%= discussion.user.first_name %></div>
+                  <div class="user-answer">
+                    <div class="discussion_message"><%= discussion.message_event.capitalize %></div>
+                  </div>
+                <% end %>
               <% end %>
           <% end %>
           <div class="text-center write-message">

@@ -71,13 +71,31 @@ class MatchesController < ApplicationController
 
 
   def sample
+    # list of user that was not yet viewed by the current user
+    listtosample = []
     file = open("./public/event.json")
     json = file.read
-    @parsed = JSON.parse(json)
+    @users = JSON.parse(json)
 
-    @sampleUser = @parsed.sample(1)
+    #file = open("./public/views.json")
+    #json = file.read
+    #views_json= JSON.parse(json)
+    #views_json.map { |u|
+    #  if u["user_id"] = current_user.id
+
+      #  u["views"].map { |v| }
+      #  # u["views"][1][0]["id"]
+      #         listtosample  << u["views"]
+     # raise
+     # end
+   # }
+
+
+
+    #random user
+    @sampleUser = @users.sample(1)
     while @sampleUser[0][:id] == current_user.id
-    @sampleUser = @parsed.sample(1)
+    @sampleUser = @users.sample(1)
     end
     return @sampleUser
   end
@@ -86,25 +104,48 @@ class MatchesController < ApplicationController
     @sampleUser = flash['@sampleUser']
     file = open("./public/views.json")
     json = file.read
-    views_json= JSON.parse(json)
-    views_json.map { |n|
-      if n["user_id"] = current_user.id
-        view_json = {
-                 "views" => [
-                    {
-                    "id" => @sampleUser[0]["id"],
-                    "fist_name" => @sampleUser[0]["first_name"]
-                   }
-                ]
-                }
-        n["views"] << view_json["views"]
-      end
-      }
+    if json.empty?
+    views_json = []
+    else
+    views_json = JSON.parse(json)
+    end
+    if views_json.empty?
+             views_json = [{ "user_id" => current_user.id,
+                      "views" =>  [
+                                  {
+                                   "id" => @sampleUser[0]["id"],
+                                   "fist_name" => @sampleUser[0]["first_name"]
+                                  }
 
+                                  ]
+                    }]
 
+    else
+        views_json.each do  |n|
+          if n["user_id"] == current_user.id
+            view_json = {
+                     "views" =>
+                        {
+                        "id" => @sampleUser[0]["id"],
+                        "fist_name" => @sampleUser[0]["first_name"]
+                       }
 
+                    }
+            views_json[0]["views"] << view_json["views"]
+          end
+          if n["user_id"] != current_user.id
+            view_json = [{ "user_id" => current_user.id,
+                            "views" =>
+                        {
+                        "id" => @sampleUser[0]["id"],
+                        "fist_name" => @sampleUser[0]["first_name"]
+                       }
+                        }]
+            views_json << view_json
+          end
+        end
 
-
+    end
     File.open("public/views.json","w") do |f|
       f.write(views_json.to_json)
     end
