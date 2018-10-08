@@ -1,11 +1,15 @@
 <div class="container-form">
   <%= simple_form_for [@profile] do |f| %>
   <div class="form-login">
-    <%= f.input :description_user %>
+    <%= f.input :photoprofile%>
+    <%= f.input :photoprofile_cache, as: :hidden %>
+    <%= f.input :description_user, placeholder:"I was born to surf..."%>
     <%= f.input :address, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
     <%= f.input :phone %>
-    <%= f.input :photoprofile %>
-    <%= f.input :photoprofile_cache, as: :hidden %>
+    <%= f.input :surf_level, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
+    <%= f.input :board_type, collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
+    <%= f.input :favorite_beach, placeholder:"Waikiki" %>
+    <%= f.input :i_like, collection: Profile::I_LIKE, prompt: "what do you like?" %>
     <div class="text-center"> <%= f.button :submit, class: 'btn btn-success' %> </div>
   </div>
   <% end %>
