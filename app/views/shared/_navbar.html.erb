@@ -9,28 +9,25 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Profile</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Create an event</a>
 
-
-    <!-- Profile picture with dropdown list -->
+    <!-- Desktop Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/bendeboissieu" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      <i class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 40, height: 40 %></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
        <% if user_signed_in? %>
             <li>
-            <li><%= link_to "Profile", profile_path(current_user.id) %>
+            <li style="margin:10px;"><%= link_to "Profile", profile_path(current_user.id) %>
             </li>
-          <li><%= link_to "Create an event", new_event_path %></li>
-          <li>
+          <li style="margin:10px;"><%= link_to "Create an event", new_event_path %></li>
+          <li style="margin:10px;">
             <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
 
           </li>
         <% else %>
-          <li><%= link_to "Log in", new_user_session_path %></li>
+          <li style='margin:10px;'><%= link_to "Log in", new_user_session_path %></li>
         <% end %>
         </ul>
       </div>

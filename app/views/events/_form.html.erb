@@ -1,5 +1,6 @@
-<div class="container-form">
   <%= simple_form_for [event] do |f| %>
+<div class="container-form">
+
     <% if @event.errors.any? %>
       <div class="errors-container">
         <ul>
@@ -14,6 +15,6 @@
     <p><span><%= f.input :start_at %></span></p>
     <%= f.input :location, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
     <div class="text-center"> <%= f.button :submit, class: 'btn btn-success' %> </div>
-  <% end %>
 </div>
+  <% end %>
 

@@ -8,7 +8,7 @@
 }
 
 .organiser-answer{
-  height: 30px;
+  min-height: 30px;
   width: 100%;
   background-color: $light-gray;
   margin-bottom: 14px;
@@ -18,17 +18,19 @@
 }
 
 .user-answer{
-  height: 30px;
+  min-height: 30px;
   width: 100%;
   background-color: $dark-gray;
   margin-bottom: 14px;
-  margin-left: -6%;
+  margin-left: -8%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .discussion_user{
   color: $red;
+  padding-left: 50px;
+
 }
 
 .discussion_organiser{
