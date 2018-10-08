@@ -20,6 +20,7 @@
             <li style="margin:10px;"><%= link_to "Profile", profile_path(current_user.id) %>
             </li>
           <li style="margin:10px;"><%= link_to "Create an event", new_event_path %></li>
+          <li style="margin:10px;"><%= link_to "About us", about_path %></li>
           <li style="margin:10px;">
             <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -28,6 +29,7 @@
           </li>
         <% else %>
           <li style='margin:10px;'><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "About us", about_path %></li>
         <% end %>
         </ul>
       </div>
@@ -40,10 +42,9 @@
     <i class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 40, height: 40 %></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
-            <li>
-            <li><%= link_to "Profile", profile_path(current_user.id) %>
-            </li>
+           <li><%= link_to "My Profile", profile_path(current_user.id) %> </li>
           <li><%= link_to "Create an event", new_event_path %></li>
+           <li><%= link_to "About us", about_path %></li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -52,6 +53,7 @@
           </li>
         <% else %>
           <li><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "About us", about_path %></li>
         <% end %>
       </ul>
     </div>

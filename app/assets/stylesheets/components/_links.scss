@@ -1,13 +1,15 @@
 
 .buttons {
   position:absolute;
-  top:50%;
+  bottom:4%;
   left:50%;
   transform: translate(-50%, -50%);
   margin:0;
   padding:0;
   display:flex;
 }
+
+
 
 .buttons li {
   list-style: none;
