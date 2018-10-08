@@ -48,8 +48,13 @@
             <p> No people yet</p>
           <% else %>
           <% @event.joins.each do |join| %>
-                <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
-            <% end %>
+              <% if join.user.profile.photoprofile.file.nil? %>
+                  <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
+              <% else %>
+              <p><%= link_to join.user.first_name, profile_path(join.user_id) %>
+               <span class="organiser_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');"></span></p>
+               <% end %>
+              <% end %>
           <% end %>
         </div>
         <div class="discussion-show">
