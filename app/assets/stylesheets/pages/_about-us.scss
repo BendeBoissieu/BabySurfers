@@ -1,10 +1,10 @@
 .logo-about-us{
    position: relative;
-  top: 7%;
+  top: 0%;
   margin: 0;
   padding: 0;
   text-align: center;
-  margin-top: -27px;
+  margin-top: -30px;
 }
 
 .logo-about-us :hover{
@@ -19,14 +19,16 @@
 
 .text-about-us p{
   color: $purple;
+  font-size: 10px;
   margin-bottom: 10px;
   margin: 0px;
 }
 
 .text-about-us h1{
-  font-size: 35px;
-  text-align: center;
-  padding-top: 20px;
+  font-size: 24px;
+  text-align: left;
+  padding-top: 0px;
+  margin-bottom: 2px;
 }
 
 .text-about-us h2{
@@ -35,15 +37,18 @@
 }
 
 .text-about-us h5{
-  font-size: 15px;
+  font-size: 8px;
   color: $light-gray;
-  text-align: center;
+  margin-top: 0px;
+  text-align: left;
+
 }
 
 .text-about-us a {
   color: $white;
-  font-size: 30px;
+  font-size: 20px;
 }
+
 .links-about-us{
   color: $white;
   font-size: 25px;
