@@ -9,3 +9,15 @@
   float: right;
   margin-top: -10px;
 }
+
+.join_picture{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 12px;
+  background-repeat: no-repeat;
+  background-size: cover; //try contain
+  float: right;
+  margin-top: -10px;
+}
