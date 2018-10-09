@@ -11,9 +11,9 @@
       </div>
     <% end %>
     <%= f.input :title_event %>
+    <%= f.input :location, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
     <%= f.input :description %>
     <p><span><%= f.input :start_at %></span></p>
-    <%= f.input :location, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
     <div class="text-center"> <%= f.button :submit, class: 'btn btn-success' %> </div>
 </div>
   <% end %>
