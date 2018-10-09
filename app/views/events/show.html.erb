@@ -60,7 +60,10 @@
           <% @event.joins.each do |join| %>
           <!-- If no profile picture -->
               <% if join.user.profile.photoprofile.file.nil? %>
-                  <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
+              <img
+               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  image_path 'home.jpg' %>');" >
+             <p style="padding-left: 50px;"> <%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
+
               <% else %>
               <img
                class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" >
