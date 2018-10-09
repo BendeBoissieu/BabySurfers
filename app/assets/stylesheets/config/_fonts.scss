@@ -18,3 +18,12 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 .text-center{
   text-align: center;
 }
+
+.log-in {
+    color: white;
+    font-family: $headers-font;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+}
