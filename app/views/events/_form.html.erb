@@ -2,7 +2,7 @@
 <div class="container-form">
 
     <% if @event.errors.any? %>
-      <div class="errors-container">
+      <div class="signup-screen">
         <ul>
           <% @event.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -10,11 +10,12 @@
         </ul>
       </div>
     <% end %>
-    <%= f.input :title_event %>
-    <%= f.input :location, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
-    <%= f.input :description %>
-    <p><span><%= f.input :start_at %></span></p>
-    <div class="text-center"> <%= f.button :submit, class: 'btn btn-success' %> </div>
+    <%= f.input :title_event,input_html: {class: "input-form"} %>
+    <%= f.input :location, input_html: { id: 'gmaps-input-address',class: "input-form" }, :placeholder => 'Start typing a place name...' %>
+    <%= f.input :description, input_html: {class: "input-form"}  %>
+
+    <%= f.input :start_at,input_html: {class: "input-form"}  %>
+    <div class="text-center space-top"> <%= f.button :submit, class: 'btn btn-success' %> </div>
 </div>
   <% end %>
 
