@@ -12,8 +12,8 @@
     padding: 20px;
     padding-bottom: 40px;
     border-radius: 5px;
-    background-color: $dark-blue;
-    box-shadow: 0 1px 6px rgba(0,0,0,.3);
+    background-color: $dark-gray;
+//    box-shadow: 0 1px 6px rgba(0,0,0,.3);
     color: white;
 }
 
@@ -45,10 +45,16 @@
 }
 
 .input-form{
-  background-color: $dark-blue;
+  background-color: $dark-gray;
   color: $white;
   border: none;
   border-bottom:1px solid $white;
+
+}
+
+.input-form:focus{
+  border-color: #66afe9;
+  box-shadow: none;
 
 }
 
