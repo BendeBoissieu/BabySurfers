@@ -41,8 +41,18 @@
 
 .description_event{
    background-color: $medium-gray;
-   padding: 30px;
-   height: 80px;
+   padding: 18px;
+   height: 60px;
+}
+
+.description_organiser{
+   height: 45px;
+}
+
+.description_organiser p {
+  position: relative;
+  text-align: center;
+  top: 25%;
 }
 
 .people-comming-show{
@@ -55,6 +65,8 @@
 
 .write-message{
   display: flex;
-  margin-top:180px;
+  margin-top:150px;
   height: 21px;
+  margin-bottom: 15px;
+  margin-left: 120px;
 }

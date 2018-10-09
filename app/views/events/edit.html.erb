@@ -1,2 +1,10 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<div class="background_index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
+  <div class="arrow-left-back-page">
+     <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
+  </div>
+ <h1 class="text-center" style="margin-bottom: 0px;">Create a new event</h1>
+ <hr>
+ <div class="container-index">
+  <%= render 'form', event: @event %>
+  </div>
+</div>

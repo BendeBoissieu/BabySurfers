@@ -27,18 +27,28 @@
     <div class="row">
       <div class="text-center">
         <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-success" %>
+      <% if current_user.id == @event.user_id %>
+      <%= link_to " Delete", @event, :method => "delete", class: 'btn btn-warning'%>
+      <%= link_to " Update ", edit_event_path, class: 'btn btn-primary'%>
+      <% end %>
       </div>
     </div>
     <div class="row">
-      <div class="description_event">
+      <div class="description_organiser">
+        <!-- If no profile picture -->
         <% if @event.user.profile.photoprofile.file.nil? %>
           <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %></p>
         <% else %>
           <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %>
-            <span class="organiser_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @event.user.profile.photoprofile.url %>');"></span>
+            <%= link_to profile_path(@event.organiser_id) do %>
+               <span class="organiser_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @event.user.profile.photoprofile.url %>');"></span>
+            <% end %>
           </p>
         <% end %>
       </div>
+
+
+
     </div>
     <div class="row">
       <div class="column-show-event">
@@ -48,11 +58,14 @@
             <p> No people yet</p>
           <% else %>
           <% @event.joins.each do |join| %>
+          <!-- If no profile picture -->
               <% if join.user.profile.photoprofile.file.nil? %>
                   <p><%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
               <% else %>
-              <p><%= link_to join.user.first_name, profile_path(join.user_id) %>
-               <span class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');"></span></p>
+              <img
+               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" >
+             <p style="padding-left: 50px;"> <%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
+
                <% end %>
               <% end %>
           <% end %>
