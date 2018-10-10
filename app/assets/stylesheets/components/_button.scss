@@ -9,3 +9,15 @@
 .btn-done:focus{
   background-color: #6dc793;
 }
+
+.btn-login{
+  background-color: $purple;
+  border-radius: 3rem;
+  color: $white;
+  width: 250px;
+}
+
+.btn-login:hover{
+  text-decoration: none;
+  color: $white;
+}
