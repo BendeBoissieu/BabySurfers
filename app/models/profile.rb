@@ -1,5 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :profile_likecategories
+  has_many :likecategories, through: :profile_likecategories
   mount_uploader :photoprofile, PhotoUploader
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
