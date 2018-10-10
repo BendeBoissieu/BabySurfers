@@ -13,15 +13,44 @@
       <div class="description_user">
           <%= @profile.description_user %>
       </div>
-
     <div class="icons-space">
+    <% if @profile.likecategories.empty? %>
+        <div class="icon-black">
+          <%= image_tag "beers_b.png", alt: "baby-face-black", width: 50, height: 50 %>
+          <%= image_tag "sunbath_b.png", alt: "baby-face-black", width: 50, height: 50 %>
+          <%= image_tag "sausage_b.png", alt: "baby-face-black", width: 50, height: 50 %>
+          <%= image_tag "sports_b.png", alt: "baby-face-black", width: 50, height: 50 %>
+          <%= image_tag "run_b.png", alt: "baby-face-black", width: 50, height: 50 %>
+          <%= image_tag "van_b.png", alt: "baby-face-black", width: 50, height: 50 %>
+        </div>
+    <% else %>
       <% @profile.likecategories.each do |category| %>
-        <%= category.id %>
+        <% if category.id == 1 %>
+          <%= image_tag "beers_p.png", alt: "baby-face-black", width: 50, height: 50 %>
+        <% else %>
+        <% end %>
+        <% if category.id == 2 %>
+          <%= image_tag "sunbath_p.png", alt: "baby-face-black", width: 50, height: 50 %>
+        <% else %>
+        <% end %>
+        <% if category.id == 3 %>
+          <%= image_tag "sausage_p.png", alt: "baby-face-black", width: 50, height: 50 %>
+        <% else %>
+        <% end %>
+        <% if category.id == 4 %>
+          <%= image_tag "sports_p.png", alt: "baby-face-black", width: 50, height: 50 %>
+        <% else %>
+        <% end %>
+        <% if category.id == 5 %>
+          <%= image_tag "run_p.png", alt: "baby-face-black", width: 50, height: 50 %>
+        <% else %>
+        <% end %>
+        <% if category.id == 6 %>
+          <%= image_tag "van_p.png", alt: "baby-face-black", width: 50, height: 50 %>
+        <% else %>
+        <% end %>
       <% end %>
-      <%= image_tag "baby-face-black.png", alt: "baby-face-black", width: 30, height: 30 %>
-      <%= image_tag "cafe-red.png", alt: "baby-face-black", width: 30, height: 30 %>
-      <%= image_tag "beer-red.png", alt: "baby-face-black", width: 30, height: 30 %>
-      <%= image_tag "bbq-red.png", alt: "baby-face-black", width: 30, height: 30 %>
+    <% end %>
     </div>
     <div class="row">
       <div class="column side">

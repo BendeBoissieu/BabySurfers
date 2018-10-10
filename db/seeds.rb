@@ -13,8 +13,8 @@ puts "Creating new database..."
 
 
 likecategories = %w(Drink Sunbathing BBQ Volley-ball Running Surf-trip)
-likecategories.each do |category|
-  Likecategory.create!(name: category)
+likecategories.each do |likecategory|
+  Likecategory.create!(name: likecategory)
 end
 
 

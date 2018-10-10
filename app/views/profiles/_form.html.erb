@@ -7,15 +7,15 @@
     <%= f.input :address, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
     <%= f.input :phone %>
     <!-- Association categories replaced by the group below -->
-     <!-- f.association :likecategories, as: :check_boxes %> -->
+     <!--  f.association :likecategories, as: :check_boxes %> -->
     <div class="form-group">
       <label class="control-label check_boxes optional">Categories</label>
-      <input type="hidden" name="post[category_ids][]" value="">
+      <input type="hidden" name="profile[likecategory_ids][]" value="">
       <div class="category-choices">
-        <% Likecategory.all.each do |category| %>
-          <input type="checkbox" class="hidden" value="<%= category.id %>" name="post[category_ids][]" id="post_category_ids_<%= category.id %>">
-          <label class="category-choice" for="post_category_ids_<%= category.id %>">
-            <%= category.name %>
+        <% Likecategory.all.each do |likecategory| %>
+          <input type="checkbox" class="hidden" value="<%= likecategory.id %>" name="profile[likecategory_ids][]" id="profile_likecategory_ids_<%= likecategory.id %>">
+          <label class="category-choice" for="profile_likecategory_ids_<%= likecategory.id %>">
+            <%= likecategory.name %>
             <i class="fa fa-check"></i>
           </label>
         <% end %>
