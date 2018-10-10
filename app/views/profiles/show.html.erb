@@ -15,6 +15,9 @@
       </div>
 
     <div class="icons-space">
+      <% @profile.likecategories.each do |category| %>
+        <%= category.id %>
+      <% end %>
       <%= image_tag "baby-face-black.png", alt: "baby-face-black", width: 30, height: 30 %>
       <%= image_tag "cafe-red.png", alt: "baby-face-black", width: 30, height: 30 %>
       <%= image_tag "beer-red.png", alt: "baby-face-black", width: 30, height: 30 %>

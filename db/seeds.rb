@@ -1,7 +1,7 @@
 #Event.destroy_all
 #User.destroy_all
 
-
+Likecategory.destroy_all
 
 
 puts "Creating new database..."
@@ -12,7 +12,7 @@ puts "Creating new database..."
 #anna.save
 
 
-likecategories = %w(Coffee, Beers, BBQ, Sunbath, Volley-ball)
+likecategories = %w(Drink Sunbathing BBQ Volley-ball Running Surf-trip)
 likecategories.each do |category|
   Likecategory.create!(name: category)
 end
