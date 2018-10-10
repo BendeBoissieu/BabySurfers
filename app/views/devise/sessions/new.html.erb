@@ -8,14 +8,14 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email", class: "input-form" },
-                placeholder: "email" %>
+                placeholder: "Email" %>
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password", class: "input-form" },
-                placeholder: "password" %>
+                placeholder: "Password" %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
- <div class="space-bot text-center">
+ <div class="text-center">
   <div class="form-actions">
     <%= f.button :submit, "Log in", {class: "btn btn-login"} %>
   </div>

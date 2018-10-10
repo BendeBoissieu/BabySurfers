@@ -6,6 +6,7 @@
     <%= f.input :description_user, placeholder:"I was born to surf..."%>
     <%= f.input :address, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
     <%= f.input :phone %>
+    <%= f.association :likecategories, as: :check_boxes %>
     <%= f.input :surf_level, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
     <%= f.input :board_type, collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
     <%= f.input :favorite_beach, placeholder:"Waikiki" %>

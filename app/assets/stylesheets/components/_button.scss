@@ -21,3 +21,15 @@
   text-decoration: none;
   color: $white;
 }
+
+.btn-create{
+  background-color: $blue;
+  border-radius: 3rem;
+  color: $white;
+  width: 250px;
+}
+
+.btn-create:hover{
+  text-decoration: none;
+  color: $white;
+}
