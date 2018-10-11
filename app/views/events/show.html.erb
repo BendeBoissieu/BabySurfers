@@ -11,9 +11,9 @@
       <div class="description_organiser">
         <!-- If no profile picture -->
         <% if @event.user.profile.photoprofile.file.nil? %>
-          <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %></p>
+          <p>Organised by <%= link_to @event.organiser, profile_path(@event.organiser_id) %></p>
         <% else %>
-          <p>Organised by: <%= link_to @event.organiser, profile_path(@event.organiser_id) %>
+          <p>Organised by <%= link_to @event.organiser, profile_path(@event.organiser_id) %>
             <%= link_to profile_path(@event.organiser_id) do %>
                <span class="organiser_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @event.user.profile.photoprofile.url %>');"></span>
             <% end %>
@@ -24,12 +24,12 @@
     <div class="row">
       <div class="column-show-event">
         <div class="location-show-event">
-         <p class="text-center"> <%= @event.location %> </p>
+         <p class="text-center"> <i class="fa fa-location-arrow" aria-hidden="true"></i> <%= @event.location %> </p>
         </div>
         <% if @event.start_at != nil %>
           <div class="date-show-event text-center">
             <p><%= @event.start_at.strftime("%A %m %B %Y") %></p>
-            <p><%= @event.start_at.strftime("%H:%M") %></p>
+            <p style="font-weight: bold; font-size: 22px; margin-bottom: 0px;"><%= @event.start_at.strftime("%l:%M  %P") %></p>
           </div>
         <% end %>
       </div>
@@ -45,6 +45,7 @@
     <% if current_user.nil? %>
     <% else %>
       <% if current_user.id == @event.user_id %>
+      <div class="space-top"></div>
       <%= link_to " Delete", @event, :method => "delete", class: 'btn btn-warning'%>
       <%= link_to " Update ", edit_event_path, class: 'btn btn-primary'%>
       <% end %>
@@ -75,7 +76,7 @@
           <% end %>
         </div>
         <div class="discussion-show">
-          <p class="text-center">Discussion</p>
+          <p class="text-center"><i class="fa fa-envelope-open" aria-hidden="true"></i>  Discussion</p>
           <% if @event.discussions.count < 1 %>
               <p>no message yet</p>
           <% else %>
