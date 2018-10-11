@@ -9,6 +9,8 @@
   top: 0px;
   left: 0px;
   z-index: -1;
+  border-bottom-right-radius: 70rem;
+  border-bottom-left-radius: 0rem;
 }
 
 .profile_picture{
@@ -37,7 +39,7 @@
 }
 
 .description_user {
-  background-color: $medium-gray;
+  //background-color: $medium-gray;
 }
 
 .icons-space{
@@ -89,9 +91,14 @@
 }
 
 .contact{
-  background-color: $medium-gray;
-  height: 70px;
-  font-size: 20px;
+  //background-color: $medium-gray;
+  min-height: 70px;
+  font-size: 15px;
+
+}
+
+.contact p{
+  margin-bottom: 0px;
 }
 /* Clear floats after the columns */
 .row:after {
