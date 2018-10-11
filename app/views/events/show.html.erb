@@ -1,4 +1,4 @@
-<div class="banner_profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'surf_session.jpg' %>');"></div>
+<div class="banner_event" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'surf_session.jpg' %>');"></div>
 <div class="arrow-left-back-page">
    <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  events_path() %>
 </div>
@@ -6,36 +6,7 @@
     <div class="text-center">
       <h2 id="title_event"><%= @event.title_event %></h2>
     </div>
-    <div class="row">
-      <div class="column-show-event">
-        <div class="location-show-event">
-         <p class="text-center"> <%= @event.location %> </p>
-        </div>
-        <% if @event.start_at != nil %>
-          <div class="date-show-event">
-            <p><%= @event.start_at.strftime("At %H:%M") %></p>
-            <p><%= @event.start_at.strftime("On %m %B %Y") %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="description_event">
-          <p class="text-center"><%= @event.description %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="text-center">
-        <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-success" %>
-    <% if current_user.nil? %>
-    <% else %>
-      <% if current_user.id == @event.user_id %>
-      <%= link_to " Delete", @event, :method => "delete", class: 'btn btn-warning'%>
-      <%= link_to " Update ", edit_event_path, class: 'btn btn-primary'%>
-      <% end %>
-    <% end %>
-      </div>
-    </div>
+    <!-- Organised by -->
     <div class="row">
       <div class="description_organiser">
         <!-- If no profile picture -->
@@ -49,9 +20,36 @@
           </p>
         <% end %>
       </div>
-
-
-
+    </div>
+    <div class="row">
+      <div class="column-show-event">
+        <div class="location-show-event">
+         <p class="text-center"> <%= @event.location %> </p>
+        </div>
+        <% if @event.start_at != nil %>
+          <div class="date-show-event text-center">
+            <p><%= @event.start_at.strftime("%A %m %B %Y") %></p>
+            <p><%= @event.start_at.strftime("%H:%M") %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="description_event">
+          <p class="text-center"><%= @event.description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-join" %>
+    <% if current_user.nil? %>
+    <% else %>
+      <% if current_user.id == @event.user_id %>
+      <%= link_to " Delete", @event, :method => "delete", class: 'btn btn-warning'%>
+      <%= link_to " Update ", edit_event_path, class: 'btn btn-primary'%>
+      <% end %>
+    <% end %>
+      </div>
     </div>
     <div class="row">
       <div class="column-show-event">

@@ -33,3 +33,18 @@
   text-decoration: none;
   color: $white;
 }
+
+.btn-join{
+  background-color: none;
+  border-radius: 3rem;
+  color: $white;
+  width: 250px;
+  border: 4px solid $purple;
+  border-radius: 20px;
+}
+
+.btn-join:hover{
+  text-decoration: none;
+  color: $white;
+  background-color: $purple;
+}
