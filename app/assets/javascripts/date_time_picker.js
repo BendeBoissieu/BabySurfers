@@ -1,5 +1,5 @@
 $( document ).on('turbolinks:load', function() {
-  $('#datetimepicker').datetimepicker({
+  $('#datetimepicker').datetimepicker((function){
     console.log('test');
     locale: 'fr',
     sideBySide: true,
