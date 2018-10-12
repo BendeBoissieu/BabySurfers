@@ -1,8 +1,7 @@
 $( document ).on('turbolinks:load', function() {
-  $('#datetimepicker').datetimepicker(function){
-    console.log('test');
+  $('#datetimepicker').datetimepicker({
     locale: 'fr',
     sideBySide: true,
     format: "DD-MM-YYYY h:mm A"
-  };
+  });
 });
