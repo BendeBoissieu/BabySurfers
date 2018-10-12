@@ -4,4 +4,6 @@
 //= require jquery_ujs
 //= require underscore
 //= require gmaps/google
+//= require moment
+//= require moment/fr.js
 

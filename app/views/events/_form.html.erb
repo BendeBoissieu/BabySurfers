@@ -13,8 +13,19 @@
     <%= f.input :title_event,input_html: {class: "input-form"} %>
     <%= f.input :location, input_html: { id: 'gmaps-input-address',class: "input-form" }, :placeholder => 'Start typing a place name...' %>
     <%= f.input :description, input_html: {class: "input-form"}  %>
+    <!-- Previous Datetime -->
+    <!-- %= f.input :start_at,input_html: {class: "input-form"}  %> -->
 
-    <%= f.input :start_at,input_html: {class: "input-form"}  %>
+
+        <div class='input-group date' id='datetimepicker'>
+          <%= f.input :start_at, label: false, placeholder: "Select a date and time", class: "form-control" %>
+          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+
+
+
+
     <div class="text-center space-top"> <%= f.button :submit, class: 'btn btn-login' %> </div>
 </div>
   <% end %>

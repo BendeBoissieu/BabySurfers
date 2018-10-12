@@ -1,5 +1,4 @@
 function autocomplete() {
-  console.log('test');
   document.addEventListener("DOMContentLoaded", function() {
     var eventLocation = document.getElementById('gmaps-input-address');
     if (eventLocation) {
