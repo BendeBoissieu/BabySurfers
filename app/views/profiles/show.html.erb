@@ -73,20 +73,22 @@
       </div>
     </div>
 
+    <% if current_user.id == @profile.id %>
+
     <div class="row">
       <div class="contact text-center">
-        <h4>Contact</h4>
+        <h4>Contact (only seen by you)</h4>
         <hr style="margin-bottom: 4px;margin-top: 4px;">
         <p>Phone: <%= @profile.phone %></p>
         <p>Mail: <%= @profile.user.email %></p>
-        <% if current_user.id == @profile.id %>
+
           <div class="space-top">
            <%= link_to "Update Profile", edit_profile_path(@profile), class:"btn btn-create" %>
           </div>
-        <% end %>
+
       </div>
     </div>
-
+    <% end %>
   </div>
 
 

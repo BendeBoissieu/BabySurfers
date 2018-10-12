@@ -9,4 +9,5 @@ class Profile < ApplicationRecord
   SURF_LEVEL = ["very baby", "baby", "super baby", "papy", "super papy", "papy pro"]
   I_LIKE = ["beers", "BBQ", "coffee", "blabla", "volley-ball", "chill", "other ideas?"]
   BOARD_TYPE = ["no board", "soft board", "hard board"]
+
 end
