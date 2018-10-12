@@ -1,9 +1,3 @@
-//= require jquery
-//= require rails-ujs
-//= require jquery_ujs
-//= require moment
-//= require moment/fr.js
-
 $( document ).on('turbolinks:load', function() {
   $('#datetimepicker').datetimepicker({
     console.log('test');
