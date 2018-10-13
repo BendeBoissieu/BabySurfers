@@ -39,7 +39,7 @@
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
-    <i class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 60, height: 60 %></i>
+    <i class="dropdown-toggle button-circle circle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 50, height: 60, style:"padding-bottom: 13px;" %></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
            <li><%= link_to "My Profile", profile_path(current_user.id) %> </li>

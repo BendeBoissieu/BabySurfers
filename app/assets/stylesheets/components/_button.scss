@@ -48,3 +48,34 @@
   color: $white;
   background-color: $purple;
 }
+
+
+.button-circle {
+  color: #2a343c;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 75px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 20px 20px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+  transition: all 0.3s cubic-bezier(0, 0.35, 0.5, 1);
+}
+.button-circle:hover {
+  color: #000;
+  transform: scale(1.03);
+  box-shadow: 0 22px 22px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+}
+.button-circle:focus,
+.button-circle:active {
+  transform: scale(1);
+  box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
+}
+
+.circle {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  margin: 50px auto;
+  background-color: $light-blue;
+}

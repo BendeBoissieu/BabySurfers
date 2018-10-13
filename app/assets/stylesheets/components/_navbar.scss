@@ -47,6 +47,7 @@
   bottom: 25px;
   z-index: 200;
   right: 20px;
+  padding-bottom: 13px;
 }
 
 /* Navbar link */
@@ -93,4 +94,9 @@
 
 .dropdown-menu{
   top: -350% !important;
+}
+
+.dropdown-menu a{
+  color: black;
+
 }
