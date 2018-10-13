@@ -1,79 +1,81 @@
   <div class="arrow-left-back-page">
      <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
+<div class="container">
+  <h2 class="text-center">BabySurfers</h2>
 
-<h2 class="text-center">BabySurfers</h2>
+  <div class="tinder">
+    <div class="tinder--status">
+      <i class="fa fa-remove"></i>
+      <i class="fa fa-heart"></i>
+    </div>
 
-<div class="tinder">
-  <div class="tinder--status">
-    <i class="fa fa-remove"></i>
-    <i class="fa fa-heart"></i>
+    <div class="tinder--cards">
+      <div class="tinder--card">
+        <img src="https://www.ocregister.com/wp-content/uploads/2017/07/018-hurley-090916-mr_.jpg?w=571">
+        <h3>Kelly Slater</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/currywurst.png">
+        <h3>Currywurst</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/loveparade.png">
+        <h3>Loveparade</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/frankfurt.png">
+        <h3>Frankfurt am Main</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/Bundestagwahl.png">
+        <h3>Bundestagwahl</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/Nena.png">
+        <h3>Nena</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/neuschwanstein.png">
+        <h3>Neuschwanstein</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/berlin.png">
+        <h3>Berlin</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/bretzel.png">
+        <h3>Bretzel</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/fackjugohte.png">
+        <h3>Fack Ju Göthe</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/diewelle.png">
+        <h3>Die Welle</h3>
+      </div>
+      <div class="tinder--card">
+        <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/radiotoren.png">
+        <h3>Fernsehturm Berlin</h3>
+      </div>
+        <div class="tinder-result-button">
+           <h3>Welke methode past bij jou?</h3>
+       <button class="button-match" id="resultbutton">Uitslag</font></button>
+    </div>
+    </div>
+     <div class="tinderresult">
+      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/2468133/NU_VO_NeueKontakte_7e+ed_Onderbouw_2.png">
+      <a class="button-match" style="vertical-align:middle" href="https://www.noordhoffuitgevers.nl/voortgezet-onderwijs/methoden/duits/neue-kontakte" target="_blank">Bestel nu!</font></a>
+    </div>
+  <div class="tinderresult">
+      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/2465001/NU_VO_Talen_Trabitour_4vwo_omslag_789001826925.png">
+      <a class="button-match" style="vertical-align:middle" href="https://www.noordhoffuitgevers.nl/voortgezet-onderwijs/methoden/duits/trabitour" target="_blank">Bestel nu!</font></a>
+    </div>
+    <div class="tinder--buttons space-bot">
+      <button id="nope"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
+      <button id="refresh" onclick=location=URL><i class="fa fa-refresh"></i></button>
+      <button id="love"><%= image_tag "aloha-sign.png", alt: "Yes", width: 80, height: 80 %></button>
+    </div>
   </div>
 
-  <div class="tinder--cards">
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/namika.png">
-      <h3>Namika</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/currywurst.png">
-      <h3>Currywurst</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/loveparade.png">
-      <h3>Loveparade</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/frankfurt.png">
-      <h3>Frankfurt am Main</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/Bundestagwahl.png">
-      <h3>Bundestagwahl</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/Nena.png">
-      <h3>Nena</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/neuschwanstein.png">
-      <h3>Neuschwanstein</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/berlin.png">
-      <h3>Berlin</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/bretzel.png">
-      <h3>Bretzel</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/fackjugohte.png">
-      <h3>Fack Ju Göthe</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/diewelle.png">
-      <h3>Die Welle</h3>
-    </div>
-    <div class="tinder--card">
-      <img src="https://www.noordhoffuitgevers.nl/documents/2449749/10773815/radiotoren.png">
-      <h3>Fernsehturm Berlin</h3>
-    </div>
-      <div class="tinder-result-button">
-         <h3>Welke methode past bij jou?</h3>
-     <button class="button-match" id="resultbutton">Uitslag</font></button>
-  </div>
-  </div>
-   <div class="tinderresult">
-    <img src="https://www.noordhoffuitgevers.nl/documents/2449749/2468133/NU_VO_NeueKontakte_7e+ed_Onderbouw_2.png">
-    <a class="button-match" style="vertical-align:middle" href="https://www.noordhoffuitgevers.nl/voortgezet-onderwijs/methoden/duits/neue-kontakte" target="_blank">Bestel nu!</font></a>
-  </div>
-<div class="tinderresult">
-    <img src="https://www.noordhoffuitgevers.nl/documents/2449749/2465001/NU_VO_Talen_Trabitour_4vwo_omslag_789001826925.png">
-    <a class="button-match" style="vertical-align:middle" href="https://www.noordhoffuitgevers.nl/voortgezet-onderwijs/methoden/duits/trabitour" target="_blank">Bestel nu!</font></a>
-  </div>
-  <div class="tinder--buttons">
-    <button id="nope"><i class="fa fa-remove"></i></button>
-    <button id="refresh" onclick=location=URL><i class="fa fa-refresh"></i></button>
-    <button id="love"><i class="fa fa-heart"></i></button>
-  </div>
 </div>
