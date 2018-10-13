@@ -10,7 +10,7 @@ class MatchesController < ApplicationController
     #Save the sampleuser in flash to be use in other methods
     flash['@sampleUser'] = @sampleUser
     #write in json the sampleuser as viewed
-    writejsonview()
+    #writejsonview()
 
   end
 

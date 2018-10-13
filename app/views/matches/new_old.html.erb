@@ -1,0 +1,25 @@
+<div class="arrow-left-back-page">
+   <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
+</div>
+
+<h1 id="match">Matches#new</h1>
+
+<p><%= @sampleUser[0]["first_name"]%></p>
+<p><%= @sampleUser[0]["id"]%></p>
+
+<form id="add">
+  <button type="submit", name: "like", class="btn btn-primary"><%= image_tag "aloha-sign.png", alt: "Yes", width: 80, height: 80 %></button>
+
+</form>
+
+
+<form id="skip">
+  <button type="submit", name: "cancel", class="btn btn-warning"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
+</form>
+
+<div id="tag-id"></div>
+
+  <%= simple_form_for [@user, @match] do |f| %>
+    <%= f.submit "validate", class: "btn btn-warning" %>
+    <%= f.submit "cancel", name: "cancel", class: "btn btn-danger" %>
+  <% end %>
