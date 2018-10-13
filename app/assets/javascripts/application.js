@@ -7,3 +7,9 @@
 //= require moment
 //= require moment/fr.js
 
+initCards();
+
+
+
+nope.addEventListener('click', nopeListener);
+love.addEventListener('click', loveListener);
