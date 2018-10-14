@@ -10,7 +10,11 @@ class EventsController < ApplicationController
     @event.user = current_user
     @event.organiser = current_user.first_name
     @event.organiser_id = current_user.id
+    @join = Join.new()
+    @join.event = @event
+    @join.user = current_user
     if @event.save
+      @join.save
       redirect_to event_path(@event)
     else
       render :new

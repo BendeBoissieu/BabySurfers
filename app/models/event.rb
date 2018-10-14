@@ -4,4 +4,6 @@ class Event < ApplicationRecord
   has_many :joins, :dependent => :delete_all
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+
 end
+
