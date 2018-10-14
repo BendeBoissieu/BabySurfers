@@ -44,7 +44,7 @@
   cursor: pointer;
   padding: 0 0px;
   position: fixed;
-  bottom: 25px;
+  top: 10px;
   z-index: 200;
   right: 20px;
   padding-bottom: 13px;
@@ -91,10 +91,6 @@
   border-top: 1px solid #E6E6E6;
 }
 
-
-.dropdown-menu{
-  top: -350% !important;
-}
 
 .dropdown-menu a{
   color: black;
