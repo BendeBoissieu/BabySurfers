@@ -2,7 +2,7 @@
   <% @event.joins.each do |join| %>
     <% if  join.user_id == current_user.id %>
       <%= simple_form_for [@event, @join] do |f| %>
-      <h1>You are already joining!</h1>
+      <h1>You are already registered!</h1>
        <%= f.submit "Back to the event", name: "no", class: "btn btn-login" %>
        <% end %>
         <% @marker = "yes" %>

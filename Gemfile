@@ -25,6 +25,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'momentjs-rails', '>= 2.9'
+#gem 'rspec-rails', '~> '
 
 source "https://rails-assets.org" do
   gem "rails-assets-underscore"
@@ -42,5 +43,6 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.8'
 end
 
