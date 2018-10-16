@@ -28,7 +28,7 @@
         </div>
         <% if @event.start_at != nil %>
           <div class="date-show-event text-center">
-            <p><%= @event.start_at.strftime("%A %m %B %Y") %></p>
+            <p><%= @event.start_at.strftime("%A %d %B %Y") %></p>
             <p style="font-weight: bold; font-size: 22px; margin-bottom: 0px;"><%= @event.start_at.strftime("%l:%M  %P") %></p>
           </div>
         <% end %>
