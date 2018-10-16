@@ -19,7 +19,16 @@
     <div class="row">
       <% @events.each do |event| %>
        <div class="col-xs-12 col-md-4 col-sm-6">
-          <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),  url('<%= image_path 'surf_session.jpg', height: 300, width: 400, crop: :fill %>')">
+        <% if event.id%2 == 0 %>
+          <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),  url('<%= image_path 'surf_session1.jpg', height: 300, width: 400, crop: :fill %>')">
+        <% else %>
+          <% if  event.id%3 == 0 %>
+           <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),  url('<%= image_path 'surf_session2.jpg', height: 300, width: 400, crop: :fill %>')">
+          <% else %>
+          <div class="card", style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),  url('<%= image_path 'surf_session3.jpg', height: 300, width: 400, crop: :fill %>')">
+          <% end %>
+        <% end %>
+
             <div class="card-title">
                 <h2> <%= event.title_event.capitalize %> </h2>
             </div>
