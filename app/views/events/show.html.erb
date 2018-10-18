@@ -97,7 +97,10 @@
               <li style="padding-left: 50px;">  <%= link_to join.user.first_name, profile_path(join.user_id) %> </li>
                   <% if current_user.present?  %>
                     <% if current_user.id == join.user_id %>
-                      <li>  <%= link_to "Unregister", event_join_path(@event,join), method: :delete, class: 'btn-unregister'%></li>
+                      <li style="padding-left: 30px;">
+                     <%= link_to event_join_path(@event,join), method: :delete do%> <i class="fa fa-times" style="color:#cf3a3a; font-size: 25px;" aria-hidden="true"></i>
+                     <% end %>
+                    </li>
                     <% end %>
                   <% end %>
               </ul>
