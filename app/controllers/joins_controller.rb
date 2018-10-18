@@ -18,6 +18,13 @@ class JoinsController < ApplicationController
     end
   end
 
+  def destroy
+    @event = Event.find(params[:event_id])
+    @join = Join.find(params[:id])
+    @join.destroy
+    redirect_to event_path(@event)
+  end
+
     private
 
   def redirect_cancel

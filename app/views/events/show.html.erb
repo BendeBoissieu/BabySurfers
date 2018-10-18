@@ -70,23 +70,41 @@
       <div class="column-show-event">
         <div class="people-comming-show">
           <p class="text-center">Who's coming?</p>
+
+
           <% if @event.joins.count < 1 %>
             <p> No people yet</p>
           <% else %>
           <% @event.joins.each do |join| %>
           <!-- If no profile picture -->
+            <ul>
+              <li><img
+               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  image_path 'home.jpg' %>');" ></li>
               <% if join.user.profile.photoprofile.file.nil? %>
-              <img
-               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  image_path 'home.jpg' %>');" >
-             <p style="padding-left: 50px;"> <%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
+            <li style="padding-left: 50px;"> <%= link_to join.user.first_name, profile_path(join.user_id) %> </li>
+                <% if current_user.present?  %>
+                  <% if current_user.id == join.user_id %>
+                    <li style="padding-left: 30px;">
+                     <%= link_to event_join_path(@event,join), method: :delete do%> <i class="fa fa-times" style="color:#cf3a3a; font-size: 25px;" aria-hidden="true"></i>
+                     <% end %>
+                    </li>
+                    <% end %>
 
+                <% end %>
               <% else %>
-              <img
-               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" >
-             <p style="padding-left: 50px;"> <%= link_to join.user.first_name, profile_path(join.user_id) %> </p>
-
+              <li><img
+               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" ></li>
+              <li style="padding-left: 50px;">  <%= link_to join.user.first_name, profile_path(join.user_id) %> </li>
+                  <% if current_user.present?  %>
+                    <% if current_user.id == join.user_id %>
+                      <li>  <%= link_to "Unregister", event_join_path(@event,join), method: :delete, class: 'btn-unregister'%></li>
+                    <% end %>
+                  <% end %>
+              </ul>
                <% end %>
+
               <% end %>
+
           <% end %>
         </div>
         <div class="discussion-show">
@@ -95,7 +113,7 @@
               <p>no message yet</p>
           <% else %>
               <% @event.discussions.each do |discussion| %>
-                <% if discussion.user_id == @event.organiser_id %>
+                <% if discussion.user_id == @event.organiser_id%>
                     <div class="discussion_organiser"><%= discussion.user.first_name %></div>
                   <div class="organiser-answer">
                     <div class="discussion_message_organiser"><%= discussion.message_event.capitalize %></div>
