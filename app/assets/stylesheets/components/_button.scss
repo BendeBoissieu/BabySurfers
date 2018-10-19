@@ -31,9 +31,9 @@
 }
 
 .btn-login{
-  background-color: $purple;
+  background-color: $white;
   border-radius: 3rem;
-  color: $white;
+  color: $dark-gray;
   width: 250px;
 }
 
@@ -69,6 +69,15 @@
   background-color: $purple;
 }
 
+.button-white{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  margin: 0px auto;
+  background-color: $white;
+
+}
 
 .button-circle {
   color: #2a343c;

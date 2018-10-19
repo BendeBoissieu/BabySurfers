@@ -12,7 +12,7 @@
     padding: 20px;
     //padding-bottom: 40px;
     border-radius: 5px;
-    background-color: $dark-gray;
+    //background-color: $dark-gray;
 //    box-shadow: 0 1px 6px rgba(0,0,0,.3);
     color: white;
 }
@@ -45,15 +45,17 @@
 }
 
 .input-form{
-  background-color: $dark-gray;
-  color: $white;
+  background-color: $light-gray-blue;
+  color: $dark-gray;
   border: none;
   border-bottom:1px solid $white;
+  opacity: 0.8
 }
 
 .input-form:focus{
   border-color: #66afe9;
   box-shadow: none;
+  background-color: none;
 
 }
 

@@ -13,7 +13,7 @@
     <!-- Desktop Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-      <i class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 40, height: 40 %></i>
+      <i class="dropdown-toggle button-circle circle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 35, height: 50, style:"padding-bottom: 17px;" %></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
        <% if user_signed_in? %>
             <li>
@@ -39,7 +39,7 @@
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
-    <i class="dropdown-toggle button-circle circle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 35, height: 50, style:"padding-bottom: 17px;" %></i>
+    <i class="fa fa-bars dropdown-toggle button-white" style="font-size:20px;color:#27292C;" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
            <li><%= link_to "My Profile", profile_path(current_user.id) %> </li>
