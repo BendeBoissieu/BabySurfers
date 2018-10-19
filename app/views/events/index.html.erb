@@ -1,4 +1,4 @@
-<div class="background_index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= image_path 'home_page1.jpg' %>');"></div>
+<div class="background_index" style="background-image:  url('<%= image_path 'home_page1.jpg' %>');"></div>
   <div class="arrow-left-back-page">
      <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
   </div>
@@ -20,6 +20,7 @@
       <% @events.each do |event| %>
        <div class="col-xs-12 col-md-4 col-sm-6">
           <div class="card">
+            <%= link_to "", event_path(event), class: "card-link" %>
             <div class="card-title">
                 <h2> <%= event.title_event.upcase %> </h2>
             </div>
@@ -32,7 +33,7 @@
             <div class="card-location">
               <p><%= event.location %></p>
             </div>
-            <%= link_to "", event_path(event), class: "card-link" %>
+
           </div>
        </div>
       <% end %>
