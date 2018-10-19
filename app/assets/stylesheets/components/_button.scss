@@ -1,3 +1,23 @@
+.btn-home{
+  #background-color: $purple;
+  border-radius: 3rem;
+  color: $white;
+  width: 200px;
+  border: 2px solid $white;
+  padding: 10px !important;
+}
+
+.btn-home:hover{
+  text-decoration: none;
+  color: $white;
+}
+
+.btn-home:active{
+  text-decoration: none;
+  color: $white;
+}
+
+
 .btn-done{
   background-color: #5CAB7D;
 }

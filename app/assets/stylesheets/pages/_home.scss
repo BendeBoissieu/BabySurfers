@@ -9,22 +9,31 @@
   position: absolute;
   height: 170px;
   width: 100vw;
-  top: 20%;
-  background-color: rgba(255,255,255, 0.4);
+  top: 7%;
+  //background-color: rgba(255,255,255, 0.4);
   z-index: 1;
 }
 
+.buttons-home{
+  position: relative;
+  top: 25%;
+  width: 200px;
+  height: 200px;
+
+    //border: 3px solid #73AD21;
+  display:flex;
+
+}
 .see_event_home{
   @media screen and (min-width: 601px) {
   width: 400px;
   }
   position: absolute;
-  width: 100vw;
-  top: 70%;
-  background-color: $gray-buttons;
-  font-family: $headers-font;
-  font-size: 25px;
-
+  top: 88px;
+  //background-color: $gray-buttons;
+  font-family: $body-font;
+  font-size: 12px;;
+  width:100%;
 }
 
 .see_baby_surfers_home{
@@ -32,11 +41,12 @@
   width: 400px;
   }
   position: absolute;
-  width: 100vw;
-  top: 84%;
-  background-color: $gray-buttons;
-  font-family: $headers-font;
-  font-size: 25px;
+  top: 137px;
+  //background-color: $gray-buttons;
+  font-family: $body-font;
+  font-size: 12px;
+  width:100%;
+
 
 }
 
