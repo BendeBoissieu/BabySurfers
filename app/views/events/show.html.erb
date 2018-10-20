@@ -38,7 +38,9 @@
     <div class="row">
       <div class="column-show-event">
         <div class="location-show-event">
-         <p class="text-center"> <i class="fa fa-location-arrow" aria-hidden="true"></i> <%= @event.location %> </p>
+         <p class="text-center" , url('https://www.google.com/maps/place/Bondi+beach')> <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          <a href="https://www.google.com/maps/place/<%=@event.location%>"><%= @event.location %></a>
+           </p>
         </div>
         <% if @event.start_at != nil %>
           <div class="date-show-event text-center">

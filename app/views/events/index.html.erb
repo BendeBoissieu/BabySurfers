@@ -18,24 +18,28 @@
   <% end %>
     <div class="row">
       <% @events.each do |event| %>
-       <div class="col-xs-12 col-md-4 col-sm-6">
-          <div class="card">
-            <%= link_to "", event_path(event), class: "card-link" %>
-            <div class="card-title">
-                <h2> <%= event.title_event.upcase %> </h2>
-            </div>
-            <div class="card-date">
-              <% if event.start_at != nil %>
-                <p style="margin-bottom: 0px"><%= event.start_at.strftime("On %d %B %Y") %></p>
-                <%= event.start_at.strftime("At %l:%M  %P") %>
-              <% end %>
-            </div>
-            <div class="card-location">
-              <p><%= event.location %></p>
-            </div>
+<!--         Remove the events if there are pasted
+% unless Date.today.to_datetime >  event.start_at%> -->
+         <div class="col-xs-12 col-md-4 col-sm-6">
+            <div class="card">
+              <%= link_to "", event_path(event), class: "card-link" %>
+              <div class="card-title">
+                  <h2> <%= event.title_event.upcase %> </h2>
+              </div>
+              <div class="card-date">
+                <% if event.start_at != nil %>
+                  <p style="margin-bottom: 0px"><%= event.start_at.strftime("%A %d %B %Y") %></p>
+                  <%= event.start_at.strftime("at %l:%M  %P") %>
+                <% end %>
+              </div>
+              <div class="card-location">
+                <p><%= event.location %></p>
+              </div>
 
-          </div>
-       </div>
+            </div>
+         </div>
+<!--  Remove the events if there are pasted
+       % end %> -->
       <% end %>
     </div>
     <div class="row">
