@@ -1,3 +1,4 @@
+
 # frozen_string_literal: true
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
@@ -287,4 +288,5 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'name, email'
 end

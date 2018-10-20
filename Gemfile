@@ -25,7 +25,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'momentjs-rails', '>= 2.9'
-#gem 'rspec-rails', '~> '
+gem 'omniauth-facebook'
 
 source "https://rails-assets.org" do
   gem "rails-assets-underscore"
