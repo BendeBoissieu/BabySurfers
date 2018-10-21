@@ -1,7 +1,7 @@
 <div class="background_form" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= image_path 'home_page1.jpg' %>');"></div>
 <div class="background_gray"></div>
 <div class="text-center">
-<h2 class="log-in">Log in</h2>
+<h2 class="log-in">Login</h2>
 </div>
 <hr>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,9 +19,17 @@
   </div>
  <div class="text-center">
   <div class="form-actions">
-    <%= f.button :submit, "Connect", {class: "btn btn-login"} %>
+    <%= f.button :submit, "CONNECT", {class: "btn btn-login"} %>
   </div>
 <% end %>
 </div>
+<div class="space-bot"></div>
+ <div class="text-center">
+  <div class="form-actions">
+    <%= link_to 'LOGIN WITH FACEBOOK ', user_facebook_omniauth_authorize_path, class: "btn btn-facebook" %>
+  </div>
+</div>
+
+<h5 class="text-center">OR</h5>
 
 <%= render "devise/shared/links" %>

@@ -28,14 +28,15 @@ class User < ApplicationRecord
     end
   end
 
-  def self.from_omniauth(auth)
-  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  def self.from_facebook(auth)
+  where(facebook_id: auth.uid).first_or_create do |user|
     user.email = auth.info.email
-    user.provider = auth.provider
-    user.uid = auth.uid
+    #user.provider = auth.provider
+    #user.uid = auth.uid
     user.password = Devise.friendly_token[0,20]
-    user.first_name = auth.info.name
+    user.username = auth.info.name
     user.profile_picture = auth.info.image
+    #user.skip_confirmation!
     end
   end
 
