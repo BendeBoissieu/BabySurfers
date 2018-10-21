@@ -301,6 +301,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   momentjs-rails (>= 2.9)
+  omniauth
   omniauth-facebook
   pg (~> 0.21)
   pry-byebug
