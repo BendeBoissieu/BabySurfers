@@ -6,6 +6,7 @@
 //= require gmaps/google
 //= require moment
 //= require moment/fr.js
+//= require swiper
 
 initCards();
 
