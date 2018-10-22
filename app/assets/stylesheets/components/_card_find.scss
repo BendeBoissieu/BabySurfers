@@ -1,0 +1,24 @@
+.profile_find_a_surfer{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: cover; //try contain
+  border: 8px solid $white;
+
+}
+
+.card_find_a_surfer_description {
+  position: absolute;
+  bottom: 57px;
+  left: 25px;
+  right: 25px;
+
+}
+
+.card_find_a_surfer_description p{
+  margin: 0;
+}

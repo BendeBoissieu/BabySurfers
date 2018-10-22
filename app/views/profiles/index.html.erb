@@ -1,1 +1,31 @@
-<p>all profiles</p>
+<div class="background_index" style="background-image:  url('<%= image_path 'home_page1.jpg' %>');"></div>
+  <div class="arrow-left-back-page">
+     <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
+  </div>
+  <div class="title"><h2>FIND A SURFERS</h2></div>
+  <div class="container_profile">
+  <% if current_user.profile.photoprofile.file.nil? %>
+    <% if current_user.profile_picture.nil? %>
+     <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
+     <% else %>
+      <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= current_user.profile_picture %>');"></div>
+    <% end %>
+  <% else %>
+    <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= current_user.profile.photoprofile.url %>');"></div>
+  <% end %>
+
+  <div class="card_find_a_surfer_description">
+    <h4><%= current_user.first_name %></h4>
+    <p><%= current_user.profile.favorite_beach %></p>
+    <p><%= current_user.profile.surf_level %></p>
+  </div>
+  </div>
+  <div class="container-buttons">
+    <div class="like_dislike">
+      <button id="nope"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
+    </div>
+    <div class="like_dislike">
+      <button id="aloha"><%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %></button>
+    </div>
+  </div>
+
