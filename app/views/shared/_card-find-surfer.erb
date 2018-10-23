@@ -9,7 +9,10 @@
       <% end %>
 
       <div class="card_find_a_surfer_description">
+         <%= link_to profile_path(user), class: "card-link" do %>
         <h4><%= user.first_name %></h4>
+        <% end %>
         <p><%= user.profile.favorite_beach %></p>
         <p><%= user.profile.surf_level %></p>
       </div>
+
