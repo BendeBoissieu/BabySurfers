@@ -7,10 +7,8 @@
 //= require moment
 //= require moment/fr.js
 //= require swiper
+//= require category_choice
 
-initCards();
-
-
-
-nope.addEventListener('click', nopeListener);
+/*nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
+*/

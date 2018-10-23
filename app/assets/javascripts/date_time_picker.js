@@ -1,3 +1,4 @@
+//= require jquery
 $( document ).on('turbolinks:load', function() {
   $('#datetimepicker').datetimepicker({
     sideBySide: true,
