@@ -1,5 +1,16 @@
 function superSwiper() {
-      var mySwiper = new Swiper ('.swiper-container', {
+
+
+  $(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true
+    })
+  });
+
+        var mySwiper = new Swiper ('.swiper-container', {
         // Optional parameters
         direction: 'vertical',
         loop: true,
@@ -14,17 +25,7 @@ function superSwiper() {
         // And if we need scrollbar
         scrollbar: '.swiper-scrollbar',
       })
-
-  $(document).ready(function () {
-    //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true
-    })
-  });
 }
 
 superSwiper();
 export { superSwiper };
-
