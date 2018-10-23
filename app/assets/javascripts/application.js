@@ -7,7 +7,7 @@
 //= require moment
 //= require moment/fr.js
 //= require swiper
-//= require category_choice
+
 
 /*nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
