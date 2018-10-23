@@ -7,7 +7,7 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
            <% @users.each do |user| %>
-            <div class="swiper-slide"><%= render "shared/card-find-surfer", user: user %></div>
+            <%= render "shared/card-find-surfer", user: user %>
            <% end %>
         </div>
                 <!-- Add Pagination -->
