@@ -1,5 +1,8 @@
 
 <div class="swiper-slide">
+  <!-- IN ORDER TO FIND THE USER ID OF THE ACTIVE CARD -->
+  <div class="inactive"><%= user.profile.id %></div>
+  <div class="swiper-slide">
  <% if user.profile.photoprofile.file.nil? %>
         <% if user.profile_picture.nil? %>
          <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
@@ -17,5 +20,8 @@
         <p><%= user.profile.favorite_beach %></p>
         <p><%= user.profile.surf_level %></p>
       </div>
+
+</div>
+
 
 </div>
