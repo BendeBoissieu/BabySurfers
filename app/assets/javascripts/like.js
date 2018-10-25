@@ -8,6 +8,20 @@ $('document').ready(function (){
    var idUser = mySwiper.slides[activenb].firstChild.nextElementSibling.innerText
      console.log(idUser);
    document.getElementById("demo").innerHTML = idUser;
+     /* Send the data using post and put the results in a div */
+    $('document').ajax({
+      url: "/matches/",
+      type: "post",
+      data:  { profile_id: idUser },
+      success: function(){
+        alert('Saved Successfully');
+      },
+      error:function(){
+       alert('Error');
+      }
+    });
+
+
   }
 
 

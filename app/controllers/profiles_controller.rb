@@ -25,6 +25,7 @@ class ProfilesController < ApplicationController
     users_allowed = User.find_by_sql([ query, { current_user_id: current_user.id }])
     @users = users_allowed #.sample(12, random: Random.new(number))
     @user = current_user
+    @idUser = params[:idUser]
 
 
   end

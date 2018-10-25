@@ -14,22 +14,24 @@ class MatchesController < ApplicationController
 
   end
 
-  def create
-    @match = Match.new()
-    @match.user = current_user
-    @sampleUser = flash['@sampleUser']
-    # we need `event_id` to asssociate the discussion with corresponding event
-    @match.user_one_id = current_user.id
-    @match.user_two_id = @sampleUser[0]["id"]
-
-    #@match_user_two_id = @sampleUser[0]["id"]
-
-    if @match.save
-      redirect_to root_path
-      flash[:notice] = "you like"
+ def create
+    @liker = current_user
+    @likee = User.find(params[:profile_id])
+    if @likee.likes_user(@liker) != []
+      preexisting_match = @likee.likes_user(@liker).first
+      preexisting_match.mutual = true
+      preexisting_match.save
+      # redirect_to profiles_path, alert: 'Congratulations it\'s a match!'
+      @conversation = Conversation.new(match: preexisting_match)
+      authorize @conversation
+      @conversation.save
+      redirect_to conversation_path(@conversation), alert: 'Congratulations it\'s a match!'
+    else
+      @match = Match.new(first_user: @liker, second_user: @likee)
+      authorize @match
+      @match.save
+      redirect_to profiles_path, notice: 'You liked that person!'
     end
-
-
   end
 
 
