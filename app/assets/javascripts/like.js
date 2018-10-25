@@ -9,6 +9,8 @@ $('document').ready(function (){
      console.log(idUser);
    document.getElementById("demo").innerHTML = idUser;
   }
+
+
   var mySwiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,

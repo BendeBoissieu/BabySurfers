@@ -146,3 +146,29 @@
   bottom: 20px;
   text-align: center;
 }
+
+.button_finder {
+  background: linear-gradient(0deg, white 30%, rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  margin: 0px auto;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  img {
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  @media(min-width: 1200px) {
+    img {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  position: fixed;
+  bottom: 0px;
+}
+.match-choice-btn {
+  flex-grow: 1;
+}

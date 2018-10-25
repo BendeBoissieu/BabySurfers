@@ -23,6 +23,13 @@
         <div class="like_dislike">
           <button id="aloha"><%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %></button>
         </div>
+    <div class="button_finder">
+      <%= link_to profiles_path(), method: :post do %>
+      <div class="like match-choice-btn">
+        <%= image_tag("aloha.png") %>
+      </div>
+    <% end %>
+    </div>
   </div>
 
 

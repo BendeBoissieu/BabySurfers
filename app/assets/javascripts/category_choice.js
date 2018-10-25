@@ -6,6 +6,4 @@ $(document).ready(function() {
   });
 });
 
-
-
 /*Toggleclass Jquery method if the class doest exit, add it*/

@@ -18,6 +18,14 @@ class ProfilesController < ApplicationController
   def index
     @users=User.all
     @profiles=Profile.all
+    query = <<-SQL
+      SELECT * FROM users u
+      WHERE u.id != :current_user_id
+    SQL
+    users_allowed = User.find_by_sql([ query, { current_user_id: current_user.id }])
+    @users = users_allowed #.sample(12, random: Random.new(number))
+    @user = current_user
+
 
   end
 
