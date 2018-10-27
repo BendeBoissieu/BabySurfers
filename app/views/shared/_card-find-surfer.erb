@@ -14,12 +14,18 @@
 <% end %>
 
       <div class="card_find_a_surfer_description">
-         <%= link_to profile_path(user) do %>
+         <%= link_to profile_find_a_surfer_path(user) do %>
         <h4><%= user.first_name %></h4>
         <% end %>
         <p><%= user.profile.favorite_beach %></p>
         <p><%= user.profile.surf_level %></p>
+      <%= link_to profile_matches_path(user.profile.id), method: :post do %>
+        <div class="like_dislike btn">
+         <%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %>
+        </div>
+        <% end %>
       </div>
+
 
 </div>
 

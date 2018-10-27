@@ -16,7 +16,7 @@ class MatchesController < ApplicationController
 
  def create
     @liker = current_user
-    @likee = User.find(params[:profile_id])
+    @likee = Profile.find(params[:profile_id])
     if @likee.likes_user(@liker) != []
       preexisting_match = @likee.likes_user(@liker).first
       preexisting_match.mutual = true
@@ -27,8 +27,7 @@ class MatchesController < ApplicationController
       @conversation.save
       redirect_to conversation_path(@conversation), alert: 'Congratulations it\'s a match!'
     else
-      @match = Match.new(first_user: @liker, second_user: @likee)
-      authorize @match
+      @match = Match.new(user_one_id: @liker.id, user_two_id: @likee.id)
       @match.save
       redirect_to profiles_path, notice: 'You liked that person!'
     end
@@ -60,7 +59,7 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    params.require(:match).permit(:user_id, :user_one_id, :user_two_id)
+    params.require(:match).permit(:user_id, :user_one_id, :user_two_id, :profile_id)
   end
 
   def redirect_dontlike

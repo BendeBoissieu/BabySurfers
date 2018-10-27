@@ -1,0 +1,37 @@
+<div class="container_profile">
+  <div class="swiper-slide">
+    <div class="swiper-slide">
+   <% if @profile.user.profile.photoprofile.file.nil? %>
+          <% if @profile.user.profile_picture.nil? %>
+           <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
+           <% else %>
+            <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.user.profile_picture %>');"></div>
+          <% end %>
+  <% else %>
+          <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.user.profile.photoprofile.url %>');"></div>
+  <% end %>
+
+        <div class="card_find_a_surfer_description">
+          <h4><%= @profile.user.first_name %></h4>
+          <p><%= @profile.favorite_beach %></p>
+          <p><%= @profile.surf_level %></p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container-buttons">
+        <div class="like_dislike">
+          <button id="nope"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
+        </div>
+        <p>Results</p>
+        <p id="demo"></p>
+        <p><%= @idUser %></p>
+          <%= link_to profile_matches_path(profile.id), method: :post do %>
+        <div class="like_dislike btn">
+         <%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %>
+        </div>
+        <% end %>
+
+
+
+  </div>

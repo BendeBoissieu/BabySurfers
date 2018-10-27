@@ -35,6 +35,11 @@ class ProfilesController < ApplicationController
       @profile
   end
 
+  def show_surfer
+      @profile = Profile.find(params[:profile_id])
+      @profile
+  end
+
 
   def edit
     @profile = Profile.find(params[:id])
