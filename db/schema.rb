@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_104028) do
+ActiveRecord::Schema.define(version: 2018_10_27_151723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2018_10_21_104028) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_discussions_on_event_id"
     t.index ["user_id"], name: "index_discussions_on_user_id"
+  end
+
+  create_table "dislikes", force: :cascade do |t|
+    t.integer "user_one_id"
+    t.integer "user_two_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -63,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_104028) do
     t.integer "user_one_id"
     t.integer "user_two_id"
     t.bigint "user_id"
+    t.boolean "mutual", default: false
     t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
@@ -121,9 +129,13 @@ ActiveRecord::Schema.define(version: 2018_10_21_104028) do
 
   add_foreign_key "discussions", "events"
   add_foreign_key "discussions", "users"
+  add_foreign_key "dislikes", "users", column: "user_one_id"
+  add_foreign_key "dislikes", "users", column: "user_two_id"
   add_foreign_key "events", "users"
   add_foreign_key "joins", "events"
   add_foreign_key "joins", "users"
+  add_foreign_key "matches", "users", column: "user_one_id"
+  add_foreign_key "matches", "users", column: "user_two_id"
   add_foreign_key "profile_likecategories", "likecategories"
   add_foreign_key "profile_likecategories", "profiles"
   add_foreign_key "profiles", "users"
