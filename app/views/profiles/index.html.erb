@@ -11,6 +11,7 @@
           <% else %>
              <% @users.each do |user| %>
               <%= render "shared/card-find-surfer", user: user %>
+
              <% end %>
           <% end %>
         </div>
@@ -19,18 +20,9 @@
     </div>
   </div>
 
-      <div class="container-buttons">
-        <div class="like_dislike">
-          <button id="nope"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
-        </div>
-        <div class="like_dislike">
-          <button id="aloha"><%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %></button>
-        </div>
-     </div>
+
 
 
      <!-- If we need scrollbar -->
       <!-- <div class="swiper-scrollbar"></div> -->
           <!-- Swiper JS -->
-
-
