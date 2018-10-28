@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dislikes/create'
   #devise_for :users, :controllers => { registrations: 'registrations'  }
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   root to: 'pages#home'
