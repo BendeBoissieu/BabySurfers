@@ -20,8 +20,17 @@ class ProfilesController < ApplicationController
     @profiles=Profile.all
     query = <<-SQL
       SELECT * FROM users u
-      WHERE u.id != :current_user_id
+      WHERE id NOT IN
+      (
+        SELECT user_two_id FROM matches WHERE user_one_id = :current_user_id
+        UNION
+        SELECT user_one_id FROM matches WHERE user_two_id = :current_user_id AND mutual = TRUE
+        UNION
+        SELECT user_two_id FROM dislikes WHERE user_one_id = :current_user_id
+      )
+      AND u.id != :current_user_id
     SQL
+
     users_allowed = User.find_by_sql([ query, { current_user_id: current_user.id }])
     @users = users_allowed #.sample(12, random: Random.new(number))
     @user = current_user
