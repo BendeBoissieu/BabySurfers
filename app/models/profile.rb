@@ -10,4 +10,7 @@ class Profile < ApplicationRecord
   I_LIKE = ["beers", "BBQ", "coffee", "blabla", "volley-ball", "chill", "other ideas?"]
   BOARD_TYPE = ["no board", "soft board", "hard board"]
 
+
+
+
 end

@@ -41,19 +41,19 @@ class User < ApplicationRecord
   end
 
   def likes # return only when YOUVE BEEN THE FIRST to like
-    Match.where(first_user: self)
+    Match.where(user_one_id: self)
   end
 
   def been_liked # second_user denotes the person who HAS BEEN LIKED by the PERSON WHO LIKED FIRST
-    Match.where(second_user: self)
+    Match.where(user_two_id: self)
   end
 
   def full_matches
-    Match.where(first_user: self).or(Match.where(second_user: self)).where(mutual: true)
+    Match.where(user_one_id: self).or(Match.where(user_two_id: self)).where(mutual: true)
   end
 
   def likes_user(target)
-    Match.where(first_user: self, second_user: target)
+    Match.where(user_one_id: self, user_two_id: target)
   end
 
 end
