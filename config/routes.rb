@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :profiles do
     get '/find_a_surfer', to: "profiles#show_surfer"
     resources :matches, only: [:create]
+    resources :dislikes, only: [:create]
   end
   get 'about', to: 'pages#about', as: :about
   get 'my-profile', to: "profiles#show"

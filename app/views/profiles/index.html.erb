@@ -6,9 +6,13 @@
   <div class="container_profile">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-           <% @users.each do |user| %>
-            <%= render "shared/card-find-surfer", user: user %>
-           <% end %>
+          <% if @users.count == 0 %>
+            <h3>No other match</h3>
+          <% else %>
+             <% @users.each do |user| %>
+              <%= render "shared/card-find-surfer", user: user %>
+             <% end %>
+          <% end %>
         </div>
                 <!-- Add Pagination -->
         <div class="swiper-pagination swiper-all-cards"></div>
@@ -19,16 +23,10 @@
         <div class="like_dislike">
           <button id="nope"><%= image_tag "delete.png", alt: "No", width: 80, height: 80 %></button>
         </div>
-        <p>Results</p>
-        <p id="demo"></p>
-        <p><%= @idUser %></p>
         <div class="like_dislike">
           <button id="aloha"><%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %></button>
         </div>
-
-
-
-  </div>
+     </div>
 
 
      <!-- If we need scrollbar -->

@@ -24,6 +24,11 @@
          <%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %>
         </div>
         <% end %>
+        <%= link_to profile_dislikes_path(user.profile.id), method: :post do %>
+        <div class="like_dislike btn">
+         <%= image_tag "delete.png", alt: "No", width: 40, height: 40 %>
+        </div>
+        <% end %>
       </div>
 
 
