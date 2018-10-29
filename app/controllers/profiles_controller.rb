@@ -43,6 +43,7 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(params[:id])
       @user = User.find(params[:id])
       @profile
+      @matches = Match.all
   end
 
   def show_surfer
