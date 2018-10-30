@@ -82,9 +82,8 @@
       <div class="matches_view">
         <h4>My matches (only seen by you)</h4>
         <hr style="margin-bottom: 4px;margin-top: 4px;">
-        <% @matches.each do |match| %>
-        <%= match.user_one_id %>
-        <%= match.user_one_id %>
+        <% @users_matched.each do |match| %>
+        <p><%= match.first_name %></p>
         <% end %>
       </div>
     </div>

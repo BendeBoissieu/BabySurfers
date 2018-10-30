@@ -34,7 +34,6 @@ class ProfilesController < ApplicationController
     users_allowed = User.find_by_sql([ query, { current_user_id: current_user.id }])
     @users = users_allowed #.sample(12, random: Random.new(number))
     @user = current_user
-    @idUser = params[:idUser]
 
 
   end
@@ -43,7 +42,16 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(params[:id])
       @user = User.find(params[:id])
       @profile
-      @matches = Match.all
+      query = <<-SQL
+      SELECT * FROM users u
+      WHERE id IN
+      (
+        SELECT user_two_id FROM matches WHERE user_one_id = :current_user_id AND mutual = TRUE
+        UNION
+        SELECT user_one_id FROM matches WHERE user_two_id = :current_user_id AND mutual = TRUE
+      )
+      SQL
+      @users_matched = User.find_by_sql([ query, { current_user_id: current_user.id }])
   end
 
   def show_surfer
