@@ -13,7 +13,7 @@ $('document').ready(function (){
 
   var mySwiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     onSlideChangeStart:function(swipe){
        // console.log(geSlideDataIndex(swipe))
     },
