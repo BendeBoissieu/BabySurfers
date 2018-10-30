@@ -83,7 +83,26 @@
         <h4>My matches (only seen by you)</h4>
         <hr style="margin-bottom: 4px;margin-top: 4px;">
         <% @users_matched.each do |match| %>
-        <p><%= match.first_name %></p>
+          <div class="col-xs-2 col-md-2 col-sm-2">
+            <div class="match_show">
+
+                <% if (match.profile.photoprofile.url.nil? && match.profile_picture.nil?)%>
+                  <%= link_to profile_path(match.id) do %>
+                    <img
+                     class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');" >
+                   <% end %>
+                <% else %>
+                  <%= link_to profile_path(match.id) do %>
+                    <img
+                     class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= match.profile.photoprofile.url || match.profile_picture %>');" >
+                  <% end %>
+                <% end %>
+               <%= link_to profile_path(match.id) do %>
+                 <p><%= match.first_name %></p>
+               <% end %>
+
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
