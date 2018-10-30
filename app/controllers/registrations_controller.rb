@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(user)
-      profile_path(user.id)
+    edit_profile_path(user.id)
   end
 
 end
