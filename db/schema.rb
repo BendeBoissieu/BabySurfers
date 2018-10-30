@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_110415) do
+ActiveRecord::Schema.define(version: 2018_10_30_153421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "last_opened_id"
+    t.bigint "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_conversations_on_match_id"
+  end
 
   create_table "discussions", force: :cascade do |t|
     t.text "message_event"
@@ -72,6 +80,16 @@ ActiveRecord::Schema.define(version: 2018_10_28_110415) do
     t.boolean "mutual", default: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "profile_likecategories", force: :cascade do |t|
     t.bigint "profile_id"
     t.bigint "likecategory_id"
@@ -125,6 +143,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_110415) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conversations", "matches"
   add_foreign_key "discussions", "events"
   add_foreign_key "discussions", "users"
   add_foreign_key "dislikes", "users", column: "user_one_id"
@@ -134,6 +153,8 @@ ActiveRecord::Schema.define(version: 2018_10_28_110415) do
   add_foreign_key "joins", "users"
   add_foreign_key "matches", "users", column: "user_one_id"
   add_foreign_key "matches", "users", column: "user_two_id"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "profile_likecategories", "likecategories"
   add_foreign_key "profile_likecategories", "profiles"
   add_foreign_key "profiles", "users"
