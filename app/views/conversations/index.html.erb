@@ -1,2 +1,62 @@
-<h1>Conversations#index</h1>
-<p>Find me in app/views/conversations/index.html.erb</p>
+<% content_for(:title_tag) do %>
+  Your Conversations - Meteor
+<% end %>
+
+<div class="wrapper1">
+  <div class="top-scroll">
+    <% @unstarted.each do |convo| %>
+
+      <div class="avatar-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path convo.match.other_user(current_user).user_images.first&.small_url || convo.match.other_user(current_user).facebook_picture_url %>);">
+      <%= link_to "", conversation_path(convo), class: "avatar-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# if @started != [] %>
+  <%# @started.each do |conversation| %>
+
+    <%# if (!conversation.messages.last.from?(current_user)) && conversation.last_opened_id != current_user.id %>
+      <%# variable_to_know_if_unread = 'unread' %>
+    <%# elsif (!conversation.messages.last.from?(current_user)) && conversation.last_opened_id == current_user.id %>
+      <%# variable_to_know_if_unread = '' %>
+    <%# else  %>
+      <%# variable_to_know_if_unread = '' %>
+    <%# end %>
+
+  <div class="messages-box">
+
+      <%= render 'conversations', conversations: @started %>
+
+  </div>
+
+  <%# end %>
+<%# end %>
+
+
+
+<%= content_for(:after_js) do %>
+  <script>
+    App['user_<%= @user.id %>'] = App.cable.subscriptions.create(
+      { channel: 'UsersChannel', user_id: <%= @user.id %> },
+      {
+        received: (data) => {
+          $.getScript("<%= conversations_path %>");
+        }
+      });
+  </script>
+<% end %>
+
+
+
+
+<!-- <script>
+  setTimeout(window.location.reload(), 5000);
+</script>
+ -->
+
+
+
+
+
+
