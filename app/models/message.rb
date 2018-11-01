@@ -15,7 +15,7 @@ class Message < ApplicationRecord
       current_user_id: user.id
     })
 
-    [conversation.match.first_user, conversation.match.second_user].each do |the_user|
+    [conversation.match.user_one, conversation.match.user_two].each do |the_user|
       ActionCable.server.broadcast("user_#{the_user.id}", { "conversations_updated": true })
     end
   end
