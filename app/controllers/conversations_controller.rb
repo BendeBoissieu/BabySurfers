@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   def show
-    @conversation = Conversation.includes(messages: { user: :user_images }).find(params[:id])
+    @conversation = Conversation.includes(messages: {  }).find(params[:id])
     @conversation.update(last_opened_id: current_user.id)
   end
 
