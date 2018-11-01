@@ -21,7 +21,9 @@ class MatchesController < ApplicationController
       preexisting_match = @likee.likes_user(@liker).first
       preexisting_match.mutual = true
       preexisting_match.save
-      redirect_to profiles_path, alert: 'Congratulations it\'s a match!'
+      @conversation = Conversation.new(match: preexisting_match)
+      @conversation.save
+      redirect_to conversation_path(@conversation), alert: 'Congratulations it\'s a match!'
     else
       @match = Match.new(user_one_id: @liker.id, user_two_id: @likee.id)
       @match.save

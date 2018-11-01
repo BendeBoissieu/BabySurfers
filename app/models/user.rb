@@ -10,6 +10,10 @@ class User < ApplicationRecord
   after_save :write_json
 
 
+  before_destroy :destroy_matches
+
+
+
   def init_profile
     self.create_profile!
   end
@@ -56,6 +60,71 @@ class User < ApplicationRecord
   def likes_user(target)
     Match.where(user_one_id: self, user_two_id: target)
   end
+
+
+  def matches
+    likes + been_liked
+  end
+
+
+  def conversations
+    full_matches.map do |match|
+      match.conversation
+    end
+  end
+
+  def unstarted_chats
+    full_matches = self.full_matches
+    unstarted_chats = []
+    full_matches.each do |match|
+      unstarted_chats << match if match.conversation.nil?
+    end
+    unstarted_chats
+  end
+
+  def started_chats
+    full_matches = self.full_matches
+    started_chats = []
+    full_matches.each do |match|
+      started_chats << match unless match.conversation.nil?
+    end
+    started_chats
+  end
+
+    def unstarted_users
+    other_users = []
+    unstarted_chats.each do |match|
+      [match.first_user_id, match.second_user_id].each do |user|
+        other_users << user if user != id
+      end
+    end
+    other_users
+  end
+
+  def started_users
+    other_users = []
+    started_chats.each do |match|
+      [match.first_user_id, match.second_user_id].each do |user|
+        other_users << user if user != id
+      end
+    end
+    other_users
+  end
+
+  def conversations_sorted_by_date
+    convos = []
+    started_chats.each do |match|
+      convos << match.conversation
+    end
+    sorted_convos = convos.sort { |convo| convo }
+    sorted_convos.reverse
+  end
+
+  def destroy_matches
+    matches.each &:destroy
+  end
+
+
 
 end
 

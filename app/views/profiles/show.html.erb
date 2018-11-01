@@ -97,10 +97,9 @@
                      class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= match.profile.photoprofile.url || match.profile_picture %>');" >
                   <% end %>
                 <% end %>
-               <%= link_to profile_path(match.id) do %>
+               <%= link_to conversation_path(match.id) do %>
                  <p><%= match.first_name %></p>
                <% end %>
-
             </div>
           </div>
         <% end %>

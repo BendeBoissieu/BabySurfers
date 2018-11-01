@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'messages/create'
+  get 'conversations/show'
+  get 'conversations/index'
   get 'dislikes/create'
   #devise_for :users, :controllers => { registrations: 'registrations'  }
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
@@ -7,6 +10,9 @@ Rails.application.routes.draw do
     resources :joins
     resources :discussions
   end
+  resources :conversations, only: [:index, :show, :create] do
+    resources :messages, only: [:create]
+  end
   resources :profiles do
     get '/find_a_surfer', to: "profiles#show_surfer"
     resources :matches, only: [:create]
@@ -14,6 +20,8 @@ Rails.application.routes.draw do
   end
   get 'about', to: 'pages#about', as: :about
   get 'my-profile', to: "profiles#show"
+
+  mount ActionCable.server => "/cable"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
