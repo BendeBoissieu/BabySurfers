@@ -1,6 +1,8 @@
 production:
   adapter: redis
-  url: <%= ENV['REDISCLOUD_URL'] %>
+  url: redis://redistogo:02ab7032624205ec3d10fe17bfaa2eb7@soapfish.redistogo.com:10497/
+
+  #url: <%= ENV['REDISCLOUD_URL'] %>
 
 development:
   adapter: async
