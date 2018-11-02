@@ -10,10 +10,10 @@ class ConversationsController < ApplicationController
     # conversations = policy_scope(Conversation)
     @user = current_user
     conversations = Conversation.all
-   # if conversations == []
+   if conversations == []
 
-    #  redirect_to profiles_path, alert: 'You have to match with someone to start a conversation!'
-   # else
+     redirect_to profiles_path, alert: 'You have to match with someone to start a conversation!'
+    else
       @started = []
       @unstarted = []
       conversations.delete(nil)
@@ -24,7 +24,7 @@ class ConversationsController < ApplicationController
             @started << convo
           end
       end
-   # end
+    end
   end
 
   def conversation_params
