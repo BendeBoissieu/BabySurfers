@@ -12,3 +12,10 @@
 
 }).call(this);
 
+function scrollLastMessageIntoView() {
+  var messages = document.querySelectorAll(".message");
+  var lastMessage = messages[messages.length - 1];
+  if (lastMessage) {
+    lastMessage.scrollIntoView();
+  }
+}

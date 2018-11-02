@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable, :omniauthable, omniauth_providers: [:facebook]
   has_many :events
+  has_many :messages, dependent: :destroy
   has_one :profile, dependent: :destroy
   after_create :init_profile
   after_save :write_json
