@@ -6,7 +6,6 @@
   <div class="top-scroll">
     <% @unstarted.each do |convo| %>
 
-      <div class="avatar-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path convo.match.other_user(current_user).user_images.first&.small_url || convo.match.other_user(current_user).facebook_picture_url %>);">
       <%= link_to "", conversation_path(convo), class: "avatar-link" %>
       </div>
     <% end %>
