@@ -23,16 +23,11 @@
     <!-- Organised by -->
     <div class="row">
       <div class="description_organiser">
-        <!-- If no profile picture -->
-        <% if @event.user.profile.photoprofile.file.nil? %>
-          <p>Organised by <%= link_to @event.organiser, profile_path(@event.organiser_id) %></p>
-        <% else %>
           <p>Organised by <%= link_to @event.organiser, profile_path(@event.organiser_id) %>
             <%= link_to profile_path(@event.organiser_id) do %>
                <span class="organiser_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @event.user.profile.photoprofile.url %>');"></span>
             <% end %>
           </p>
-        <% end %>
       </div>
     </div>
     <div class="row">
@@ -77,39 +72,24 @@
           <% if @event.joins.count < 1 %>
             <p> No people yet</p>
           <% else %>
-          <% @event.joins.each do |join| %>
-          <!-- If no profile picture -->
-            <ul>
-              <li><img
-               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  image_path 'home.jpg' %>');" ></li>
-              <% if join.user.profile.photoprofile.file.nil? %>
-            <li style="padding-left: 40px;"> <%= link_to join.user.first_name, profile_path(join.user_id) %> </li>
-                <% if current_user.present?  %>
-                  <% if current_user.id == join.user_id %>
-                    <li style="padding-left: 10px;">
-                     <%= link_to event_join_path(@event,join), method: :delete do%> <i class="fa fa-times" style="color:#cf3a3a; font-size: 22px;" aria-hidden="true"></i>
-                     <% end %>
-                    </li>
-                    <% end %>
-
+            <% @event.joins.each do |join| %>
+            <!-- If no profile picture -->
+              <ul>
+                <%= link_to profile_path(join.user_id) do %>
+                  <li><img
+                   class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" ></li>
+                  <li style="padding-left: 40px;">  <%= join.user.first_name %> </li>
                 <% end %>
-              <% else %>
-              <li><img
-               class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" ></li>
-              <li style="padding-left: 40px;">  <%= link_to join.user.first_name, profile_path(join.user_id) %> </li>
-                  <% if current_user.present?  %>
-                    <% if current_user.id == join.user_id %>
-                      <li style="padding-left: 10px;">
-                     <%= link_to event_join_path(@event,join), method: :delete do%> <i class="fa fa-times" style="color:#cf3a3a; font-size: 22px;" aria-hidden="true"></i>
-                     <% end %>
-                    </li>
+                    <% if current_user.present?  %>
+                      <% if current_user.id == join.user_id %>
+                        <li style="padding-left: 10px;">
+                         <%= link_to event_join_path(@event,join), method: :delete do%> <i class="fa fa-times" style="color:#cf3a3a; font-size: 22px;" aria-hidden="true"></i>
+                         <% end %>
+                         </li>
+                      <% end %>
                     <% end %>
-                  <% end %>
-              </ul>
-               <% end %>
-
+                </ul>
               <% end %>
-
           <% end %>
         </div>
         <div class="discussion-show">

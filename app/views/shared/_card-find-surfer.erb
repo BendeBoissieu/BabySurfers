@@ -2,15 +2,7 @@
   <!-- IN ORDER TO FIND THE USER ID OF THE ACTIVE CARD but finally not used
   <div class="inactive">%= user.profile.id %></div> -->
   <div class="card-surfer">
-    <% if user.profile.photoprofile.file.nil? %>
-      <% if user.profile_picture.nil? %>
-        <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
-      <% else %>
-        <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile_picture %>');"></div>
-      <% end %>
-    <% else %>
-      <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile.photoprofile.url %>');"></div>
-    <% end %>
+     <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile.photoprofile.url %>');"></div>
       <div class="card_find_a_surfer_description">
          <%= link_to profile_find_a_surfer_path(user) do %>
         <h4><%= user.first_name %></h4>
