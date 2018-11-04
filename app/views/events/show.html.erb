@@ -53,6 +53,7 @@
     <div class="row">
       <div class="text-center">
         <%= link_to "Join",  new_event_join_path(@event), class: "btn btn-join" %>
+           <p class="space-top"><a href="whatsapp://send?text=<%= request.original_url %>">Share on WhatsApp</a></p>
     <% if current_user.nil? %>
     <% else %>
       <% if current_user.id == @event.user_id %>
