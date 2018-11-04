@@ -69,6 +69,11 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     @profile.update(profile_params)
+    if current_user.profile_picture.nil?
+      @profile.surf_level = "baby"
+    else
+      @profile.photoprofile = current_user.profile_picture
+    end
     if @profile.save
       redirect_to profile_path(@profile)
     else

@@ -19,6 +19,7 @@ class User < ApplicationRecord
     self.create_profile!
   end
 
+
   def write_json
     events_json = []
     User.all.each do |event|

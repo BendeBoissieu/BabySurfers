@@ -4,6 +4,7 @@ class Profile < ApplicationRecord
   has_many :likecategories, through: :profile_likecategories
   mount_uploader :photoprofile, PhotoUploader
   geocoded_by :address
+  #before_create :init_picture
   after_validation :geocode, if: :will_save_change_to_address?
 
 
@@ -12,5 +13,13 @@ class Profile < ApplicationRecord
   BOARD_TYPE = ["no board", "soft board", "hard board"]
 
 
+=begin  def init_picture
+    if user.profile_picture.nil?
+      self.photoprofile = "/assets/images/home.jpg"
+    else
+      self.photoprofile = user.profile_picture
+    end
+  end
+=end
 
 end

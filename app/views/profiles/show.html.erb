@@ -3,15 +3,8 @@
    <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  root_path() %>
 </div>
 
-  <% if @profile.photoprofile.file.nil? %>
-    <% if @user.profile_picture.nil? %>
-     <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');"></div>
-     <% else %>
-      <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @user.profile_picture %>');"></div>
-    <% end %>
-  <% else %>
     <div class="profile_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @profile.photoprofile.url %>');"></div>
-  <% end %>
+
 
   <div class="profile_infos">
     <h2 id="firstName"><%= @profile.user.first_name %></h2>
