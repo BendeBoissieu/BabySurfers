@@ -1,7 +1,10 @@
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
+  <%= link_to profile_path(message.user) do %>
+    <%= image_tag message.user.profile.photoprofile_url, class: "avatar" %>
+  <% end %>
   <div class="message-content">
     <p>
-       <%= message.content %>
+      <%= message.content %>
     </p>
   </div>
 </div>

@@ -78,19 +78,9 @@
         <% @users_matched.each do |match| %>
           <div class="col-xs-3 col-md-3 col-sm-3">
             <div class="match_show">
-
-                <% if (match.profile.photoprofile.url.nil? && match.profile_picture.nil?)%>
-                  <%= link_to profile_path(match.id) do %>
-                    <img
-                     class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home.jpg' %>');" >
-                   <% end %>
-                <% else %>
                   <%= link_to profile_path(match.id) do %>
                     <img
                      class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= match.profile.photoprofile.url || match.profile_picture %>');" >
-                  <% end %>
-                <% end %>
-               <%= link_to conversation_path(match.id) do %>
                  <p><%= match.first_name %></p>
                <% end %>
             </div>
