@@ -4,7 +4,7 @@
   <div class="card-surfer">
      <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile.photoprofile.url %>');"></div>
       <div class="card_find_a_surfer_description">
-         <%= link_to profile_find_a_surfer_path(user) do %>
+         <%= link_to profile_path(user) do %>
         <h4><%= user.first_name %></h4>
         <% end %>
         <p><%= user.profile.favorite_beach %></p>
