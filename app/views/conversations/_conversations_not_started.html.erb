@@ -1,5 +1,5 @@
 
-<% conversations.sort_by { |conv| conv.messages.last.created_at }.reverse.each do |convo| %>
+<% conversations.sort_by { |conv| conv.created_at }.reverse.each do |convo| %>
   <div class="single-message">
     <% if convo.match.user_one.id == current_user.id%>
     <div class="avatar-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= convo.match.user_two.profile.photoprofile.url %>');"></div>
@@ -9,7 +9,7 @@
     <div class="messagess-body">
       <p><strong><h5> <%= convo.match.other_user(current_user).first_name %> </h5></strong></p>
         <div class="convo-text">
-          <%= truncate(convo.messages.last.content, :length => 30) %>
+          <p>You can say hello ;-)</p>
         </div>
 
     </div>

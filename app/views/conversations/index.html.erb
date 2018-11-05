@@ -22,9 +22,8 @@
     <%# end %>
 
   <div class="messages-box">
-
-      <%= render 'conversations', conversations: @started %>
-
+        <%= render 'conversations', conversations: @started %>
+        <%= render 'conversations_not_started', conversations: @unstarted %>
   </div>
 
   <%# end %>
