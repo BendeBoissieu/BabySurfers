@@ -45,7 +45,7 @@
   border: 1px solid #ececec;
   position: fixed;
   bottom: 0;
-  width: 80vw;
+  display: contents;
 }
 #create-message input.form-control {
   border: 1px solid #ECECEC;
@@ -68,7 +68,9 @@
 .bottom-message {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 80vw;
+  padding:15px;
+  height: 100px;
 }
 
 .form-group {
