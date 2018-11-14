@@ -17,7 +17,7 @@
     <% end %>
   <% end %>
     <div class="row">
-      <% @events.each do |event| %>
+      <% @events.order(:start_at).each do |event| %>
 <!--         Remove the events if there are pasted
 % unless Date.today.to_datetime >  event.start_at%> -->
          <div class="col-xs-12 col-md-4 col-sm-6">
