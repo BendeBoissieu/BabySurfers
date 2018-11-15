@@ -105,8 +105,20 @@
   height: 40px;
   border-radius: 100px;
   margin: 0px auto;
-  background-color: $gray-arrow;
+  background-color: $white;
     padding-top: 10px;
+  text-align: center;
+
+}
+
+.button-white-left{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  margin: 0px auto;
+  background-color: $white;
+  padding-top: 7px;
   text-align: center;
 
 }
