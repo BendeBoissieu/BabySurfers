@@ -16,20 +16,36 @@
       <i class="dropdown-toggle button-circle circle" data-toggle="dropdown"><%= image_tag "baby-face-white.png", alt: "baby-face-black", width: 35, height: 50, style:"padding-bottom: 17px;" %></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
        <% if user_signed_in? %>
-            <li>
-            <li style="margin:10px;"><%= link_to "Profile", profile_path(current_user.id) %>
-            </li>
-          <li style="margin:10px;"><%= link_to "Conversations", conversations_path %></li>
-          <li style="margin:10px;"><%= link_to "Find an event", events_path %></li>
-          <li style="margin:10px;"><%= link_to "Find a surfer", profiles_path %></li>
-          <li style="margin:10px;"><%= link_to "Create an event", new_event_path %></li>
-          <li style="margin:10px;"><%= link_to "About us", about_path %></li>
-          <li style="margin:10px;">
-            <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                      <li>
+              <%= link_to profile_path(current_user) do %>
+              <i class="fa fa-user"></i> My Profile
               <% end %>
-
-          </li>
+            </li>
+            <li>
+              <%= link_to conversations_path do %>
+                <i class="fa fa-comments"></i> Conversations
+              <% end %>
+            </li>
+            <li>
+              <%= link_to events_path do %>
+                <i class="fa fa-calendar"></i> Find an event
+              <% end %>
+            </li>
+            <li>
+              <%= link_to profiles_path do %>
+                <i class="fa fa-address-book"></i> Find a surfer
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_event_path do %>
+                <i class="fa fa-calendar-plus"></i> Create an event
+              <% end %>
+            </li>
+            <li>
+              <%= link_to about_path do %>
+                <i class="fa fa-globe"></i> About us
+              <% end %>
+            </li>
         <% else %>
           <li style='margin:10px;'><%= link_to "Log in", new_user_session_path %></li>
           <li><%= link_to "About us", about_path %></li>
@@ -45,12 +61,36 @@
       <i class="fa fa-bars dropdown-toggle button-white" style="font-size:20px;color:#CFD3DF;" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
            <% if user_signed_in? %>
-             <li><%= link_to "My Profile", profile_path(current_user.id) %> </li>
-             <li><%= link_to "Conversations", conversations_path %></li>
-            <li><%= link_to "Find an event", events_path %></li>
-            <li><%= link_to "Find a surfer", profiles_path %></li>
-            <li><%= link_to "Create an event", new_event_path %></li>
-             <li><%= link_to "About us", about_path %></li>
+            <li>
+              <%= link_to profile_path(current_user) do %>
+              <i class="fa fa-user"></i> My Profile
+              <% end %>
+            </li>
+            <li>
+              <%= link_to conversations_path do %>
+                <i class="fa fa-comments"></i> Conversations
+              <% end %>
+            </li>
+            <li>
+              <%= link_to events_path do %>
+                <i class="fa fa-calendar"></i> Find an event
+              <% end %>
+            </li>
+            <li>
+              <%= link_to profiles_path do %>
+                <i class="fa fa-address-book"></i> Find a surfer
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_event_path do %>
+                <i class="fa fa-calendar-plus"></i> Create an event
+              <% end %>
+            </li>
+            <li>
+              <%= link_to about_path do %>
+                <i class="fa fa-globe"></i> About us
+              <% end %>
+            </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
