@@ -10,6 +10,32 @@
   z-index: 100;
 }
 
+
+
+nav.open{
+  left: 0;
+}
+
+nav *:first-child{
+  position: fixed;
+  padding: 1em;
+  cursor: pointer;
+  left: 0;
+  top: 50vh;
+  clear: both;
+}
+
+nav a{
+  display: block;
+  font-size: 4em;
+  color: #000;
+  font-family: arial;
+  text-decoration: none;
+  margin-top: .2em;
+}
+
+
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -61,15 +87,27 @@
 }
 
 /* Dropdown menu */
+
+
 .navbar-wagon-dropdown-menu {
-  margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  position: absolute;
+  top: -9px;
+  right: -18px;
+  box-sizing: border-box;
+  z-index: 9999;
+  padding: .5em 1em .5em 1em;;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background: $dark-gray;
+  transition: all 1s;
+
 }
+
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -78,17 +116,14 @@
   background: transparent !important;
   color: black !important;
 }
+
 .navbar-wagon-dropdown-menu:before {
-  content: ' ';
+  content: '☰';
   height: 10px;
   width: 10px;
   position: absolute;
-  right: 10px;
-  bottom: 16px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  right: 30px;
+  top: 10px;
 }
 
 
