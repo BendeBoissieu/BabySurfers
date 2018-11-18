@@ -10,32 +10,6 @@
   z-index: 100;
 }
 
-
-
-nav.open{
-  left: 0;
-}
-
-nav *:first-child{
-  position: fixed;
-  padding: 1em;
-  cursor: pointer;
-  left: 0;
-  top: 50vh;
-  clear: both;
-}
-
-nav a{
-  display: block;
-  font-size: 4em;
-  color: #000;
-  font-family: arial;
-  text-decoration: none;
-  margin-top: .2em;
-}
-
-
-
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -100,10 +74,10 @@ nav a{
   height: 100vh;
   text-align: left;
   background: $dark-gray;
-  transition: all 1s;
   padding-top: 14vh;
-
+  transition: width 2s, height 4s;
 }
+
 
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -125,6 +99,7 @@ nav a{
   position: absolute;
   right: 30px;
   top: 10px;
+  color: $white;
 }
 
 
