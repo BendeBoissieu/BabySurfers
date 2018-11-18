@@ -91,16 +91,17 @@ nav a{
 
 .navbar-wagon-dropdown-menu {
   position: absolute;
-  top: -9px;
+  top: -11px;
   right: -18px;
   box-sizing: border-box;
   z-index: 9999;
   padding: .5em 1em .5em 1em;;
   width: 100vw;
   height: 100vh;
-  text-align: center;
+  text-align: left;
   background: $dark-gray;
   transition: all 1s;
+  padding-top: 14vh;
 
 }
 
@@ -108,9 +109,9 @@ nav a{
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: $white !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
-  padding: 10px 20px;
+  font-size: 25px !important;
+  line-height: 18px !important;
+  padding: 15px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
