@@ -1,0 +1,27 @@
+<div class="footer">
+    <div class="col_icon">
+      <%= link_to profile_path(current_user) do %>
+        <i class="fa fa-user"></i>
+      <% end %>
+    </div>
+    <div class="col_icon">
+      <%= link_to conversations_path do %>
+        <i class="fa fa-comments"></i>
+      <% end %>
+    </div>
+    <div class="col_icon">
+      <%= link_to events_path do %>
+        <i class="fa fa-calendar"></i>
+      <% end %>
+    </div>
+    <div class="col_icon">
+      <%= link_to profiles_path do %>
+        <i class="fa fa-address-book"></i>
+      <% end %>
+    </div>
+    <div class="col_icon">
+      <%= link_to new_event_path do %>
+        <i class="fa fa-calendar-plus"></i>
+      <% end %>
+    </div>
+</div>

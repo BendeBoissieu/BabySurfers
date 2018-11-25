@@ -16,6 +16,7 @@
   <body>
     <% unless action_name == "home" || controller.controller_name == "matches" %>
       <%= render 'shared/navbar' %>
+      <%= render 'shared/footer' %>
     <% end %>
       <%= render 'shared/flashes' %>
     <% unless action_name == "home" %>
