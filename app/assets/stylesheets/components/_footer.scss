@@ -1,12 +1,17 @@
 .footer{
-  display: flex;
-  background-color: $white;
-  position: fixed;
-  bottom: 0px;
-  z-index: 99999;
-  height: 43px;
-  min-height: 43px;
-  width: 100vw;
+  @media screen and (max-width: 601px) {
+    display: flex;
+    background-color: $white;
+    position: fixed;
+    bottom: 0px;
+    z-index: 99999;
+    height: 43px;
+    min-height: 43px;
+    width: 100vw;
+  }
+  @media screen and (min-width: 601px) {
+  display: none;
+  }
 
 }
 
