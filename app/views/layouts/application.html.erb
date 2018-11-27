@@ -16,7 +16,6 @@
   <body>
     <% unless action_name == "home" || controller.controller_name == "matches" %>
       <%= render 'shared/navbar' %>
-      <%= render 'shared/footer' %>
     <% end %>
       <%= render 'shared/flashes' %>
     <% unless action_name == "home" %>
@@ -24,6 +23,9 @@
     <% end %>
     <%= yield %>
     </div>
+    <% unless action_name == "home" || controller.controller_name == "matches" %>
+      <%= render 'shared/footer' %>
+    <% end %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../dist/css/swiper.min.css">
      <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

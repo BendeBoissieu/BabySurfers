@@ -1,8 +1,9 @@
+<div class="space_footer"></div>
 <div class="footer">
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to profile_path(current_user) do %>
-            <i class="fa fa-user"></i>
+            <div class="avatar-footer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= current_user.profile.photoprofile.url %>');"></div>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
