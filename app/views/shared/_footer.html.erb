@@ -30,11 +30,11 @@
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to profiles_path do %>
-            <i class="fa fa-address-book"></i>
+            <%= image_tag "baby-face-black.png", alt: "No", width: 30, height: 30 %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
-            <i class="fa fa-address-book"></i>
+            <%= image_tag "baby-face-black.png", alt: "No", width: 30, height: 30 %>
           <% end %>
         <% end %>
       </div>
