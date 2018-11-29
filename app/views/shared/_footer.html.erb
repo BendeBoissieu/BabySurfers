@@ -14,38 +14,40 @@
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to conversations_path do %>
-            <i class="fa fa-comments"></i>
+            <!-- <i class="fa fa-comments"></i> -->
+            <%= image_tag "conversation.png", alt: "No", width: 35, height: 30 %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
-            <i class="fa fa-comments"></i>
+            <!-- <i class="fa fa-comments"></i> -->
+            <%= image_tag "conversation.png", alt: "No", width: 35, height: 30 %>
           <% end %>
         <% end %>
       </div>
       <div class="col_icon">
         <%= link_to events_path do %>
-          <i class="fa fa-calendar"></i>
+          <%= image_tag "surfer_black.jpg", alt: "No", width: 35, height: 30 %>
         <% end %>
       </div>
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to profiles_path do %>
-            <%= image_tag "baby-face-black.png", alt: "No", width: 30, height: 30 %>
+            <%= image_tag "aloha_black.png", alt: "No", width: 30, height: 40 %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
-            <%= image_tag "baby-face-black.png", alt: "No", width: 30, height: 30 %>
+            <%= image_tag "aloha_black.png", alt: "No", width: 30, height: 40 %>
           <% end %>
         <% end %>
       </div>
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to new_event_path do %>
-            <i class="fa fa-calendar-plus"></i>
+            <%= image_tag "new_event.png", alt: "No", width: 30, height: 30 %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
-            <i class="fa fa-calendar-plus"></i>
+            <%= image_tag "new_event.png", alt: "No", width: 30, height: 30 %>
           <% end %>
         <% end %>
       </div>

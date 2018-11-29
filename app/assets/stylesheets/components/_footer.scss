@@ -8,6 +8,7 @@
     height: 43px;
     min-height: 43px;
     width: 100vw;
+    border-top: 2px solid $dark-gray;
   }
   @media screen and (min-width: 601px) {
   display: none;
