@@ -32,22 +32,22 @@
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to profiles_path do %>
-            <%= image_tag "aloha_black.png", alt: "No", width: 30, height: 40 %>
+            <%= image_tag "aloha_black.png", alt: "No", width: 33, height: 43 %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
-            <%= image_tag "aloha_black.png", alt: "No", width: 30, height: 40 %>
+            <%= image_tag "aloha_black.png", alt: "No", width: 33, height: 43 %>
           <% end %>
         <% end %>
       </div>
       <div class="col_icon">
         <% if user_signed_in? %>
           <%= link_to new_event_path do %>
-            <%= image_tag "new_event.png", alt: "No", width: 30, height: 30 %>
+            <%= image_tag "new_event.png", alt: "No", width: 25, height: 25 %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
-            <%= image_tag "new_event.png", alt: "No", width: 30, height: 30 %>
+            <%= image_tag "new_event.png", alt: "No", width: 25, height: 25 %>
           <% end %>
         <% end %>
       </div>
