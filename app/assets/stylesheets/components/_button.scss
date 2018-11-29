@@ -99,6 +99,45 @@
   background-color: $purple;
 }
 
+.btn-write{
+  background-color: none;
+  border-radius: 3rem;
+  color: $white;
+  width: 250px;
+  border: 4px solid $purple;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+
+}
+
+.btn-write:hover{
+  text-decoration: none;
+  color: $white;
+  background-color: $purple;
+}
+
+.btn-validate{
+  background-color: none;
+  border-radius: 3rem;
+  color: $white;
+  width: 150px;
+  border: 4px solid $green;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: $dark-gray;
+  padding-bottom: 4px;
+  padding-top: 4px;
+
+}
+
+.btn-validate:hover{
+  text-decoration: none;
+  color: $white;
+  background-color: $green;
+}
+
 .button-white{
   display: block;
   width: 40px;

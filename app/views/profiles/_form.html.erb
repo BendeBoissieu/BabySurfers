@@ -1,33 +1,33 @@
-<div class="container-form">
-  <%= simple_form_for [@profile] do |f| %>
-  <div class="signup-screen">
-    <%= f.input :photoprofile %>
-    <%= f.input :photoprofile_cache, as: :hidden %>
-    <%= f.input :description_user, placeholder:"I was born to surf..."%>
-    <%= f.input :address, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
-    <%= f.input :phone %>
-    <!-- Association categories replaced by the group below -->
-     <!--  f.association :likecategories, as: :check_boxes %> -->
-    <div class="form-group">
-      <label class="control-label check_boxes optional">Categories</label>
-      <input type="hidden" name="profile[likecategory_ids][]" value="">
-      <div class="category-choices">
-        <% Likecategory.all.each do |likecategory| %>
-          <input type="checkbox" class="hidden" value="<%= likecategory.id %>" name="profile[likecategory_ids][]" id="profile_likecategory_ids_<%= likecategory.id %>">
-          <label class="category-choice" for="profile_likecategory_ids_<%= likecategory.id %>">
-            <%= likecategory.name %>
-            <i class="fa fa-check"></i>
-          </label>
-        <% end %>
-       </div>
+<%= simple_form_for [@profile] do |f| %>
+  <div class="container-form">
+    <div class="signup-screen">
+      <%= f.input :photoprofile %>
+      <%= f.input :photoprofile_cache, as: :hidden %>
+      <%= f.input :description_user, placeholder:"I was born to surf..."%>
+      <%= f.input :address, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
+      <%= f.input :phone %>
+      <!-- Association categories replaced by the group below -->
+       <!--  f.association :likecategories, as: :check_boxes %> -->
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Categories</label>
+        <input type="hidden" name="profile[likecategory_ids][]" value="">
+        <div class="category-choices">
+          <% Likecategory.all.each do |likecategory| %>
+            <input type="checkbox" class="hidden" value="<%= likecategory.id %>" name="profile[likecategory_ids][]" id="profile_likecategory_ids_<%= likecategory.id %>">
+            <label class="category-choice" for="profile_likecategory_ids_<%= likecategory.id %>">
+              <%= likecategory.name %>
+              <i class="fa fa-check"></i>
+            </label>
+          <% end %>
+         </div>
+      </div>
+
+
+      <%= f.input :surf_level, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
+      <%= f.input :board_type, collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
+      <%= f.input :favorite_beach, placeholder:"Waikiki" %>
+      <div class="text-center"> <%= f.button :submit, class: 'btn btn-validate' %> </div>
     </div>
-
-
-    <%= f.input :surf_level, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
-    <%= f.input :board_type, collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
-    <%= f.input :favorite_beach, placeholder:"Waikiki" %>
-    <div class="text-center"> <%= f.button :submit, class: 'btn btn-success' %> </div>
   </div>
-  <% end %>
-</div>
+<% end %>
 
