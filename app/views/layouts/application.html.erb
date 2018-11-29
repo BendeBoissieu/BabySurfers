@@ -14,7 +14,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless action_name == "home" || controller.controller_name == "matches" %>
+    <% unless action_name == "home" || controller.controller_name == "matches" || action_name == "edit"%>
       <%= render 'shared/navbar' %>
     <% end %>
       <%= render 'shared/flashes' %>
