@@ -1,15 +1,15 @@
 <%= simple_form_for [@profile] do |f| %>
   <div class="container-form">
     <div class="signup-screen">
-      <%= f.input :photoprofile %>
+      <%= f.input :photoprofile, label: 'My profile picture' %>
       <%= f.input :photoprofile_cache, as: :hidden %>
       <%= f.input :description_user, placeholder:"I was born to surf..."%>
-      <%= f.input :address, input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
+      <%= f.input :address, label: 'My address',input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
       <%= f.input :phone %>
       <!-- Association categories replaced by the group below -->
        <!--  f.association :likecategories, as: :check_boxes %> -->
       <div class="form-group">
-        <label class="control-label check_boxes optional">Categories</label>
+        <label class="control-label check_boxes optional">I also love</label>
         <input type="hidden" name="profile[likecategory_ids][]" value="">
         <div class="category-choices">
           <% Likecategory.all.each do |likecategory| %>
