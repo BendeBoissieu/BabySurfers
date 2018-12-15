@@ -23,7 +23,14 @@
       </div>
 
 
-      <%= f.input :surf_level, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
+      <%= f.input :surf_level, label: 'Surf level (?) ', input_html: { "data-tooltip" => true, :class => "has-tip", :title => "
+        Super Baby: \"I never surf\"
+        Baby: \"I have tried one time\"
+        Mid Baby Mid Papy: \"I have an intermediate level\"
+        Papy: \"I am not too bad\"
+        Super Papy: \"I am quiet good\"
+        " }, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
+      </%>
       <%= f.input :board_type, collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
       <%= f.input :favorite_beach, placeholder:"Waikiki" %>
       <div class="text-center"> <%= f.button :submit, class: 'btn btn-validate' %> </div>
