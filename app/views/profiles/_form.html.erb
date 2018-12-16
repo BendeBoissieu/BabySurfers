@@ -3,9 +3,9 @@
     <div class="signup-screen">
       <%= f.input :photoprofile, label: 'My profile picture' %>
       <%= f.input :photoprofile_cache, as: :hidden %>
-      <%= f.input :description_user, placeholder:"I was born to surf..."%>
+      <%= f.input :description_user, label: 'Tell us about you', placeholder:"I was born to surf..."%>
       <%= f.input :address, label: 'My address',input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
-      <%= f.input :phone %>
+      <%= f.input :phone, label: 'My phone' %>
       <!-- Association categories replaced by the group below -->
        <!--  f.association :likecategories, as: :check_boxes %> -->
       <div class="form-group">
@@ -22,17 +22,11 @@
          </div>
       </div>
 
+     <span>
+      <%= f.input :surf_level, label: 'My surf level', collection: Profile::SURF_LEVEL, prompt:"which level?" %>
 
-      <%= f.input :surf_level, label: 'Surf level (?) ', input_html: { "data-tooltip" => true, :class => "has-tip", :title => "
-        Super Baby: \"I never surf\"
-        Baby: \"I have tried one time\"
-        Mid Baby Mid Papy: \"I have an intermediate level\"
-        Papy: \"I am not too bad\"
-        Super Papy: \"I am quiet good\"
-        " }, collection: Profile::SURF_LEVEL, prompt:"which level?" %>
-      </%>
-      <%= f.input :board_type, collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
-      <%= f.input :favorite_beach, placeholder:"Waikiki" %>
+      <%= f.input :board_type,label: 'My board', collection: Profile::BOARD_TYPE, prompt:"Any board?" %>
+      <%= f.input :favorite_beach, label: 'My favorite spot', placeholder:"Waikiki" %>
       <div class="text-center"> <%= f.button :submit, class: 'btn btn-validate' %> </div>
     </div>
   </div>

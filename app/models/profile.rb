@@ -8,7 +8,7 @@ class Profile < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
 
-  SURF_LEVEL = ["very baby", "baby", "super baby", "papy", "super papy", "papy pro"]
+  SURF_LEVEL = ["very baby (I never surf)", "baby (I tried one time)", "super baby (I know the takeoff)", "papy (I am surfing good waves)", "super papy (I did a tube)", "papy pro (I am Kelly Slater)"]
   I_LIKE = ["beers", "BBQ", "coffee", "blabla", "volley-ball", "chill", "other ideas?"]
   BOARD_TYPE = ["no board", "soft board", "hard board"]
 
