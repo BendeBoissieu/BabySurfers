@@ -6,10 +6,21 @@
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
-  background-size: cover; //try contain
+  background-size: contain; //try contain
   border: 8px solid $white;
   background-position: center;
 
+}
+
+.card_find_a_surfer_i_like {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  background-color: $dark-gray;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem
 }
 
 .card_find_a_surfer_description {

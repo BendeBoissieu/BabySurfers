@@ -1,13 +1,5 @@
-<div class="swiper-slide">
-  <!-- IN ORDER TO FIND THE USER ID OF THE ACTIVE CARD but finally not used
-  <div class="inactive">%= user.profile.id %></div> -->
-  <div class="card-surfer">
-     <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile.photoprofile.url %>');">
-
-     <div class="card_find_a_surfer_i_like">
-            <div class="icons-space">
-
-    <% if user.profile.likecategories.empty? %>
+    <div class="icons-space">
+    <% if @profile.likecategories.empty? %>
         <div class="icon-black">
           <%= image_tag "beers_b.png", alt: "baby-face-black", width: 50, height: 50 %>
           <%= image_tag "sunbath_b.png", alt: "baby-face-black", width: 50, height: 50 %>
@@ -17,7 +9,7 @@
           <%= image_tag "van_b.png", alt: "baby-face-black", width: 50, height: 50 %>
         </div>
     <% else %>
-      <% user.profile.likecategories.each do |category| %>
+      <% @profile.likecategories.each do |category| %>
         <% if category.id == 1 %>
           <%= image_tag "beers_p.png", alt: "baby-face-black", width: 50, height: 50 %>
         <% else %>
@@ -45,32 +37,3 @@
       <% end %>
     <% end %>
     </div>
-
-
-
-
-
-     </div>
-     </div>
-      <div class="card_find_a_surfer_description">
-         <%= link_to profile_path(user) do %>
-        <h4><%= user.first_name %></h4>
-        <% end %>
-        <p><%= user.profile.favorite_beach %></p>
-        <p><%= user.profile.surf_level %></p>
-      </div>
-  </div>
-  <div class="container-buttons">
-    <%= link_to profile_dislikes_path(user.profile.id), method: :post do %>
-      <div class="like_dislike btn nope">
-        <%= image_tag "delete.png", alt: "No", width: 30, height: 30 %>
-      </div>
-    <% end %>
-    <%= link_to profile_matches_path(user.profile.id), method: :post do %>
-      <div class="like_dislike btn aloha">
-        <%= image_tag "aloha.png", alt: "No", width: 40, height: 40 %>
-      </div>
-    <% end %>
-  </div>
-
-</div>
