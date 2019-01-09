@@ -1,36 +1,55 @@
 .profile_find_a_surfer{
   position: relative;
-  height: 100%;
-  width: 100%;
-  margin-left: auto;
+  height: 250px;
+  width: 200px;
+  margin-left: 0;
   margin-right: auto;
   background-repeat: no-repeat;
   background-size: contain; //try contain
   background-position: center;
+  border-top-left-radius: 3rem;
 
 }
 
 .card_find_a_surfer_i_like {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
-  width: 80px;
+  top: 0px;
+  right: -86px;
+  width: 66px;
   background-color: $dark-gray;
-  border-bottom-left-radius: 3rem;
-  border-bottom-right-radius: 3rem
+  border-bottom-right-radius: 3rem;
+  border-top-right-radius: 3rem;
+  height: 334px;
 }
 
 .card_find_a_surfer_description {
   position: relative;
-  bottom: 133px;
+  bottom: 10px;
   left: 25px;
   right: 25px;
+
 }
 
 .card_find_a_surfer_description p{
   margin: 0;
 }
 
+.card_find_a_surfer_description h4{
+  color: $white;
+
+}
+
 .inactive{
   display: none;
+}
+
+.icons-space-find{
+  position: relative;
+//  background-color: $medium-gray;
+  min-height: 68px;
+  width: 100%;
+  margin: 0px auto 5px auto;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 8px;
 }
