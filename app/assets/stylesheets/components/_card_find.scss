@@ -12,9 +12,9 @@
 }
 
 .card_find_a_surfer_i_like {
-  position: absolute;
-  top: 0px;
-  right: -80px;
+  position: relative;
+  top: -100px;
+  right: -212px;
   width: 66px;
   background-color: $dark-gray;
   //border-bottom-right-radius: 3rem;
@@ -29,6 +29,7 @@
   background: $purple;
   width: 150px;
   padding-left:10px;
+  height: 25px;
 
 }
 .card_find_a_surfer_description {
@@ -48,7 +49,7 @@
 
 .card_find_a_surfer_description h4{
   color: $white;
-
+  margin-bottom: 6.5px;
 }
 
 .inactive{

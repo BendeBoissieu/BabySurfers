@@ -3,6 +3,9 @@
   <div class="inactive">%= user.profile.id %></div> -->
   <div class="card-surfer">
     <div class="card_level">
+      <% if user.profile.surf_level == "" %>
+        <p>No level</p>
+      <% else %>
         <% case user.profile.surf_level %>
         <% when "very baby (I never surf)" %>
          <p>Beginner</p>
@@ -17,6 +20,23 @@
         <% when "papy pro (I am Kelly Slater)" %>
          <p>Expert</p>
         <% end %>
+      <% end %>
+    </div>
+
+    <div class="card_surfboard">
+      <% if user.profile.board_type == "" %>
+        <%= image_tag "surfboard_pink.png", alt: "baby-face-black", width: 100, height: 70 %> <p><%= user.profile.favorite_beach %></p>
+      <% else %>
+        <% case user.profile.board_type %>
+        <% when "no board" %>
+         <%= image_tag "surfboard_pink.png", alt: "baby-face-black", width: 100, height: 70 %> <p><%= user.profile.favorite_beach %></p>
+        <% when "soft board" %>
+         <%= image_tag "surfboard_pink.png", alt: "baby-face-black", width: 100, height: 70 %> <p><%= user.profile.favorite_beach %></p>
+        <% when "hard board" %>
+         <%= image_tag "surfboard_pink.png", alt: "baby-face-black", width: 100, height: 70 %> <p><%= user.profile.favorite_beach %></p>
+        <% end %>
+      <% end %>
+
     </div>
      <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile.photoprofile.url %>');">
 
@@ -25,37 +45,37 @@
 
     <% if user.profile.likecategories.empty? %>
         <div class="icon-black">
-          <%= image_tag "beers_b.png", alt: "baby-face-black", width: 30, height: 30 %>
-          <%= image_tag "sunbath_b.png", alt: "baby-face-black", width: 30, height: 30 %>
-          <%= image_tag "sausage_b.png", alt: "baby-face-black", width: 30, height: 30 %>
-          <%= image_tag "sports_b.png", alt: "baby-face-black", width: 30, height: 30 %>
-          <%= image_tag "run_b.png", alt: "baby-face-black", width: 30, height: 30 %>
-          <%= image_tag "van_b.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "beers_b.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "sunbath_b.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "sausage_b.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "sports_b.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "run_b.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "van_b.png", alt: "baby-face-black", width: 35, height: 35 %>
         </div>
     <% else %>
       <% user.profile.likecategories.each do |category| %>
         <% if category.id == 1 %>
-          <%= image_tag "beers_p.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "beers_p.png", alt: "baby-face-black", width: 35, height: 35 %>
         <% else %>
         <% end %>
         <% if category.id == 2 %>
-          <%= image_tag "sunbath_p.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "sunbath_p.png", alt: "baby-face-black", width: 35, height: 35 %>
         <% else %>
         <% end %>
         <% if category.id == 3 %>
-          <%= image_tag "sausage_p.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "sausage_p.png", alt: "baby-face-black", width: 35, height: 35 %>
         <% else %>
         <% end %>
         <% if category.id == 4 %>
-          <%= image_tag "sports_p.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "sports_p.png", alt: "baby-face-black", width: 35, height: 35 %>
         <% else %>
         <% end %>
         <% if category.id == 5 %>
-          <%= image_tag "run_p.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "run_p.png", alt: "baby-face-black", width: 35, height: 35 %>
         <% else %>
         <% end %>
         <% if category.id == 6 %>
-          <%= image_tag "van_p.png", alt: "baby-face-black", width: 30, height: 30 %>
+          <%= image_tag "van_p.png", alt: "baby-face-black", width: 35, height: 35 %>
         <% else %>
         <% end %>
       <% end %>
@@ -72,13 +92,12 @@
          <%= link_to profile_path(user) do %>
         <h4><%= user.first_name %></h4>
         <% end %>
-        <p><%= user.profile.favorite_beach %></p>
       </div>
   </div>
   <div class="container-buttons">
     <%= link_to profile_dislikes_path(user.profile.id), method: :post do %>
       <div class="like_dislike btn nope">
-        <%= image_tag "delete.png", alt: "No", width: 30, height: 30 %>
+        <%= image_tag "delete.png", alt: "No", width: 35, height: 35 %>
       </div>
     <% end %>
     <%= link_to profile_matches_path(user.profile.id), method: :post do %>
