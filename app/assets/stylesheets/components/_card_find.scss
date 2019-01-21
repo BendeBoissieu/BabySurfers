@@ -36,11 +36,10 @@
     position: relative;
     top: 0px;
     left: 0px;
-    height: 25px;
+    min-height: 25px;
     margin: 10px;
     background: $purple;
     width: 80%;
-    padding-left:10px;
     margin: 15px auto 0px auto;
 }
 
@@ -51,6 +50,8 @@
 .card_find_a_surfer_description h4{
   color: $white;
   margin-bottom: 6.5px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .inactive{
