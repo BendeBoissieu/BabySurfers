@@ -41,7 +41,7 @@
      <div class="profile_find_a_surfer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= user.profile.photoprofile.url %>');">
 
      <div class="card_find_a_surfer_i_like">
-            <div class="icons-space-find">
+
 
     <% if user.profile.likecategories.empty? %>
         <div class="icon-black">
@@ -55,32 +55,32 @@
     <% else %>
       <% user.profile.likecategories.each do |category| %>
         <% if category.id == 1 %>
-          <%= image_tag "beers_p.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "beers_p.png",  :class => "style_likecategories" %>
         <% else %>
         <% end %>
         <% if category.id == 2 %>
-          <%= image_tag "sunbath_p.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "sunbath_p.png",  :class => "style_likecategories"  %>
         <% else %>
         <% end %>
         <% if category.id == 3 %>
-          <%= image_tag "sausage_p.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "sausage_p.png",  :class => "style_likecategories"  %>
         <% else %>
         <% end %>
         <% if category.id == 4 %>
-          <%= image_tag "sports_p.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "sports_p.png",  :class => "style_likecategories"  %>
         <% else %>
         <% end %>
         <% if category.id == 5 %>
-          <%= image_tag "run_p.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "run_p.png",  :class => "style_likecategories"  %>
         <% else %>
         <% end %>
         <% if category.id == 6 %>
-          <%= image_tag "van_p.png", alt: "baby-face-black", width: 35, height: 35 %>
+          <%= image_tag "van_p.png",  :class => "style_likecategories"  %>
         <% else %>
         <% end %>
       <% end %>
     <% end %>
-    </div>
+
 
 
 
