@@ -1,13 +1,14 @@
 .profile_find_a_surfer{
   position: relative;
-  height: 194px;
-  width: 200px;
-  margin-left: 0;
+  height: 160px;
+  width: 150px;
   margin-right: auto;
   background-repeat: no-repeat;
   background-size: contain; //try contain
   background-position: center;
   //border-top-left-radius: 3rem;
+  left: 10px;
+  margin-top: 10px;
 
 }
 
@@ -25,11 +26,12 @@
 .card_level{
   position: relative;
   top: 0px;
-  left: 0px;
+  left: 10px;
   background: $purple;
-  width: 150px;
+  width: 120px;
   padding-left:10px;
   height: 25px;
+  margin-top: 10px;
 
 }
 .card_find_a_surfer_description {
