@@ -44,7 +44,7 @@
 
 
     <% if user.profile.likecategories.empty? %>
-        <div class="icon-black">
+        <div class="icon-black-find-a-surfer">
           <%= image_tag "beers_b.png", alt: "baby-face-black", width: 35, height: 35 %>
           <%= image_tag "sunbath_b.png", alt: "baby-face-black", width: 35, height: 35 %>
           <%= image_tag "sausage_b.png", alt: "baby-face-black", width: 35, height: 35 %>
@@ -92,6 +92,9 @@
          <%= link_to profile_path(user) do %>
         <h4><%= user.first_name %></h4>
         <% end %>
+      </div>
+      <div class="card_find_a_description">
+        <p><%= user.profile.description_user %></p>
       </div>
   </div>
   <div class="container-buttons">
