@@ -36,6 +36,7 @@
          <p class="text-center" , url('https://www.google.com/maps/place/Bondi+beach')> <i class="fa fa-location-arrow" aria-hidden="true"></i>
           <a href="https://www.google.com/maps/place/<%=@event.location%>"><%= @event.location %></a>
            </p>
+             <%= render 'weather'%>
         </div>
         <% if @event.start_at != nil %>
           <div class="date-show-event text-center">
