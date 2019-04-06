@@ -1,3 +1,5 @@
 <div class="text-center">
-  <p><%=@weather["main"]["temp"]%>°C</p>
+  <%=@weather["main"]["temp"]%>°C
+  <%= image_tag("weather/#{@weather["weather"][0]["icon"]}.png")  %>
+
 </div>
