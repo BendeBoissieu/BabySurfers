@@ -34,8 +34,9 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @hash = [{lat: @event.latitude, lng: @event.longitude}]
-    url_weather = "https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=#{ENV['WEATHER_KEY']}"
+    url_weather = "http://api.openweathermap.org/data/2.5/weather?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&appid=#{ENV['WEATHER_KEY']}"
     weather = JSON.parse(open(url_weather).read)
+    test
   end
 
 
