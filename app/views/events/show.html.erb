@@ -47,9 +47,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut repellendus accusamus excepturi necessitatibus repellat sequi, placeat asperiores fugiat provident optio. Vero nisi sit voluptatibus.</p>
+      <div class="collapse" id="collapseWeather">
+        <div class="description_event">
+          <p>Min temperature: <%=@weather["main"]["temp_min"]%>°C</p>
+          <p>Max temperature: <%=@weather["main"]["temp_max"]%>°C</p>
+          <p>Wind: <%=@weather["wind"]["speed"]%> nd</p>
         </div>
       </div>
     </div>
