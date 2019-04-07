@@ -1,5 +1,7 @@
 <div class="text-center">
-  <%=@weather["main"]["temp"]%>°C
-  <%= image_tag("weather/#{@weather["weather"][0]["icon"]}.png")  %>
-
+  <p><%=@weather["main"]["temp"]%>°C
+  <%= image_tag("weather/#{@weather["weather"][0]["icon"]}.png")  %> </p>
+  <p></p><a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    More about the weather
+  </a></p>
 </div>
