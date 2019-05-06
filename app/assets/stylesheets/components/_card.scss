@@ -29,6 +29,13 @@
   text-transform: uppercase;
 }
 
+.card-validation {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-align:left;
+  padding-top: 10px;
+  color: $dark-black;
+}
+
 .card-title {
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   text-align:center;

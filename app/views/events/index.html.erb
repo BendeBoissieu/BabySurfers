@@ -23,9 +23,14 @@
          <div class="col-xs-12 col-md-4 col-sm-6">
             <div class="card">
               <%= link_to "", event_path(event), class: "card-link" %>
-              <div class="card-title">
-                  <h2> <%= event.title_event.upcase %> </h2>
+              <div class="card-validation">
+                <% if event.start_at < Date.today %>
+                  <p>passed</p>
+                <% elsif event.start_at = Date.today %>
+                  <p>Today</p>
+                <% end %>
               </div>
+
               <div class="card-date">
                 <% if event.start_at != nil %>
                   <p style="margin-bottom: 0px"><%= event.start_at.strftime("%A %d %B %Y") %></p>
@@ -34,6 +39,9 @@
               </div>
               <div class="card-location">
                 <p><%= event.location %></p>
+                <% if event.start_at < Date.today %>
+                <p>passed</p>
+                <% end %>
               </div>
 
             </div>
