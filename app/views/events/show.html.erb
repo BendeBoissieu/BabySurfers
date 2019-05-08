@@ -52,6 +52,26 @@
           <p>Min temperature: <%=@weather["main"]["temp_min"]%>°C</p>
           <p>Max temperature: <%=@weather["main"]["temp_max"]%>°C</p>
           <p>Wind: <%=@weather["wind"]["speed"]%> m/s  <%=@weather["wind"]["deg"]%> deg   <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i> </p>
+          <tr>
+            <th><%= Date.current.strftime("%a %d") %> 00h</th>
+            <th><%= Date.current.strftime("%a %d") %> 06h</th>
+            <th><%= Date.current.strftime("%a %d") %> 12h</th>
+            <th><%= Date.current.strftime("%a %d") %> 18h</th>
+            <th><%= (Date.current+1).strftime("%a %d") %> 00h</th>
+            <th><%= (Date.current+1).strftime("%a %d") %> 06h</th>
+            <th><%= (Date.current+1).strftime("%a %d") %> 12h</th>
+            <th><%= (Date.current+1).strftime("%a %d") %> 18h</th>
+            <th><%= (Date.current+2).strftime("%a %d") %> 00h</th>
+            <th><%= (Date.current+2).strftime("%a %d") %> 06h</th>
+            <th><%= (Date.current+2).strftime("%a %d") %> 12h</th>
+            <th><%= (Date.current+2).strftime("%a %d") %> 18h</th>
+          </tr>
+          <tr>
+            <th><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></th>
+            <th><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></th>
+            <th><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></th>
+
+          </tr>
           <p>More information on <a href="https://magicseaweed.com/">Magicseaweed</a></p>
         </div>
       </div>
