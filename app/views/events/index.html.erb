@@ -29,8 +29,10 @@
               <div class="card-validation">
                 <% if event.start_at < Date.today %>
                   <p style="color:#CC351F; font-style: italic;">Passed</p>
-                <% elsif event.start_at = Date.today %>
-                  <p style="color: #32B796; font-style: italic;">Today</p>
+                <% else %>
+                  <% if event.start_at.to_date == Date.today %>
+                    <p style="color: #32B796; font-style: italic;">Today</p>
+                  <% end %>
                 <% end %>
               </div>
               <div class="card-date">
