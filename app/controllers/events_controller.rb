@@ -36,7 +36,9 @@ class EventsController < ApplicationController
     @hash = [{lat: @event.latitude, lng: @event.longitude}]
     #API open weather
     url_weather = "http://api.openweathermap.org/data/2.5/weather?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
+    url_weather_5days = "http://api.openweathermap.org/data/2.5/forecast?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
     @weather = JSON.parse(open(url_weather).read)
+    @weater_5days = JSON.parse(open(url_weather_5days).read)
   end
 
 
