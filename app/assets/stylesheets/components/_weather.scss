@@ -1,0 +1,15 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+    border:1px solid;
+    margin-top:20px;
+    border-collapse: collapse;
+    text-align:center;
+}
+td {
+    min-width: 250px;
+    border:1px solid;
+
+}
+
+#weather td:nth-child(even){background-color: $dark-gray;}

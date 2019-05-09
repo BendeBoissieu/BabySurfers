@@ -1,7 +1,52 @@
-<div class="text-center">
-  <p><%=@weather["main"]["temp"]%>°C
-  <%= image_tag("weather/#{@weather["weather"][0]["icon"]}.png")  %> </p>
-  <p></p><a  data-toggle="collapse" href="#collapseWeather" role="button" aria-expanded="false" aria-controls="collapseWeather">
-    More about the weather
-  </a></p>
-</div>
+      <div class="collapse" id="collapseWeather">
+        <div class="description_event">
+          <p>Min temperature: <%=@weather["main"]["temp_min"]%>°C</p>
+          <p>Max temperature: <%=@weather["main"]["temp_max"]%>°C</p>
+          <p>Wind: <%=@weather["wind"]["speed"]%> m/s  <%=@weather["wind"]["deg"]%>   <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i> </p>
+          <table id="weather">
+            <tr>
+              <td><%= Date.current.strftime("%a %d") %> 00h</td>
+              <td><%= Date.current.strftime("%a %d") %> 06h</td>
+              <td><%= Date.current.strftime("%a %d") %> 12h</td>
+              <td><%= Date.current.strftime("%a %d") %> 18h</td>
+            </tr>
+            <tr>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+            </tr>
+          </table>
+          <br>
+          <table id="weather">
+            <tr>
+              <td><%= (Date.current+1).strftime("%a %d") %> 00h</td>
+              <td><%= (Date.current+1).strftime("%a %d") %> 06h</td>
+              <td><%= (Date.current+1).strftime("%a %d") %> 12h</td>
+              <td><%= (Date.current+1).strftime("%a %d") %> 18h</td>
+            </tr>
+            <tr>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+            </tr>
+          </table>
+          <br>
+                    <table id="weather">
+            <tr>
+              <td><%= (Date.current+2).strftime("%a %d") %> 00h</td>
+              <td><%= (Date.current+2).strftime("%a %d") %> 06h</td>
+              <td><%= (Date.current+2).strftime("%a %d") %> 12h</td>
+              <td><%= (Date.current+2).strftime("%a %d") %> 18h</td>
+            </tr>
+            <tr>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+              <td><%=@weather["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i></td>
+            </tr>
+          </table>
+          <br>
+          <p>More information on <a href="https://magicseaweed.com/">Magicseaweed</a></p>
+        </div>
+      </div>
+
+
