@@ -2,7 +2,7 @@
         <div class="description_event">
           <p>Min temperature: <%=@weather["main"]["temp_min"]%>°C</p>
           <p>Max temperature: <%=@weather["main"]["temp_max"]%>°C</p>
-          <p>Wind: <%=@weather["wind"]["speed"]%> m/s   <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i> </p>
+          <p>Wind: <%=@wind_speed_km %> km/h   <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i> </p>
           <table id="weather">
             <tr>
               <td><%= (Date.current+1).strftime("%a %d") %> 00h</td>

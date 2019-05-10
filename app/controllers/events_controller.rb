@@ -39,6 +39,7 @@ class EventsController < ApplicationController
     url_weather_5days = "http://api.openweathermap.org/data/2.5/forecast?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
     @weather = JSON.parse(open(url_weather).read)
     @weater_5days = JSON.parse(open(url_weather_5days).read)
+    @wind_speed_km = (@weather["wind"]["speed"].to_f)*3.6
   end
 
 
