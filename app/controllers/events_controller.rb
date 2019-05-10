@@ -34,12 +34,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @hash = [{lat: @event.latitude, lng: @event.longitude}]
-    #API open weather
-    url_weather = "http://api.openweathermap.org/data/2.5/weather?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
-    url_weather_5days = "http://api.openweathermap.org/data/2.5/forecast?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
-    @weather = JSON.parse(open(url_weather).read)
-    @weater_5days = JSON.parse(open(url_weather_5days).read)
-    @wind_speed_km = (@weather["wind"]["speed"].to_f)*3.6
+    weather
   end
 
 
@@ -67,6 +62,24 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title_event, :description, :start_at, :end_at, :location, :photo_event, :organiser, :user_id)
+  end
+
+  def weather
+        #API open weather
+    url_weather = "http://api.openweathermap.org/data/2.5/weather?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
+    url_weather_5days = "http://api.openweathermap.org/data/2.5/forecast?lat=#{@hash[0][:lat]}&lon=#{@hash[0][:lng]}&units=metric&appid=#{ENV['WEATHER_KEY']}"
+    @weather = JSON.parse(open(url_weather).read)
+    #conversion m/s into km/h for the wind speed of today
+    @wind_speed_km = (@weather["wind"]["speed"].to_f)*3.6
+    @weater_5days = JSON.parse(open(url_weather_5days).read)
+    # we put the value of the wind in an array
+    y=0
+    for i in (0..22)
+
+      @weatherspeed_5days[y] = @weater_5days["list"][i]["wind"]["speed"] * 3.6
+      i+=2
+      y+=1
+    end
   end
 
 
