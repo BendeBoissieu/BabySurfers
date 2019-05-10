@@ -11,7 +11,7 @@
               <td><%= (Date.current+1).strftime("%a %d") %> 18h</td>
             </tr>
             <tr>
-              <td><%=@weater_5days["list"][0]["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][0]["wind"]["deg"]%>deg);"></i></td>
+              <td style="background-color:  #32B796;"><%=@weater_5days["list"][0]["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][0]["wind"]["deg"]%>deg);"></i></td>
               <td><%=@weater_5days["list"][2]["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][2]["wind"]["deg"]%>deg);"></i></td>
               <td><%=@weater_5days["list"][4]["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][4]["wind"]["deg"]%>deg);"></i></td>
               <td><%=@weater_5days["list"][6]["wind"]["speed"]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][6]["wind"]["deg"]%>deg);"></i></td>
