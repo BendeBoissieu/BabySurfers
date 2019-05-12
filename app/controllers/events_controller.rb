@@ -76,7 +76,7 @@ class EventsController < ApplicationController
     @weatherspeed_5days = Array.new
     for i in (0..22)
 
-      @weatherspeed_5days << @weater_5days["list"][i]["wind"]["speed"] * 3.6
+      @weatherspeed_5days << (@weater_5days["list"][i]["wind"]["speed"] * 3.6).round(2)
       i+=2
     end
   end
