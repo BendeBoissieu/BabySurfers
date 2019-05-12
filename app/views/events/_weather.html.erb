@@ -3,8 +3,8 @@
           <p>Min temperature: <%=@weather["main"]["temp_min"]%>°C</p>
           <p>Max temperature: <%=@weather["main"]["temp_max"]%>°C</p>
           <p>Wind: <%=@wind_speed_km %> km/h   <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather["wind"]["deg"]%>deg);"></i> </p>
-          <table id="weather">
-            <tr>
+          <table>
+            <tr id="weather">
               <td><%= (Date.current+1).strftime("%a %d") %> 00h</td>
               <td><%= (Date.current+1).strftime("%a %d") %> 06h</td>
               <td><%= (Date.current+1).strftime("%a %d") %> 12h</td>
@@ -12,13 +12,23 @@
             </tr>
             <tr>
               <% for i in (0..3) %>
-              <td style="background-color:  #32B796;"><%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
+                  <% if @weatherspeed_5days[i] < 5 %>
+                    <td id="no_wind">
+                  <% elsif @weatherspeed_5days[i] > 5 && @weatherspeed_5days[i] < 12 %>
+                    <td id="light_wind">
+                  <% elsif @weatherspeed_5days[i] > 12 && @weatherspeed_5days[i] < 20 %>
+                    <td id="good_wind">
+                  <% else %>
+                    <td id="strong_wind">
+                  <% end %>
+                  <%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i>
+                </td>
               <% end %>
             </tr>
           </table>
           <br>
-          <table id="weather">
-            <tr>
+          <table>
+            <tr id="weather">
               <td><%= (Date.current+2).strftime("%a %d") %> 00h</td>
               <td><%= (Date.current+2).strftime("%a %d") %> 06h</td>
               <td><%= (Date.current+2).strftime("%a %d") %> 12h</td>
@@ -26,13 +36,22 @@
             </tr>
             <tr>
               <% for i in (4..7) %>
-              <td style="background-color:  #32B796;"><%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
+               <% if @weatherspeed_5days[i] < 5 %>
+                    <td id="no_wind">
+                  <% elsif @weatherspeed_5days[i] > 5 && @weatherspeed_5days[i] < 12 %>
+                    <td id="light_wind">
+                  <% elsif @weatherspeed_5days[i] > 12 && @weatherspeed_5days[i] < 20 %>
+                    <td id="good_wind">
+                  <% else %>
+                    <td id="strong_wind">
+                  <% end %>
+              <%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
               <% end %>
             </tr>
           </table>
           <br>
-                    <table id="weather">
-            <tr>
+          <table>
+            <tr id="weather">
               <td><%= (Date.current+3).strftime("%a %d") %> 00h</td>
               <td><%= (Date.current+3).strftime("%a %d") %> 06h</td>
               <td><%= (Date.current+3).strftime("%a %d") %> 12h</td>
@@ -40,7 +59,16 @@
             </tr>
             <tr>
               <% for i in (8..11) %>
-              <td style="background-color:  #32B796;"><%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
+               <% if @weatherspeed_5days[i] < 5 %>
+                    <td id="no_wind">
+                  <% elsif @weatherspeed_5days[i] > 5 && @weatherspeed_5days[i] < 12 %>
+                    <td id="light_wind">
+                  <% elsif @weatherspeed_5days[i] > 12 && @weatherspeed_5days[i] < 20 %>
+                    <td id="good_wind">
+                  <% else %>
+                    <td id="strong_wind">
+                  <% end %>
+               <%=@weatherspeed_5days[i]%> <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
               <% end %>
             </tr>
           </table>

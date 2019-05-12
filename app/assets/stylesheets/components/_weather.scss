@@ -13,3 +13,20 @@ td {
 }
 
 #weather td:nth-child(even){background-color: $dark-gray;}
+
+#no_wind{
+
+}
+
+#light_wind{
+  background-color: $light-green;
+}
+
+#good_wind{
+  background-color: $green;
+}
+
+#strong_wind{
+  background-color: $light-blue;
+
+}
