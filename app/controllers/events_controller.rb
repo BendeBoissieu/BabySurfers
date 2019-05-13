@@ -71,13 +71,15 @@ class EventsController < ApplicationController
     @weather = JSON.parse(open(url_weather).read)
     # conversion m/s into km/h for the wind speed of today
     @wind_speed_km = ((@weather["wind"]["speed"].to_f)*3.6).round(2)
-    @weater_5days = JSON.parse(open(url_weather_5days).read)
+    @weather_5days = JSON.parse(open(url_weather_5days).read)
     # we put the value of the wind in an array with 2 digit
     @weatherspeed_5days = Array.new
-    for i in (0..22)
-      @weatherspeed_5days << (@weater_5days["list"][i]["wind"]["speed"] * 3.6).round(2)
-      i+=2
+    @weatherspeed_5days_time = Array.new
+    for i in (0..22).step(2)
+      @weatherspeed_5days << (@weather_5days["list"][i]["wind"]["speed"] * 3.6).round(2)
+      @weatherspeed_5days_time << @weather_5days["list"][i]["dt_txt"]
     end
+
 
   end
 

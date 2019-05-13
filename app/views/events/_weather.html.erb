@@ -21,7 +21,7 @@
                   <% else %>
                     <td id="strong_wind">
                   <% end %>
-                  <%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i>
+                  <%=@weatherspeed_5days_time[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather_5days["list"][i]["wind"]["deg"]%>deg);"></i>
                 </td>
               <% end %>
             </tr>
@@ -45,7 +45,7 @@
                   <% else %>
                     <td id="strong_wind">
                   <% end %>
-              <%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
+              <%=@weatherspeed_5days[i]%>  <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
               <% end %>
             </tr>
           </table>
@@ -68,7 +68,7 @@
                   <% else %>
                     <td id="strong_wind">
                   <% end %>
-               <%=@weatherspeed_5days[i]%> <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weater_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
+               <%=@weatherspeed_5days[i]%> <i class="fas fa-arrow-up rotate_arrow", style=" transform: rotate(<%=@weather_5days["list"][i]["wind"]["deg"]%>deg);"></i></td>
               <% end %>
             </tr>
           </table>
