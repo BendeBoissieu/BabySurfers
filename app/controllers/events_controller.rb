@@ -77,7 +77,7 @@ class EventsController < ApplicationController
     @weatherspeed_5days_time = Array.new
     for i in (0..22).step(2)
       @weatherspeed_5days << (@weather_5days["list"][i]["wind"]["speed"] * 3.6).round(2)
-      @weatherspeed_5days_time << @weather_5days["list"][i]["dt_txt"]
+      @weatherspeed_5days_time << DateTime.parse(@weather_5days["list"][i]["dt_txt"]).strftime('%^a %e  %H:%M')
     end
 
 
