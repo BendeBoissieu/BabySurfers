@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :dislikes, only: [:create]
   end
   get 'about', to: 'pages#about', as: :about
+  get 'presentation_find', to: "pages#presentation_find", as: :presentation_find
   get 'my-profile', to: "profiles#show"
 
   mount ActionCable.server => "/cable"
