@@ -1,19 +1,24 @@
+.container-presentation{
+  position: relative;
+  height: 100vh;
+    width: 100vw;
+}
 .presentation_find{
-   position: absolute;
-  top: 10%;
-  margin: 0;
-  padding: 0;
   text-align: center;
-  margin-top: -30px;
+}
+
+.presentation_find h2{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .buttons-find{
-  position: relative;
-  top: 33%;
-  width: 235px;
-  height: 200px;
+  height: 40px;
+  font-size: 12px;
+  margin-top: 20px;
+}
 
-    //border: 3px solid #73AD21;
-  display:flex;
-
+.image_presentation{
+  text-align: center;
+  width: 100%;
 }
