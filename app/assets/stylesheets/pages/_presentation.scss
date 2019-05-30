@@ -20,3 +20,10 @@
   text-align: center;
   width: 100%;
 }
+
+.image_presentation img{
+  height: 400px;
+    @media screen and (min-width: 601px) {
+    height: 100%;
+  }
+}
