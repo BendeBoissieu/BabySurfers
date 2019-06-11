@@ -1,0 +1,5 @@
+meta_product_name: "Babysurfers"
+meta_title: "The biggest surf community in the world"
+meta_description: "Find a surf community aroud you. Surf with friends!"
+meta_image: "babysurfers-page.png"                       # should exist in `app/assets/images/`
+twitter_account: "@BabySurfers"   # required for Twitter Cards
