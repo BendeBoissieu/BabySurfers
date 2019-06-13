@@ -1,1 +1,12 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+App developped by Benjamin de Boissieu on Ruby on Rails
+
+Design and project from Nicolas Marion and I. 
+
+Design mockup on Figma. 
+
+Back-end: Ruby on rails
+Database: PostgreSQL
+Front-end: HTML, CSS and Javascript
+
+I used the Lewagon/rails-templates to start the project. 
+
