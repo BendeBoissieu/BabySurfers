@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'rentals/new'
+  get 'rentals/index'
+  get 'rentals/show'
+  get 'rentals/edit'
   get 'messages/create'
   get 'conversations/show'
   get 'conversations/index'
