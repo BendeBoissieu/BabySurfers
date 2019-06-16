@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'rentals/new'
-  get 'rentals/index'
-  get 'rentals/show'
-  get 'rentals/edit'
   get 'messages/create'
   get 'conversations/show'
   get 'conversations/index'
@@ -22,12 +18,12 @@ Rails.application.routes.draw do
     resources :matches, only: [:create]
     resources :dislikes, only: [:create]
   end
+  resources :rentals
   get 'about', to: 'pages#about', as: :about
   get 'presentation_find', to: "pages#presentation_find", as: :presentation_find
   get 'my-profile', to: "profiles#show"
 
   mount ActionCable.server => "/cable"
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
