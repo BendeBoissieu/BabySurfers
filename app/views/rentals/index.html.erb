@@ -1,2 +1,6 @@
 <h1>Rentals#index</h1>
 <p>Find me in app/views/rentals/index.html.erb</p>
+<% @rentals.each do |rental| %>
+  <p><%= rental.title %></p>
+  <p><%= rental.price %></p>
+<% end %>

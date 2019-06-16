@@ -2,8 +2,11 @@
   <div class="container-form">
     <div class="signup-screen">
       <%= f.input :picture, label: 'Your surfboard' %>
+      <%= f.input :picture_cache, as: :hidden %>
+      <%= f.input :title, label: 'Title' %>
       <%= f.input :description, label: 'Tell us about the surfboard', placeholder:"dimensions..."%>
       <%= f.input :phone, label: 'My phone' %>
+      <%= f.input :location, input_html: { id: 'gmaps-input-address',class: "input-form" }, :placeholder => 'Start typing a place name...' %>
       <!-- Association categories replaced by the group below -->
        <!--  f.association :likecategories, as: :check_boxes %> -->
 
