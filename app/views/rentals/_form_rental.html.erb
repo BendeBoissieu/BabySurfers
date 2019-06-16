@@ -1,0 +1,21 @@
+<%= simple_form_for [rental] do |f| %>
+  <div class="container-form">
+    <div class="signup-screen">
+      <%= f.input :picture, label: 'Your surfboard' %>
+      <%= f.input :picture_cache, as: :hidden %>
+      <%= f.input :description, label: 'Tell us about the surfboard', placeholder:"dimensions..."%>
+      <%= f.input :localisation, label: 'localisation',input_html: { id: 'gmaps-input-address' }, :placeholder => 'Start typing a place name...' %>
+      <%= f.input :phone, label: 'My phone' %>
+      <!-- Association categories replaced by the group below -->
+       <!--  f.association :likecategories, as: :check_boxes %> -->
+
+
+     <span>
+      <%= f.input :price, label: 'Price', prompt:"which price?" %>
+
+      <%= f.input :category,label: 'category', collection: Profile::TYPE_OF_RENTAL, prompt:"category" %>
+      <div class="text-center"> <%= f.button :submit, class: 'btn btn-validate' %> </div>
+    </div>
+  </div>
+<% end %>
+
