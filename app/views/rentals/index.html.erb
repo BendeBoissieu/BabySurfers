@@ -9,7 +9,8 @@
       <div class="card">
         <%= link_to "", rental_path(rental), class: "card-link" %>
         <div class="card-title">
-          <h2> <%= rental.title.upcase %> </h2>
+          <h2> <%= rental.title %> </h2>
+          <!-- .upcase to put in block letters -->
         </div>
         <div class="card-location">
                 <p><%= rental.price %></p>
