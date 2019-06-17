@@ -1,2 +1,15 @@
+<div class="arrow-left-back-page">
+   <%= link_to '<i class="fa fa-angle-left button-white-left"></i>'.html_safe,  rentals_path() %>
+</div>
+<div class="event_infos">
+   <div class="text-center">
+     <h2 id="title_event"><%= @rental.title %></h2>
+   </div>
 <h1>Rentals#show</h1>
 <p>Find me in app/views/rentals/show.html.erb</p>
+ 
+  
+  <img
+                     class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @rental.picture.url %>');" >
+  
+  
