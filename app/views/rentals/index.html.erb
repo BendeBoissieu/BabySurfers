@@ -7,6 +7,7 @@
     <% @rentals.each do |rental| %>
     <div class="col-xs-12 col-md-4 col-sm-6">
       <div class="card">
+        <%= link_to "", rental_path(rental), class: "card-link" %>
         <div class="card-title">
           <h2> <%= rental.title.upcase %> </h2>
         </div>
