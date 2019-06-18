@@ -12,6 +12,13 @@
           <h2> <%= rental.title %> </h2>
           <!-- .upcase to put in block letters -->
         </div>
+        
+        <%= link_to profile_path(join.user_id) do %>
+                  <li><img
+                   class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" ></li>
+                  <li style="padding-left: 40px;">  <%= rental.user.picture %> </li>
+                <% end %>
+        
         <div class="card-location">
                 <p><%= rental.price %></p>
         </div>
