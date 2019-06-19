@@ -4,25 +4,34 @@
   </div>
   <div class="title"><h1>RENTALS</h1></div>
   <div class="row">
+    <% if @rentals.count = 0 %>
+      <p> No rental available</p>
+    <% else %>  
     <% @rentals.each do |rental| %>
-    <div class="col-xs-12 col-md-4 col-sm-6">
-      <div class="card">
-        <%= link_to "", rental_path(rental), class: "card-link" %>
-        <div class="card-title">
-          <h2> <%= rental.title %> </h2>
-          <!-- .upcase to put in block letters -->
+      <div class="col-xs-12 col-md-4 col-sm-6">
+        <div class="card">
+          <%= link_to "", rental_path(rental), class: "card-link" %>
+          <div class="card-title">
+            <h2> <%= rental.title %>  by <%= rental.user.first_name %> </h2>
+            <!-- .upcase to put in block letters -->
+          </div>
+          
+          <%= link_to profile_path(join.user_id) do %>
+                    <li><img
+                     class="rental_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" ></li>
+                    <li style="padding-left: 40px;">  <%= rental.user.picture %> </li>
+                  <% end %>
+          <div class="rental_description">
+            <p><%= rental.description %></p>
+          </div>
+          <div class="rental_price">
+            <p><%= rental.price %></p>
+          </div>
+          <div class="rental_contact">
+            <p><%= rental.contact %></p>
+          </div>
         </div>
-        
-        <%= link_to profile_path(join.user_id) do %>
-                  <li><img
-                   class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  join.user.profile.photoprofile.url %>');" ></li>
-                  <li style="padding-left: 40px;">  <%= rental.user.picture %> </li>
-                <% end %>
-        
-        <div class="card-location">
-                <p><%= rental.price %></p>
-        </div>
-     </div>
+    <% end %> 
    </div>
    <% end %>
  </div>
