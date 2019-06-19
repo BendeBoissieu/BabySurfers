@@ -1,1 +1,28 @@
+.rental_picture{
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-left: 3px;
+  background-repeat: no-repeat;
+  background-size: cover; //try contain
+  float: right;
+}
 
+
+.rental-description {
+  position: absolute;
+  top: 57px;
+  left: 25px;
+  right: 25px;
+}
+.rental-description h2 {
+  font-size: 24px;
+}
+.rental-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: bold;
+  color: $dark-gray;
+  background-color: $white;
+}
