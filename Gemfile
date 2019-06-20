@@ -28,6 +28,8 @@ gem 'momentjs-rails', '>= 2.9'
 gem 'omniauth'
 gem 'omniauth-facebook', '>= 4.0.0'
 gem 'swiper-rails'
+gem 'webpush'
+gem 'serviceworker-rails'
 
 source "https://rails-assets.org" do
   gem "rails-assets-underscore"
