@@ -1,5 +1,5 @@
 .rental-card {
-  height: 400px;
+  height: 450px;
   background-size: cover !important;
   background-position: center;
   color: white;
@@ -27,10 +27,11 @@
 
 .picture-rental{
   position: absolute;
-  height: 200px;
-  top: 100px;
+  height: 300px;
+  bottom: 25px;
   left: 10px;
   width: 40%;
+  background-position: center;
 }
 
 .rental-description{
@@ -40,7 +41,6 @@
   color: black;
   width: 50%;
   height: 200px;
-  text-align: center;
 }
 
 .rental-description h3 {
@@ -48,3 +48,18 @@
   margin: 0;
 }
 
+.rental-information{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  color: black;
+  width: 50%;
+  height: 200px;
+  text-align: center;
+  background-color: $light-gray;
+
+}
+
+.rental-information h3 {
+  font-size: 16px;
+}

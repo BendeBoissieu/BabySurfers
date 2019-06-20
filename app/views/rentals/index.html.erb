@@ -7,33 +7,34 @@
     <% if @rentals.count == 0 %>
       <p> No rental available</p>
     <% else %>
-    <% @rentals.each do |rental| %>
-      <div class="col-xs-12 col-md-4 col-sm-6">
-        <div class="rental-card">
-          <%= link_to "", rental_path(rental), class: "card-link" %>
-          <div class="card-title">
-            <h2> <%= rental.title %></h2>
-            <h2>
-              by <%= rental.user.first_name %> <img
-                     class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.user.profile.photoprofile.url %>');" >
-            </h2>
-            </h2>
-            <!-- .upcase to put in block letters -->
-          </div>
-          <div class="picture-rental">
-            <img style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.picture.url %>');" alt="picture-rental">
-          </div>
-          <div class="rental-description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis labore magni, voluptatem.
-            </p>
-             <h3>PRICE PER DAY</h3>
-            <p><%= rental.price %></p>
-            <h3>CONTACT</h3>
-            <p><%= rental.phone %></p>
-            <h3>LOCATION</h3>
-            <p><%= rental.localisation %></p>
+      <% @rentals.each do |rental| %>
+        <div class="col-xs-12 col-md-4 col-sm-6">
+          <div class="rental-card">
+            <%= link_to "", rental_path(rental), class: "card-link" %>
+            <div class="card-title">
+              <h2> <%= rental.title %></h2>
+              <h2>
+                by <%= rental.user.first_name %> <img
+                       class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.user.profile.photoprofile.url %>');" >
+              </h2>
+              </h2>
+              <!-- .upcase to put in block letters -->
             </div>
-          </div>
+            <img class="picture-rental" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.picture.url %>');">
+            <div class="rental-description">
+              <p><%= rental.description %></p>
+            </div>
+            <div class="rental-information">
+               <h3>PRICE PER DAY</h3>
+              <p><%= rental.price %></p>
+              <h3>CONTACT</h3>
+              <p><%= rental.phone %></p>
+              <% if rental.localisation.nil? %>
+              <% else %>
+                <h3>LOCATION</h3>
+                <p><%= rental.localisation.city %></p>
+              <% end %>
+            </div>
         </div>
       </div>
     <% end %>
