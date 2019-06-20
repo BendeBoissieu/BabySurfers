@@ -9,30 +9,27 @@
     <% else %>
     <% @rentals.each do |rental| %>
       <div class="col-xs-12 col-md-4 col-sm-6">
-        <div class="card">
+        <div class="rental_card">
           <%= link_to "", rental_path(rental), class: "card-link" %>
           <div class="card-title">
-            <h2> <%= rental.title %>  by <%= rental.user.first_name %> </h2>
+            <h2> <%= rental.title %>  by <%= rental.user.first_name %> <img
+                     class="rental_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.user.profile.photoprofile.url %>');" >
+            </h2>
             <!-- .upcase to put in block letters -->
           </div>
-
-          <%= link_to profile_path(rental.user_id) do %>
-                    <li><img
-                     class="rental_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.user.profile.photoprofile.url %>');" ></li>
-                    <li style="padding-left: 40px;">  <%= rental.user.first_name %> </li>
-                  <% end %>
           <div class="rental_description">
-            <p><%= rental.description %></p>
-          </div>
-          <div class="rental_price">
-            <p><%= rental.price %></p>
-          </div>
-          <div class="rental_contact">
-            <p><%= rental.phone %></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odio neque incidunt quo quas tempore sed eaque, dolores distinctio nam reiciendis libero fugiat possimus explicabo esse! Omnis natus, illum soluta!
+            </p>
+            <div class="rental_price">
+              <p><%= rental.price %></p>
+            </div>
+            <div class="rental_contact">
+              <p><%= rental.phone %></p>
+            </div>
           </div>
         </div>
+      </div>
     <% end %>
-   </div>
    <% end %>
  </div>
 </div>
