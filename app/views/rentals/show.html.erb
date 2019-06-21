@@ -7,9 +7,16 @@
    </div>
 <h1>Rentals#show</h1>
 <p>Find me in app/views/rentals/show.html.erb</p>
- 
-  
+
+
   <img
                      class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @rental.picture.url %>');" >
-  
-  
+
+
+  <% if current_user.id == @rental.user_id %>
+      <div class="space-top"></div>
+      <%= link_to " Delete", @rental, :method => "delete", class: 'btn btn-warning'%>
+      <%= link_to " Update ", edit_rental_path, class: 'btn btn-primary'%>
+      <% end %>
+    <% end %>
+

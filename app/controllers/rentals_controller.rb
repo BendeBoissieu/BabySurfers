@@ -22,6 +22,23 @@ class RentalsController < ApplicationController
   end
 
   def edit
+    @rental = Rental.find(params[:id])
+  end
+
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(rental_params)
+    if @rental.save
+      redirect_to event_path(@rental)
+    else
+      render :edit
+    end
+  end
+
+   def destroy
+    @rental = Rental.find(params[:id])
+    @rental.destroy
+    redirect_to rentals_path
   end
 
   def rental_params
