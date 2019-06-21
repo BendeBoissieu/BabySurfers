@@ -30,7 +30,9 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["@BabySurfers"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
-  </head>
+    <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
+<meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
     <% unless action_name == "home" || controller.controller_name == "matches" || action_name == "edit"%>
       <%= render 'shared/navbar' %>

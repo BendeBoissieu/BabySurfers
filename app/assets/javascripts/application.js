@@ -13,3 +13,4 @@
 love.addEventListener('click', loveListener);
 */
 
+//= require serviceworker-companion
