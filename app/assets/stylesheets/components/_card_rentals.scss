@@ -40,13 +40,25 @@
   background-position: center;
 }
 
+.rental-price{
+    position: absolute;
+    height: 50px;
+    bottom: 170px;
+    right: 10px;
+    text-align: center;
+    font-size: 14px;
+    background-color: $dark-gray;
+    width: 50%;
+    padding: 15px;
+}
+
 .rental-description{
   position: absolute;
-  top: 100px;
+  top: 110px;
   right: 10px;
   color: black;
   width: 50%;
-  height: 200px;
+  height: 1800px;
 }
 
 .rental-description h3 {
@@ -56,14 +68,12 @@
 
 .rental-information{
   position: absolute;
-  bottom: 5px;
+  bottom: 25px;
   right: 10px;
   color: black;
   width: 50%;
-  height: 200px;
+  height: 130px;
   text-align: center;
-  background-color: $light-gray;
-
 }
 
 .rental-information h3 {

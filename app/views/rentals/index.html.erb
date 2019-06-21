@@ -13,20 +13,20 @@
             <%= link_to "", rental_path(rental), class: "card-link" %>
             <div class="card-title">
               <h2> <%= rental.title %></h2>
-              <h2>
+              <p>
                 by <%= rental.user.first_name %> <img
                        class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.user.profile.photoprofile.url %>');" >
-              </h2>
-              </h2>
+              </p>
               <!-- .upcase to put in block letters -->
             </div>
             <img class="picture-rental" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  rental.picture.url %>');">
             <div class="rental-description">
               <p><%= rental.description %></p>
             </div>
+            <div class="rental-price">
+              <p><%= rental.price %> $ / Day</p>
+            </div>
             <div class="rental-information">
-               <h3>PRICE PER DAY</h3>
-              <p><%= rental.price %></p>
               <h3>CONTACT</h3>
               <p><%= rental.phone %></p>
               <% if rental.localisation.nil? %>
@@ -41,4 +41,5 @@
       <% end %>
     <% end %>
  </div>
+ <div class="space_footer_profile"></div>
 </div>
