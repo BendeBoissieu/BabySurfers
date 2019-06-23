@@ -1,22 +1,19 @@
 <div class="arrow-left-back-page">
    <%= link_to '<i class="fa fa-angle-left button-white-left"></i>'.html_safe,  rentals_path() %>
 </div>
-<div class="event_infos">
-   <div class="text-center">
-     <h2 id="title_event"><%= @rental.title %></h2>
-   </div>
-<h1>Rentals#show</h1>
-<p>Find me in app/views/rentals/show.html.erb</p>
+<div class="title"><h1><%= @rental.title %></h1></div>
 
 
-  <img
-                     class="join_picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @rental.picture.url %>');" >
+<div class="text-align">
+    <p>
+      by <%= @rental.user.first_name %> <img
+             class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.user.profile.photoprofile.url %>');" >
+    </p>
+</div>
 
-
-  <% if current_user.id == @rental.user_id %>
-      <div class="space-top"></div>
-      <%= link_to " Delete", @rental, :method => "delete", class: 'btn btn-warning'%>
-      <%= link_to " Update ", edit_rental_path, class: 'btn btn-primary'%>
-      <% end %>
-    <% end %>
-
+<div class="container">
+ <img class="picture-rental" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.picture.url %>');">
+  <div class="rental-description">
+    <p><%= @rental.description %></p>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="arrow-left-back-page">
+   <%= link_to '<i class="fa fa-angle-left button-white-left"></i>'.html_safe,  rentals_path() %>
+</div>
+<div class="title"><h1><%= @rental.title %></h1></div>
+
+
+
+  <div class="card-title">
+    <p>
+      by <%= @rental.user.first_name %> <img
+             class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.user.profile.photoprofile.url %>');" >
+    </p>
+    <!-- .upcase to put in block letters -->
+  </div>
+  <img class="picture-rental" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.picture.url %>');">
+  <div class="rental-description">
+    <p><%= @rental.description %></p>
+  </div>
+  <div class="rental-price">
+    <p><%= @rental.price %> $ / Day</p>
+  </div>
+  <div class="rental-information">
+    <h3>CONTACT</h3>
+    <p><%= @rental.phone %></p>
+    <% if @rental.localisation.nil? %>
+    <% else %>
+      <h3>LOCATION</h3>
+      <p><%= @rental.localisation.city %></p>
+    <% end %>
+  </div>
+
+
+
+ <div class="space_footer_profile"></div>
+
+
+
+
+  <% if current_user.id == @rental.user_id %>
+      <div class="space-top"></div>
+      <%= link_to " Delete", @rental, :method => "delete", class: 'btn btn-warning'%>
+      <%= link_to " Update ", edit_rental_path, class: 'btn btn-primary'%>
+      <% end %>
+
+
+<div class="space-top"><a href="whatsapp://send?text=<%= request.original_url %>">Share on WhatsApp <i class="fa fa-whatsapp" aria-hidden="true"></i></a></div>
+
+
