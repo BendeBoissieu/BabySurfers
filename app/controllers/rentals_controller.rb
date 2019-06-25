@@ -14,8 +14,10 @@ class RentalsController < ApplicationController
   end
 
   def index
-    sql_query = "category ILIKE :query"
-    @rentals = Rental.all.where(sql_query, query:"%#{params[:query]}%").order(created_at: :desc))
+
+    #sql_query = "category CATEGORY :query"
+    #@rentals = Rental.all.where(sql_query, query:"%#{params[:query]}%").order(created_at: :desc))
+    @rentals = Rental.all
   end
 
   def show
