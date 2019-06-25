@@ -12,11 +12,13 @@
 </div>
 
 <div class="container">
- <img class="picture-rental" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.picture.url %>');">
   <div class="rental-description-show">
     <p><%= @rental.description %></p>
-  </div>
-   <div class="rental-price">
+    <div class="rental-price-show">
     <p><%= @rental.price %> $ / Day</p>
-  </div>
+    </div>
+</div>
+
+ <img class="picture-rental-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.picture.url %>');">
+
 </div>
