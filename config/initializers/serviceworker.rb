@@ -1,10 +1,8 @@
 Rails.application.configure do
-  config.serviceworker.routes.draw do
-    # map to assets implicitly
-    match "/serviceworker.js"
-    match "/manifest.json"
-    match "/logo.png"
-
+  config.serviceworker.routes do
+    match "serviceworker.js"
+    match "/manifest.json.erb"
+    # match "/logo.png"
     # Examples
     #
     # map to a named asset explicitly
@@ -27,3 +25,4 @@ Rails.application.configure do
 
   end
 end
+
