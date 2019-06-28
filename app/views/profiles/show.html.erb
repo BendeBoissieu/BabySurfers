@@ -57,9 +57,9 @@
         <hr style="margin-bottom: 4px;margin-top: 4px;">
         <p>Phone: <%= @profile.phone %></p>
         <p>Mail: <%= @profile.user.email %></p>
-        <button type="button" class="btn btn-default" onclick="sendPush()">
-        Send WebPush
-        </button>
+        <div class="space-top">
+           <%= link_to "Update Profile", edit_profile_path(@profile), class:"btn btn-create" %>
+        </div>
 
 
       </div>
