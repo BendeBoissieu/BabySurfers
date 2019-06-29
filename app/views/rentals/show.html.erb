@@ -1,6 +1,7 @@
 <div class="arrow-left-back-page">
    <%= link_to '<i class="fa fa-angle-left button-white-left"></i>'.html_safe,  rentals_path() %>
 </div>
+<div class="container">
 <div class="title"><h1><%= @rental.title %></h1></div>
 
 
@@ -10,8 +11,7 @@
              class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.user.profile.photoprofile.url %>');" >
     </p>
 </div>
-
-<div class="container">
+<div class="space-top"></div>
   <div class="rental-description-show">
     <p><%= @rental.description %></p>
     <div class="rental-price-show">
@@ -19,6 +19,16 @@
     </div>
 </div>
 
+<div class="space-top"></div>
+
  <img class="picture-rental-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.picture.url %>');">
 
 </div>
+
+
+
+ <% if current_user.id == @rental.user_id %>
+      <div class="space-top"></div>
+      <%= link_to " Delete", @rental, :method => "delete", class: 'btn btn-warning'%>
+      <%= link_to " Update ", edit_rental_path, class: 'btn btn-primary'%>
+      <% end %>

@@ -50,6 +50,36 @@
   text-shadow: none;
 }
 
+.card-title p {
+  font-size: 18px;
+  margin-top: 10px;
+  text-shadow: none;
+  padding-bottom: 7px;
+}
+
+.card-title-rental {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-align:center;
+  padding-top: 10px;
+  color: $dark-black;
+  background-color: $light-gray;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title-rental h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  text-shadow: none;
+}
+
+.card-title-rental p {
+  font-size: 18px;
+  margin-top: 10px;
+  text-shadow: none;
+  padding-bottom: 15px;
+}
+
 .card-description {
   position: absolute;
   top: 57px;

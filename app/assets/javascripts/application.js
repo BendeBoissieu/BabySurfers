@@ -17,7 +17,7 @@ love.addEventListener('click', loveListener);
 
 // app/assets/javascripts/application.js
 
-if ('serviceWorker' in navigator) {
+if ('.serviceWorker' in navigator) {
   console.log('Service Worker is supported');
   navigator.serviceWorker.register('/serviceworker.js')
     .then(function(registration) {
@@ -30,3 +30,6 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed', ':^(', error);
   });
 }
+
+
+

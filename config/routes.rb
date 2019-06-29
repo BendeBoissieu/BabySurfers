@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: :about
   get 'presentation_find', to: "pages#presentation_find", as: :presentation_find
   get 'my-profile', to: "profiles#show"
+  get 'test_webpush', to: "pages#test_webpush", as: :test_webpush
 
   mount ActionCable.server => "/cable"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

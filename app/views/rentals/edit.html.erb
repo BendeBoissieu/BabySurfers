@@ -1,2 +1,10 @@
-<h1>Rentals#edit</h1>
-<p>Find me in app/views/rentals/edit.html.erb</p>
+<div class="background_index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'home_page.jpg' %>');"></div>
+  <div class="arrow-left-back-page">
+     <%= link_to '<i class="fa fa-angle-left button-white-left"></i>'.html_safe,  root_path() %>
+  </div>
+ <h1 class="text-center" style="margin-bottom: 0px;">Rent your own surfboard</h1>
+ <hr>
+ <div class="container-index">
+  <%= render 'form-rental', event: @rental %>
+  </div>
+</div>
