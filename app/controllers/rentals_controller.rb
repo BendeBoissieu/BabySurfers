@@ -32,7 +32,7 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
     @rental.update(rental_params)
     if @rental.save
-      redirect_to event_path(@rental)
+      redirect_to rental_path(@rental)
     else
       render :edit
     end

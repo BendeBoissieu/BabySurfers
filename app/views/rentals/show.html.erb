@@ -14,6 +14,7 @@
 <div class="space-top"></div>
   <div class="rental-description-show">
     <p><%= @rental.description %></p>
+    <div class="space-top"></div>
     <div class="rental-price-show">
     <p><%= @rental.price %> $ / Day</p>
     </div>
@@ -26,9 +27,10 @@
 </div>
 
 
-
+<div class="text-align">
  <% if current_user.id == @rental.user_id %>
       <div class="space-top"></div>
       <%= link_to " Delete", @rental, :method => "delete", class: 'btn btn-warning'%>
       <%= link_to " Update ", edit_rental_path, class: 'btn btn-primary'%>
       <% end %>
+</div>
