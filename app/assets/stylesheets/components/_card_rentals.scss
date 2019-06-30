@@ -46,23 +46,30 @@
     right: 10px;
     text-align: center;
     font-size: 14px;
-    background-color: $dark-gray;
     width: 50%;
     padding: 15px;
 }
 
-.rental-price{
-    position: absolute;
-    height: 50px;
-    bottom: 170px;
-    right: 10px;
-    text-align: center;
-    font-size: 14px;
-    background-color: $dark-gray;
-    width: 50%;
-    padding: 15px;
-    color: $white;
+.rental-price-index{
+  background-color: none;
+  border-radius: 3rem;
+  color: black;
+  width: 100%;
+  border: 4px solid $purple;
+  border-radius: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+
 }
+
+.rental-price-index p{
+  text-align: center;
+  margin: 3px;
+}
+
 
 .rental-description{
   position: absolute;
