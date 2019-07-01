@@ -24,8 +24,9 @@
 
 
 <script>
+  console.log('test script ok')
   function sendPush(){
-    getKeys(false)
+    getKeys()
   }
 
 
@@ -59,6 +60,7 @@ window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
      }
 }
   function getKeys(){
+    console.log('getkeys');
     navigator.serviceWorker.register('/serviceworker.js', {scope: './'})          //5
       .then(function(registration) {
         return registration.pushManager.getSubscription()

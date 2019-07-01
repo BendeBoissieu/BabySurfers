@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resources :matches, only: [:create]
     resources :dislikes, only: [:create]
   end
-  resources :rentals
+  resources :rentals do
+    get '/contact_owner', to: "rentals#contact_owner"
+  end
   get 'about', to: 'pages#about', as: :about
   get 'presentation_find', to: "pages#presentation_find", as: :presentation_find
   get 'my-profile', to: "profiles#show"

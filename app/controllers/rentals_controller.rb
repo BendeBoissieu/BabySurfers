@@ -24,6 +24,27 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
   end
 
+  def contact_owner
+    @rental = Rental.find(params[:rental_id])
+    @liker = current_user
+    @likee = User.find(@rental.user_id)
+    if @liker == @likee
+      redirect_to rental_path(@rental), alert: 'You are the owner'
+    else
+      if  (Match.where(user_one_id: @liker, user_two_id: @likee) or Match.where(user_one_id: @likee, user_two_id: @liker)) != []
+        @match = Match.new(user_one_id: @liker.id, user_two_id: @likee.id)
+        @match.mutual = true
+        @match.save
+        @conversation = Conversation.new(match: @match)
+        @conversation.save
+        redirect_to conversation_path(@conversation), alert: 'You can know start a conversation!'
+      else
+        redirect_to rental_path(@rental), alert: 'You already have a conversation with this owner'
+      end
+    end
+  end
+
+
   def edit
     @rental = Rental.find(params[:id])
   end
@@ -38,7 +59,7 @@ class RentalsController < ApplicationController
     end
   end
 
-   def destroy
+  def destroy
     @rental = Rental.find(params[:id])
     @rental.destroy
     redirect_to rentals_path

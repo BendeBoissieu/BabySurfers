@@ -1,5 +1,5 @@
 
-console.log('test');
+console.log('test sw');
 
 
 
@@ -30,3 +30,7 @@ self.addEventListener('notificationclick', function(event) {
         })
     );
 });
+
+
+
+

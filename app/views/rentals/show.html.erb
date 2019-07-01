@@ -20,6 +20,10 @@
     </div>
 </div>
 
+<div class="contact-owner">Contact the Owner
+  <%= link_to "Contact", rental_contact_owner_path(@rental), class: 'btn btn-warning'%>
+</div>
+
 <div class="space-top"></div>
 
  <img class="picture-rental-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.picture.url %>');">
