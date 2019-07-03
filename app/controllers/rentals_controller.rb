@@ -31,7 +31,7 @@ class RentalsController < ApplicationController
     if @liker == @likee
       redirect_to rental_path(@rental), alert: 'You are the owner'
     else
-      if  (Match.where(user_one_id: @liker, user_two_id: @likee) or Match.where(user_one_id: @likee, user_two_id: @liker)) != []
+      if  (Match.where(user_one_id: @liker, user_two_id: @likee) || Match.where(user_one_id: @likee, user_two_id: @liker)) == []
         @match = Match.new(user_one_id: @liker.id, user_two_id: @likee.id)
         @match.mutual = true
         @match.save
