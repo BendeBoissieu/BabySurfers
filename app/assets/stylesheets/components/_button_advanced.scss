@@ -26,7 +26,12 @@
   text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
-  text-decoration: none;
+  padding: 10px;
+}
+
+
+.button_adv a{
+  color: $white;
 }
 
 .button_adv:hover {
@@ -48,3 +53,5 @@
     background-position: 100%;
   }
 }
+
+

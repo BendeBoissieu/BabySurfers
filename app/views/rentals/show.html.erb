@@ -19,10 +19,6 @@
     <p><%= @rental.price %> $ / Day</p>
     </div>
 </div>
-<div class="space-top"></div>
-<div class="text-align">
-  <div class="button_adv"> <%= link_to "Contact", rental_contact_owner_path(@rental)%></div>
-</div>
 
 
 <div class="space-top"></div>
@@ -31,6 +27,10 @@
 
 </div>
 
+<div class="space-top"></div>
+<div class="text-align">
+  <div class="button_adv"> <%= link_to "Contact", rental_contact_owner_path(@rental)%></div>
+</div>
 
 <div class="text-align">
  <% if current_user.id == @rental.user_id %>
