@@ -22,7 +22,6 @@ class RentalsController < ApplicationController
 
   def show
     @rental = Rental.find(params[:id])
-    @hash = [{lat: @event.latitude, lng: @event.longitude}]
   end
 
   def contact_owner
