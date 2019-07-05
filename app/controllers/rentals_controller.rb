@@ -22,6 +22,7 @@ class RentalsController < ApplicationController
 
   def show
     @rental = Rental.find(params[:id])
+    @hash = [{lat: @event.latitude, lng: @event.longitude}]
   end
 
   def contact_owner
@@ -66,7 +67,7 @@ class RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rental).permit(:title, :description, :category, :latitude, :longitude, :phone, :price, :user_id, :picture)
+    params.require(:rental).permit(:title, :description, :category, :latitude, :longitude, :phone, :price, :user_id, :picture, :latitude, :longitude)
   end
 
 end

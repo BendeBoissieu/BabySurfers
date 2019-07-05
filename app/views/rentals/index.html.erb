@@ -29,10 +29,10 @@
             <div class="rental-information">
               <h3>CONTACT</h3>
               <p><%= rental.phone %></p>
-              <% if rental.localisation.nil? %>
+              <% if rental.address.nil? %>
               <% else %>
                 <h3>LOCATION</h3>
-                <p><%= rental.localisation %></p>
+                <p><%= rental.address %></p>
                 <% end %> -->
             </div>
           </div>
