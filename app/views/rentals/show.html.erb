@@ -14,11 +14,6 @@
 <div class="space-top"></div>
   <div class="rental-description-show">
     <p><%= @rental.description %></p>
-                  <% if rental.localisation.nil? %>
-              <% else %>
-                <h3>LOCATION</h3>
-                <p><%= rental.localisation.city %></p>
-              <% end %>
     <div class="space-top"></div>
     <div class="rental-price-show">
     <p><%= @rental.price %> $ / Day</p>
