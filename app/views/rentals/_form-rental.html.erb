@@ -4,6 +4,7 @@
       <%= f.input :picture, label: 'Your surfboard' %>
       <%= f.input :picture_cache, as: :hidden %>
       <%= f.input :title, label: 'Title' %>
+      <%= f.input :category,label: 'category', collection: Profile::TYPE_OF_RENTAL, prompt:"category" %>
       <%= f.input :description, label: 'Tell us about the surfboard', placeholder:"dimensions..."%>
       <%= f.input :phone, label: 'My phone' %>
       <%= f.input :address, label: 'location', input_html: { id: 'gmaps-input-address',class: "input-form" }, :placeholder => 'Start typing a place name...' %>
@@ -14,7 +15,6 @@
      <span>
       <%= f.input :price, label: 'Price per day', prompt:"which price?" %>
 
-      <%= f.input :category,label: 'category', collection: Profile::TYPE_OF_RENTAL, prompt:"category" %>
       <div class="text-center"> <%= f.button :submit, class: 'btn btn-validate' %> </div>
     </div>
   </div>
