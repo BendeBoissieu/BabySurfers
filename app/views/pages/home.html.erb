@@ -4,9 +4,11 @@
   </div>
   <div class="buttons-home text-center">
     <%= link_to "FIND AN EVENT", events_path, class: "see_event_home btn-home" %>
-
-
+  <% if @user == nil %>
     <%= link_to "FIND A BABY SURFER",  presentation_find_path, class: "see_baby_surfers_home btn-home" %>
+  <% else %>
+     <%= link_to "FIND A BABY SURFER",  profiles_path, class: "see_baby_surfers_home btn-home" %>
+  <% end %>
   </div>
 
 </div>
