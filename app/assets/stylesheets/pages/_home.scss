@@ -22,11 +22,14 @@
 
     //border: 3px solid #73AD21;
   display:flex;
+  @media screen and (min-width: 601px){
+      width: 335px;
+  }
 
 }
 .see_event_home{
   @media screen and (min-width: 601px) {
-  //width: 400px;
+     font-size: 15px;
   }
   position: absolute;
   top: 88px;
@@ -38,7 +41,8 @@
 
 .see_baby_surfers_home{
   @media screen and (min-width: 601px) {
-  //width: 400px;
+     font-size: 15px;
+     top: 147px;
   }
   position: absolute;
   top: 137px;
