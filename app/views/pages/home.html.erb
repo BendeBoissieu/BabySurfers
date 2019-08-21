@@ -1,9 +1,6 @@
 <div class="banner" style="background-image:  url('<%= image_path 'home_page.jpg' %>');">
   <div class="under-logo-home">
-    <div class="logo-home">
-         <%= image_tag "babysurfers-black.png", height: 150 %>
-    </div>
-
+    <%= image_tag "babysurfers-black.png", class: "logo-home" %>
   </div>
   <div class="buttons-home text-center">
     <%= link_to "FIND AN EVENT", events_path, class: "see_event_home btn-home" %>
