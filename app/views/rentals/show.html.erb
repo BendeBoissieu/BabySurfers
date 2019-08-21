@@ -7,8 +7,10 @@
 
 <div class="text-align">
     <p>
-      by <%= @rental.user.first_name %> <img
-             class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.user.profile.photoprofile.url %>');" >
+      by <%= link_to @rental.user.first_name.upcase_first, profile_path(@rental.user_id) %>
+      <%= link_to profile_path(@rental.user_id) do %>
+        <span class="owner-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  @rental.user.profile.photoprofile.url %>');"></span>
+        <% end %>
     </p>
 </div>
 <div class="space-top"></div>
@@ -41,5 +43,3 @@
       <%= link_to " Update ", edit_rental_path, class: 'btn btn-primary'%>
       <% end %>
 </div>
-
-
