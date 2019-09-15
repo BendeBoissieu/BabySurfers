@@ -82,3 +82,31 @@ a:hover, a:focus {
   color: #2E6C7D;
 }
 
+.home_event_desktop{
+  @media screen and (min-width: 601px){
+    height: 100vh;
+  }
+  @media screen and (max-width: 601px){
+    display: none;
+  }
+  background-color: red;
+}
+
+.home_event_desktop h1{
+  text-align: center;
+}
+
+.home_babysurfer_desktop{
+  @media screen and (min-width: 601px){
+    height: 100vh;
+  }
+  @media screen and (max-width: 601px){
+    display: none;
+  }
+  background-color: orange;
+}
+
+.home_babysurfer_desktop h1{
+  text-align: center;
+}
+

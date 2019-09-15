@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :messages, dependent: :destroy
   has_one :profile, dependent: :destroy
-  after_create :init_profile
+  after_create :init_profile, :send_welcome_email
   after_save :write_json
 
 
@@ -126,7 +126,11 @@ class User < ApplicationRecord
     matches.each &:destroy
   end
 
+  private
 
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 
 end
 
