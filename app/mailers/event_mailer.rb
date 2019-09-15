@@ -10,7 +10,7 @@ class EventMailer < ApplicationMailer
 
     mail(
       to:       @event.user.email,
-      subject:  "You are joining #{@event.name}!"
+      subject:  "You are joining #{@event.title_event}!"
     )
   end
 end
