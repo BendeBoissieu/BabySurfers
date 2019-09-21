@@ -13,7 +13,7 @@ class JoinsController < ApplicationController
     @join.event = event
     @join.user = current_user
     if @join.save
-    mail = EventMailer.with(event: event).join
+    mail = JoinMailer.with(join: @join, event: event).join_event
     mail.deliver_now
     redirect_to event_path(event)
     flash[:notice] = "See you at the event!"
