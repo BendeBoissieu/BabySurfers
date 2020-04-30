@@ -5,7 +5,7 @@
     "@rails/webpacker": "https://github.com/rails/webpacker",
     "bootstrap": "3",
     "gmaps": "^0.4.24",
-    "jquery": "^3.3.1"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.9"
